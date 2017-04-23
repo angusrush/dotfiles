@@ -46,6 +46,7 @@ nmap <leader>e :edit ~/.vim/ftplugin/tex.vim<CR>
 " }}}
 
 " Custom functions {{{
+
 " This redefines a new forward search command, <leader>f, which actually works
 function! SyncTexForward()
         "     let execstr = "silent !okular --unique %:p:r.dvi\\#src:".line(".")."%:p &"
