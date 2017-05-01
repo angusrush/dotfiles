@@ -33,7 +33,6 @@ call IMAP('MTE', "\\text{<++>}<++>", 'tex')
 call IMAP('MTN', "\\tensor{<++>}{<++>}<++>", 'tex')
 call IMAP('`%', "\\tfrac{<++>}{<++>}<++>", 'tex')
 call IMAP('`>', "\\vec{<++>}<++>", 'tex')
-call IMAP('`f', "\\phi<++>", 'tex')
 call IMAP('` ', "\\qquad", 'tex')
 call IMAP('||', "\\left|<++>\\right|<++>", 'tex')
 
@@ -43,6 +42,12 @@ inoremap `. \cdot
 "Makes editing this file easier
 nmap <leader>e :edit ~/.vim/ftplugin/tex.vim<CR>
 
+" }}}
+
+" Places in which I disagree with vim-latex {{{
+call IMAP('`e', "\\epsilon<++>", 'tex')
+call IMAP('`f', "\\phi<++>", 'tex')
+call IMAP('`w', "\\omega<++>", 'tex')
 " }}}
 
 " Custom functions {{{
