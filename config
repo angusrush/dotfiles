@@ -251,6 +251,9 @@ bindsym XF86Search exec Downloads/playerctl-master/playerctl/playerctl play-paus
 bindsym XF86LaunchA exec Downloads/playerctl-master/playerctl/playerctl previous
 bindsym XF86Explorer exec Downloads/playerctl-master/playerctl/playerctl next
 
+# Toggle day/night settings
+bindsym $mod+n exec /home/angus/programming/i3blocks/brightness_block/coolBrightness
+
 
 ##################################################
 # Startup programs begin here
