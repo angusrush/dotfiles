@@ -13,11 +13,14 @@ set tabstop=4				" 4 visual spaces per tab
 set expandtab				" tabs are spaces
 
 set incsearch               " show search matches while typing 
+
 set nocompatible            " enter the current millenium
 
 set linebreak               " intelligent line breaks
 
 set scrolloff=3             " Don't let the cursor get to the bottom of the screen
+
+set history=200             " Save more ex commands -- memory is cheap
 
 " Search for word under cursor faster
 nnoremap gf <C-W>f      
@@ -31,6 +34,10 @@ map Y y$
 
 " Adds dictionaries so vim can autocomplete better
 au FileType * exec("setlocal dictionary+=".$HOME."/.vim/dictionaries/".expand('<amatch>'))
+
+" We can use <C-p> and <C-n> to cycle through commands
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
 
 
 
