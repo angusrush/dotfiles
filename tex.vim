@@ -23,6 +23,7 @@ call IMAP('EVM', "\\begin{vmatrix}\<CR><++>\<CR>\\end{vmatrix}<++>", 'tex')
 call IMAP('MBB', "\\mathbb{<++>}<++>", 'tex')
 call IMAP('MBF', "\\mathbf{<++>}<++>", 'tex')
 call IMAP('MRM', "\\mathrm{<++>}<++>", 'tex')
+call IMAP('MSF', "\\mathsf{<++>}<++>", 'tex')
 call IMAP('MCA', "\\begin{cases}\<CR><++>\<CR>\\end{cases}<++>", 'tex')
 call IMAP('MCL', "\\mathcal{<++>}<++>", 'tex')
 call IMAP('MM*', "\\begin{multline*}\<CR><++>\<CR>\\end{multline*}<++>", 'tex')
@@ -62,4 +63,18 @@ function! SyncTexForward()
         exec "redraw!"
 endfunction
 nmap <Leader>f :call SyncTexForward()<CR>
+
+" Adds (not that it works yet) timestamps for TeX files 
+function! LastModified()
+  if &modified
+    let save_cursor = getpos(".")
+    let n = min([8, line("$")])
+    keepjumps exe '1,' . n . 's#^% Last modified: \zs.*# ' . strftime('%H:%M %A, %-d %B %Y') . '#e'
+    call histdel('search', -1)
+    keepjumps call setpos('.', save_cursor)
+  endif
+endfun
+
+autocmd BufWritePre *.tex call LastModified()
+
 " }}}
