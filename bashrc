@@ -109,3 +109,4 @@ alias night="xbright =3"
 alias vim="vim --servername LATEX"     #Get reverse searching working with vim-latex
 alias changenotes="vim ~/Documents/changes_notes"
 alias sl="sl -e"
+alias dirs="dirs -v"
