@@ -10,6 +10,9 @@ set iskeyword+=:
 " This is to get forward/reverse search working with Okular
 let g:Tex_CompileRule_dvi = 'latex -src-specials -synctex=1 -interaction=nonstopmode $*'
 let g:Tex_CompileRule_pdf = 'pdflatex -src-specials -synctex=1 -interaction=nonstopmode $*'
+
+" This makes it so vim-latex can indent half-open intervals correctly
+let g:tex_indent_brace = 0
 " }}}
 
 " User-defined vim-latex shortcuts {{{
