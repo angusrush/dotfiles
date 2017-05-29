@@ -18,9 +18,11 @@ set nocompatible            " enter the current millenium
 
 set linebreak               " intelligent line breaks
 
-set scrolloff=3             " Don't let the cursor get to the bottom of the screen
+set scrolloff=3             " don't let the cursor get to the bottom of the screen
 
-set history=200             " Save more ex commands -- memory is cheap
+set history=200             " save more ex commands -- memory is cheap
+
+set breakindent             " wrapped text respects indentation
 
 " Search for word under cursor faster
 nnoremap gf <C-W>f      
