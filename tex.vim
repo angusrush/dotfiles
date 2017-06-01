@@ -41,6 +41,7 @@ call IMAP('`%', "\\tfrac{<++>}{<++>}<++>", 'tex')
 call IMAP('`>', "\\vec{<++>}<++>", 'tex')
 call IMAP('` ', "\\qquad", 'tex')
 call IMAP('||', "\\left|<++>\\right|<++>", 'tex')
+call IMAP('EHR', "\\hyperref[<++>]{<++> \\ref*{<++>}}<++>", 'tex')
 
 "IMAP can't map `. for some bizzare reason
 inoremap `. \cdot 
@@ -52,7 +53,7 @@ nmap <leader>e :edit ~/.vim/ftplugin/tex.vim<CR>
 
 " I don't like some of vim-latex's defaults {{{
 call IMAP('`e', "\\epsilon<++>", 'tex')
-call IMAP('`f', "\\phi<++>", 'tex')
+" call IMAP('`f', "\\phi<++>", 'tex')
 call IMAP('`w', "\\omega<++>", 'tex')
 " }}}
 
