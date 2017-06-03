@@ -289,7 +289,7 @@ exec /home/angus/export_x_info
 # Change caps lock into another escape
 exec setxkbmap -option caps:escape
 
-# Change caps lock into another escape
+# Change prtscr into another escape
 exec setxkbmap -e 'keysym Print = grave'
 
 # Turn up trackpoint sensitivity
