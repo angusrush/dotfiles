@@ -292,6 +292,9 @@ exec setxkbmap -option caps:escape
 # Change caps lock into another escape
 exec setxkbmap -e 'keysym Print = grave'
 
+# Turn up trackpoint sensitivity
+exec xinput --set-prop "12" "Device Accel Constant Deceleration" 0.5
+
 # start f.lux
 exec fluxgui
 
