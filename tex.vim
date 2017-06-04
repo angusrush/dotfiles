@@ -42,6 +42,11 @@ call IMAP('`>', "\\vec{<++>}<++>", 'tex')
 call IMAP('` ', "\\qquad", 'tex')
 call IMAP('||', "\\left|<++>\\right|<++>", 'tex')
 call IMAP('EHR', "\\hyperref[<++>]{<++> \\ref*{<++>}}<++>", 'tex')
+call IMAP('ETH', "\\begin{theorem}\<CR><++>\<CR>\\end{theorem}<++>", 'tex')
+call IMAP('EDE', "\\begin{definition}[<++>]\<CR>\\label{<++>}\<CR><++>\<CR>\\end{definition}<++>", 'tex')
+call IMAP('EPR', "\\begin{proof}\<CR><++>\<CR>\\end{proof}<++>", 'tex')
+call IMAP('EEG', "\\begin{example}\<CR><++>\<CR>\\end{example}", 'tex')
+
 
 "IMAP can't map `. for some bizzare reason
 inoremap `. \cdot 
