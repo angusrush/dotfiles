@@ -23,6 +23,7 @@ set scrolloff=3             " don't let the cursor get to the bottom of the scre
 set history=200             " save more ex commands -- memory is cheap
 
 set breakindent             " wrapped text respects indentation
+set display=lastline        " show beginning of a line which ends off the screen
 
 " Search for word under cursor faster
 nnoremap gf <C-W>f      
