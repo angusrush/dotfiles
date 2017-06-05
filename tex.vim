@@ -46,6 +46,7 @@ call IMAP('ETH', "\\begin{theorem}\<CR><++>\<CR>\\end{theorem}<++>", 'tex')
 call IMAP('EDE', "\\begin{definition}[<++>]\<CR>\\label{<++>}\<CR><++>\<CR>\\end{definition}<++>", 'tex')
 call IMAP('EPR', "\\begin{proof}\<CR><++>\<CR>\\end{proof}<++>", 'tex')
 call IMAP('EEG', "\\begin{example}\<CR><++>\<CR>\\end{example}", 'tex')
+call IMAP('ECD', "\<CR>\\begin{centering}\<CR>\<CR>\\begin{tikzcd}\<CR><++>\<CR>\\end{tikzcd}\<CR>\<CR>\\end{centering}\<CR>", 'tex')
 
 
 "IMAP can't map `. for some bizzare reason
