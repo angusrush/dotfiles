@@ -16,10 +16,12 @@ let g:tex_indent_brace = 0
 " }}}
 
 " Makes hjkl work with wrapped lines; giving it a try
-onoremap <silent> j gj
-onoremap <silent> k gk
 nnoremap <silent> j gj
 nnoremap <silent> k gk
+vnoremap <silent> j gj
+vnoremap <silent> k gk
+onoremap <silent> j gj
+onoremap <silent> k gk
 
 
 
