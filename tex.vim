@@ -15,6 +15,14 @@ let g:Tex_CompileRule_pdf = 'pdflatex -src-specials -synctex=1 -interaction=nons
 let g:tex_indent_brace = 0
 " }}}
 
+" Makes hjkl work with wrapped lines; giving it a try
+onoremap <silent> j gj
+onoremap <silent> k gk
+nnoremap <silent> j gj
+nnoremap <silent> k gk
+
+
+
 " User-defined vim-latex shortcuts {{{
 call IMAP('<<', "\\left\\langle <++> \\right\\rangle<++>", 'tex')
 call IMAP('EA*', "\\begin{eqnarray*}\<CR><++>\<CR>\\end{eqnarray*}<++>", 'tex')
