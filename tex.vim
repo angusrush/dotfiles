@@ -23,7 +23,13 @@ vnoremap <silent> k gk
 onoremap <silent> j gj
 onoremap <silent> k gk
 
-
+" Makes it so I can still use line numbers how I want to
+nnoremap <silent> gj j
+nnoremap <silent> gk k
+vnoremap <silent> gj j
+vnoremap <silent> gk k
+onoremap <silent> gj j
+onoremap <silent> gk k
 
 " User-defined vim-latex shortcuts {{{
 call IMAP('<<', "\\left\\langle <++> \\right\\rangle<++>", 'tex')
