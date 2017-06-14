@@ -13,7 +13,6 @@ let g:Tex_CompileRule_pdf = 'pdflatex -src-specials -synctex=1 -interaction=nons
 
 " This makes it so vim-latex can indent half-open intervals correctly
 let g:tex_indent_brace = 0
-" }}}
 
 " Makes hjkl work with wrapped lines; giving it a try
 nnoremap <silent> j gj
@@ -30,6 +29,12 @@ vnoremap <silent> gj j
 vnoremap <silent> gk k
 onoremap <silent> gj j
 onoremap <silent> gk k
+
+" Adds 'jump to last/next line with current indentation' shortcut
+nnoremap <C-m> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
+nnoremap <C-n> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
+
+" }}}
 
 " User-defined vim-latex shortcuts {{{
 call IMAP('<<', "\\left\\langle <++> \\right\\rangle<++>", 'tex')
@@ -59,6 +64,7 @@ call IMAP('` ', "\\qquad", 'tex')
 call IMAP('||', "\\left|<++>\\right|<++>", 'tex')
 call IMAP('EHR', "\\hyperref[<++>]{<++> \\ref*{<++>}}<++>", 'tex')
 call IMAP('ETH', "\\begin{theorem}\<CR><++>\<CR>\\end{theorem}<++>", 'tex')
+call IMAP('ELM', "\\begin{lemma}\<CR><++>\<CR>\\end{lemma}<++>", 'tex')
 call IMAP('EDF', "\\begin{definition}[<++>]\<CR>\\label{<++>}\<CR><++>\<CR>\\end{definition}<++>", 'tex')
 call IMAP('EPR', "\\begin{proof}\<CR><++>\<CR>\\end{proof}<++>", 'tex')
 call IMAP('EEG', "\\begin{example}\<CR><++>\<CR>\\end{example}", 'tex')
@@ -83,10 +89,9 @@ call IMAP('`w', "\\omega<++>", 'tex')
 
 " This redefines a new forward search command, <leader>f, which actually works
 function! SyncTexForward()
-        "     let execstr = "silent !okular --unique %:p:r.dvi\\#src:".line(".")."%:p &"
-        let execstr = "silent !okular --unique %:p:r.pdf\\#src:".line(".")."%:p &"
-        exec execstr
-        exec "redraw!"
+  let execstr = "silent !okular --unique %:p:r.pdf\\#src:".line(".")."%:p &"
+  exec execstr
+  exec "redraw!"
 endfunction
 nmap <Leader>f :call SyncTexForward()<CR>
 
