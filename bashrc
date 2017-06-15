@@ -110,3 +110,6 @@ alias vim="vim --servername LATEX"     #Get reverse searching working with vim-l
 alias changenotes="vim ~/Documents/changes_notes"
 alias sl="sl -e"
 alias dirs="dirs -v"
+
+# set some environment variables
+export FERMATPATH="/home/angus/Programs/ferl6/fer64"
