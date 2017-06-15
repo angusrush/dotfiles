@@ -31,8 +31,8 @@ onoremap <silent> gj j
 onoremap <silent> gk k
 
 " Adds 'jump to last/next line with current indentation' shortcut
-nnoremap <C-n> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
-nnoremap <C-m> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
+nnoremap <silent><C-n> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
+nnoremap <silent><C-m> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
 
 " }}}
 
