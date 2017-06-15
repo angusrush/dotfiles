@@ -42,8 +42,6 @@ au FileType * exec("setlocal dictionary+=".$HOME."/.vim/dictionaries/".expand('<
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
-
-
 " allows folding in .vimrc
 augroup filetype_vim
         autocmd!
