@@ -14,21 +14,9 @@ let g:Tex_CompileRule_pdf = 'pdflatex -src-specials -synctex=1 -interaction=nons
 " This makes it so vim-latex can indent half-open intervals correctly
 let g:tex_indent_brace = 0
 
-" Makes hjkl work with wrapped lines; giving it a try
-nnoremap <silent> j gj
-nnoremap <silent> k gk
-vnoremap <silent> j gj
-vnoremap <silent> k gk
-onoremap <silent> j gj
-onoremap <silent> k gk
-
-" Makes it so I can still use line numbers how I want to
-nnoremap <silent> gj j
-nnoremap <silent> gk k
-vnoremap <silent> gj j
-vnoremap <silent> gk k
-onoremap <silent> gj j
-onoremap <silent> gk k
+" move by wrapped lines, but only if no count is provided
+noremap <expr> j (v:count? 'j' : 'gj')
+noremap <expr> k (v:count? 'k' : 'gk')
 
 " Adds 'jump to last/next line with current indentation' shortcut
 nnoremap <silent><C-n> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
