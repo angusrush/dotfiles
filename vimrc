@@ -56,6 +56,10 @@ nnoremap <silent> <Space>k :<C-U>VertigoUp n<CR>
 vnoremap <silent> <Space>k :<C-U>VertigoUp v<CR>
 onoremap <silent> <Space>k :<C-U>VertigoUp o<CR>
 
+syntax enable
+set background=dark
+colorscheme solarized
+
 " }}}
 
 " No longer used settings {{{
