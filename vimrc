@@ -47,6 +47,14 @@ augroup filetype_vim
         autocmd!
         autocmd FileType vim setlocal foldmethod=marker
 augroup END
+
+" get vertigo working
+nnoremap <silent> <Space>j :<C-U>VertigoDown n<CR>
+vnoremap <silent> <Space>j :<C-U>VertigoDown v<CR>
+onoremap <silent> <Space>j :<C-U>VertigoDown o<CR>
+nnoremap <silent> <Space>k :<C-U>VertigoUp n<CR>
+vnoremap <silent> <Space>k :<C-U>VertigoUp v<CR>
+onoremap <silent> <Space>k :<C-U>VertigoUp o<CR>
 " }}}
 
 " No longer used settings {{{
