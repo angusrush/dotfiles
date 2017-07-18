@@ -56,6 +56,10 @@ nnoremap <silent> <Space>k :<C-U>VertigoUp n<CR>
 vnoremap <silent> <Space>k :<C-U>VertigoUp v<CR>
 onoremap <silent> <Space>k :<C-U>VertigoUp o<CR>
 
+" move by wrapped lines, but only if no count is provided
+noremap <expr> j (v:count? 'j' : 'gj')
+noremap <expr> k (v:count? 'k' : 'gk')
+
 " syntax enable
 " set background=dark
 " colorscheme solarized

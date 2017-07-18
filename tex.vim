@@ -13,10 +13,6 @@ let g:Tex_CompileRule_pdf = 'pdflatex -src-specials -synctex=1 -interaction=nons
 " this makes it so vim-latex can indent half-open intervals correctly
 let g:tex_indent_brace = 0
 
-" move by wrapped lines, but only if no count is provided
-noremap <expr> j (v:count? 'j' : 'gj')
-noremap <expr> k (v:count? 'k' : 'gk')
-
 " adds 'jump to last/next line with current indentation' shortcut
 nnoremap <silent><C-n> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
 nnoremap <silent><C-n> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
