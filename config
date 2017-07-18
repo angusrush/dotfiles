@@ -184,7 +184,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Widow Colours
+# Window Colours
 #                         border       background     text       indicator
 client.focused            $base01      $base01        $base07    $base0F
 client.focused_inactive   $base02      $base02        $base03    $base0F
