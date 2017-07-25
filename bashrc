@@ -102,6 +102,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# so as not to be disturbed by <C-s> and <C-q> in terminals
+stty -ixon
+
 # User-defined aliases begin here
 alias wttr="curl -s wttr.in/Liverpool"
 alias firefox="firefox & exit"
