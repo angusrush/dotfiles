@@ -28,6 +28,7 @@ let g:surround_{char2nr('c')} = "\\\1command\1{\r}"
 " User-defined vim-latex shortcuts {{{
 
 call IMAP('<<', "\\left\\langle <++> \\right\\rangle<++>", 'tex')
+call IMAP('ARR', "\\arrow[<++>]<++>", 'tex')
 call IMAP('DEF', "\\defn{<++>}<++>", 'tex')
 call IMAP('EA*', "\\begin{eqnarray*}\<CR><++>\<CR>\\end{eqnarray*}<++>", 'tex')
 call IMAP('ECD', "\<CR>\\begin{centering}\<CR>\<CR>\\begin{tikzcd}\<CR><++>\<CR>\\end{tikzcd}\<CR>\<CR>\\end{centering}\<CR>", 'tex')
