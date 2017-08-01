@@ -269,7 +269,7 @@ exec setxkbmap -option caps:escape
 exec setxkbmap -e 'keysym Print = grave'
 
 # Turn up trackpoint sensitivity
-exec xinput --set-prop "12" "Device Accel Constant Deceleration" 0.5
+exec /home/angus/programming/i3blocks/trackpoint_block/saneTrackpoint
 
 # start f.lux
 exec fluxgui
