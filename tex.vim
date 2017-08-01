@@ -74,6 +74,7 @@ inoremap `. \cdot
 call IMAP('`e', "\\epsilon<++>", 'tex')
 " call IMAP('`f', "\\phi<++>", 'tex')
 call IMAP('`w', "\\omega<++>", 'tex')
+call IMAP('`:', "\\colon<++>", 'tex')
 " }}}
 
 " Custom functions {{{
