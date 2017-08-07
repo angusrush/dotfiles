@@ -23,6 +23,9 @@ nmap <leader>e :edit ~/.vim/ftplugin/tex.vim<CR>
 " augment surround.vim for latex commands
 let g:surround_{char2nr('c')} = "\\\1command\1{\r}"
 
+nnoremap gj j
+nnoremap gk k
+
 " }}}
 
 " User-defined vim-latex shortcuts {{{
