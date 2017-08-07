@@ -114,6 +114,7 @@ alias changenotes="vim ~/Documents/changes_notes"
 alias sl="sl -e"
 alias dirs="dirs -v"
 alias emacs="emacs25 -nw"
+alias trackpt="/home/angus/programming/i3blocks/trackpoint_block/saneTrackpoint"
 
 # set some environment variables
 export FERMATPATH="/home/angus/Programs/ferl6/fer64"
