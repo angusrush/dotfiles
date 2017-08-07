@@ -17,12 +17,13 @@ let g:tex_indent_brace = 0
 nnoremap <silent><C-n> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
 nnoremap <silent><C-n> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
 
-"Makes editing this file easier
+" makes editing this file easier
 nmap <leader>e :edit ~/.vim/ftplugin/tex.vim<CR>
 
 " augment surround.vim for latex commands
 let g:surround_{char2nr('c')} = "\\\1command\1{\r}"
 
+" sometimes I don't want to move using visual lines
 nnoremap gj j
 nnoremap gk k
 
