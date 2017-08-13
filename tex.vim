@@ -35,7 +35,7 @@ call IMAP('<<', "\\left\\langle <++> \\right\\rangle<++>", 'tex')
 call IMAP('ARR', "\\arrow[<++>]<++>", 'tex')
 call IMAP('DEF', "\\defn{<++>}<++>", 'tex')
 call IMAP('EA*', "\\begin{eqnarray*}\<CR><++>\<CR>\\end{eqnarray*}<++>", 'tex')
-call IMAP('ECD', "\<CR>\\begin{centering}\<CR>\<CR>\\begin{tikzcd}\<CR><++>\<CR>\\end{tikzcd}\<CR>\<CR>\\end{centering}\<CR>", 'tex')
+call IMAP('ECD', "\\begin{equation*}\<CR>\\begin{tikzcd}\<CR><++>\<CR>\\end{tikzcd}\<CR>\\end{equation*}", 'tex')
 call IMAP('ECO', "\\begin{corollary}\<CR><++>\<CR>\\end{corollary}<++>", 'tex')
 call IMAP('EDF', "\\begin{definition}[<++>]\<CR>\\label{<++>}\<CR><++>\<CR>\\end{definition}<++>", 'tex')
 call IMAP('EE*', "\\begin{equation*}\<CR><++>\<CR>\\end{equation*}<++>", 'tex')
@@ -75,7 +75,7 @@ inoremap `. \cdot
 " }}}
 
 " I don't like some of vim-latex's defaults {{{
-call IMAP('`e', "\\epsilon<++>", 'tex')
+" call IMAP('`e', "\\epsilon<++>", 'tex')
 " call IMAP('`f', "\\phi<++>", 'tex')
 call IMAP('`w', "\\omega<++>", 'tex')
 call IMAP('`:', "\\colon<++>", 'tex')
