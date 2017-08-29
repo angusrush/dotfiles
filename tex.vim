@@ -13,10 +13,6 @@ let g:Tex_CompileRule_pdf = 'pdflatex -src-specials -synctex=1 -interaction=nons
 " this makes it so vim-latex can indent half-open intervals correctly
 let g:tex_indent_brace = 0
 
-" adds 'jump to last/next line with current indentation' shortcut
-nnoremap <silent><C-n> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
-nnoremap <silent><C-n> :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
-
 " makes editing this file easier
 nmap <leader>e :edit ~/.vim/ftplugin/tex.vim<CR>
 
