@@ -63,20 +63,16 @@ noremap <expr> j (v:count? 'j' : 'gj')
 noremap <expr> k (v:count? 'k' : 'gk')
 
 " set up indentwise shortcuts
-map [-       <Plug>(IndentWisePreviousLesserIndent)
-map <C-N>    <Plug>(IndentWisePreviousEqualIndent)
-map [+       <Plug>(IndentWisePreviousGreaterIndent)
-map ]-       <Plug>(IndentWiseNextLesserIndent)
-map <C-n>    <Plug>(IndentWiseNextEqualIndent)
-map ]+       <Plug>(IndentWiseNextGreaterIndent)
-map [_       <Plug>(IndentWisePreviousAbsoluteIndent)
-map ]_       <Plug>(IndentWiseNextAbsoluteIndent)
-map [%       <Plug>(IndentWiseBlockScopeBoundaryBegin)
-map ]%       <Plug>(IndentWiseBlockScopeBoundaryEnd)
-
-" syntax enable
-" set background=dark
-" colorscheme solarized
+map [- <Plug>(IndentWisePreviousLesserIndent)
+map [= <Plug>(IndentWisePreviousEqualIndent)
+map [+ <Plug>(IndentWisePreviousGreaterIndent)
+map ]- <Plug>(IndentWiseNextLesserIndent)
+map ]= <Plug>(IndentWiseNextEqualIndent)
+map ]+ <Plug>(IndentWiseNextGreaterIndent)
+map [_ <Plug>(IndentWisePreviousAbsoluteIndent)
+map ]_ <Plug>(IndentWiseNextAbsoluteIndent)
+map [% <Plug>(IndentWiseBlockScopeBoundaryBegin)
+map ]% <Plug>(IndentWiseBlockScopeBoundaryEnd)
 
 " }}}
 
