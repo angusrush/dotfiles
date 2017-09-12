@@ -126,6 +126,7 @@ bindsym $mod+a focus parent
 set $backgroundimage /home/angus/Pictures/seattle-wallpaper-10.jpg
 
 # dedicated workspace definitions
+set $workspace7 "7: Skype"
 set $workspace8 "8: Htop"
 set $workspace9 "9: Thunderbird"
 set $workspace10 "10: Spotify"
