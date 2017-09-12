@@ -34,3 +34,4 @@ call IMAP('` ', "\\qquad", 'tex')
 call IMAP('`%', "\\tfrac{<++>}{<++>}<++>", 'tex')
 call IMAP('`>', "\\vec{<++>}<++>", 'tex')
 call IMAP('||', "\\left|<++>\\right|<++>", 'tex')
+inoremap `. \cdot
