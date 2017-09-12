@@ -32,6 +32,8 @@ call IMAP('MTE', "\\text{<++>}<++>", 'tex')
 call IMAP('MTN', "\\tensor{<++>}{<++>}<++>", 'tex')
 call IMAP('` ', "\\qquad", 'tex')
 call IMAP('`%', "\\tfrac{<++>}{<++>}<++>", 'tex')
+call IMAP('`:', "\\colon<++>", 'tex')
 call IMAP('`>', "\\vec{<++>}<++>", 'tex')
+call IMAP('`w', "\\omega<++>", 'tex')
 call IMAP('||', "\\left|<++>\\right|<++>", 'tex')
 inoremap `. \cdot
