@@ -6,6 +6,7 @@ call IMAP('ECD', "\\begin{equation*}\<CR>\\begin{tikzcd}\<CR><++>\<CR>\\end{tikz
 call IMAP('EGR', "\\begin{equation*}\<CR>\\begin{tikzpicture}\<CR><++>\<CR>\\end{tikzpicture}\<CR>\\end{equation*}", 'tex')
 call IMAP('ECO', "\\begin{corollary}\<CR><++>\<CR>\\end{corollary}<++>", 'tex')
 call IMAP('EDF', "\\begin{definition}[<++>]\<CR>\\label{<++>}\<CR><++>\<CR>\\end{definition}<++>", 'tex')
+call IMAP('EPP', "\\begin{proposition}[<++>]\<CR>\\label{<++>}\<CR><++>\<CR>\\end{proposition}<++>", 'tex')
 call IMAP('EE*', "\\begin{equation*}\<CR><++>\<CR>\\end{equation*}<++>", 'tex')
 call IMAP('EEG', "\\begin{example}\<CR><++>\<CR>\\end{example}", 'tex')
 call IMAP('EFE', "\\begin{frame}\<CR>\\setbeamercovered{dynamic}\<CR>\\frametitle{<++>}\<CR><++>\<CR>\\end{frame}<++>", 'tex')
