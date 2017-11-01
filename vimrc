@@ -74,6 +74,14 @@ map ]_ <Plug>(IndentWiseNextAbsoluteIndent)
 map [% <Plug>(IndentWiseBlockScopeBoundaryBegin)
 map ]% <Plug>(IndentWiseBlockScopeBoundaryEnd)
 
+" A little function to diff swap files
+command! DiffAgainstFileOnDisk call DiffAgainstFileOnDisk()
+
+function! DiffAgainstFileOnDisk()
+  :w! /tmp/working_copy
+  exec "!diff /tmp/working_copy %"
+endfunction
+
 " }}}
 
 " No longer used settings {{{
