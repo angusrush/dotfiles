@@ -115,6 +115,8 @@ alias sl="sl -e"
 alias dirs="dirs -v"
 alias emacs="emacs25 -nw"
 alias trackpt="/home/angus/programming/i3blocks/trackpoint_block/saneTrackpoint"
+alias cdtb="cd /home/angus/Documents/textbooks/"
+alias cdno="cd /home/angus/Documents/latex/notes/"
 
 # set some environment variables
 export FERMATPATH="/home/angus/Programs/ferl6/fer64"
