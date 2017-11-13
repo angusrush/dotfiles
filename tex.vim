@@ -32,7 +32,7 @@ nnoremap gk k
 
 " this redefines a new forward search command, <leader>f, which actually works
 function! SyncTexForward()
-  let execstr = "silent !okular --unique %:p:r.pdf\\#src:".line(".")."%:p &"
+  let execstr = "silent !okular --unique %:p:r.pdf\\#src:".line(".")."%:p &>/dev/null &" 
   exec execstr
   exec "redraw!"
 endfunction
