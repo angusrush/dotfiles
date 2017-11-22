@@ -273,7 +273,7 @@ exec setxkbmap -e 'keysym Print = grave'
 exec /home/angus/programming/i3blocks/trackpoint_block/saneTrackpoint
 
 # start f.lux
-exec fluxgui
+exec redshift
 
 # start htop 
 exec --no-startup-id gnome-terminal -e htop 'workspace $workspace8'
