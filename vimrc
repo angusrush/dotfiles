@@ -29,6 +29,12 @@ set ttyfast                 " re-draw the screen faster
 
 set spelllang=en            " I speak english
 
+" I often don't let go of shift in time
+command WQ wq 
+command Wq wq
+command W w
+command Q q
+
 " Search for word under cursor faster
 nnoremap gf <C-W>f      
 vnoremap gf <C-W>f
