@@ -26,6 +26,10 @@ let g:surround_{char2nr('c')} = "\\\1command\1{\r}"
 nnoremap gj j
 nnoremap gk k
 
+" extra commands for adding arrays of jump points
+command! -nargs=* IT call InsertTable(<f-args>)
+command! -nargs=* IA call InsertArray(<f-args>)
+
 " }}}
 
 " Custom functions {{{
