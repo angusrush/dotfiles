@@ -26,6 +26,10 @@ let g:surround_{char2nr('c')} = "\\\1command\1{\r}"
 nnoremap gj j
 nnoremap gk k
 
+" extra commands for adding arrays of jump points
+command! -nargs=* IT call InsertTable(<f-args>)
+command! -nargs=* IA call InsertArray(<f-args>)
+
 " }}}
 
 " Custom functions {{{
@@ -52,7 +56,7 @@ endfun
 autocmd BufWritePre *.tex call LastModified()
 
 " Inserts an array of jump points of size horiz x vert 
-function! InsertArray(horiz, vert)
+function! InsertArray(vert, horiz)
         let l:list = []                     " empty array which will hold lines
 
         let l:counterHoriz = 0              
@@ -79,7 +83,7 @@ function! InsertArray(horiz, vert)
 endfunction
 
 " Same as above, but surrounded by \begin{tabular}[ccc...] etc.
-function! InsertTable(horiz, vert)
+function! InsertTable(vert, horiz)
         let l:list = []                     
         let l:args = ""                     
         let l:argcounter = 0
