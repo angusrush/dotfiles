@@ -60,10 +60,11 @@ function! InsertArray(horiz, vert)
         let l:str = ""                      " empty string for lines
         let l:strlast = ""                   " last line will be different from the rest
 
-        while l:counterHoriz < a:horiz      " populate l:str with horiz many jumppoints
-                let l:strlast = l:strlast."<++> "
+        while l:counterHoriz < a:horiz - 1      " populate l:str with horiz many jumppoints
+                let l:strlast = l:strlast."<++> & "
                 let l:counterHoriz += 1
         endwhile
+        let l:strlast = l:strlast."<++> "
 
         let l:str = l:strlast."\\\\"         " add a newline to end of l:str
         while l:counterVert < a:vert - 1     " add l:str to l:list horiz-1 many times
@@ -95,10 +96,12 @@ function! InsertTable(horiz, vert)
         let l:str = ""
         let l:strlast = ""
 
-        while l:counterHoriz < a:horiz
-                let l:strlast = l:strlast."<++> "
+        while l:counterHoriz < a:horiz - 1
+                let l:strlast = l:strlast."<++> & "
                 let l:counterHoriz += 1
         endwhile
+        let l:strlast = l:strlast."<++> "
+
         let l:str = l:strlast."\\\\"
         while l:counterVert < a:vert - 1
                 call add(l:list, l:str)
@@ -106,7 +109,7 @@ function! InsertTable(horiz, vert)
         endwhile
         call add(l:list, l:strlast)
 
-        call add(l:list, "\\end{tabular}")
+        call add(l:list, "\\end{tabular}")                " add last line of tabular
 
         call append('.', l:list)
 
