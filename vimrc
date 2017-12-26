@@ -29,6 +29,8 @@ set ttyfast                 " re-draw the screen faster
 
 set spelllang=en            " I speak english
 
+set wildmenu                " makes tab completion in ex mode better
+
 " I often don't let go of shift in time
 command WQ wq 
 command Wq wq
