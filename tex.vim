@@ -32,21 +32,21 @@ nnoremap gk k
 
 " this redefines a new forward search command, <leader>f, which actually works
 function! SyncTexForward()
-  let execstr = "silent !okular --unique %:p:r.pdf\\#src:".line(".")."%:p &>/dev/null &" 
-  exec execstr
-  exec "redraw!"
+        let execstr = "silent !okular --unique %:p:r.pdf\\#src:".line(".")."%:p &>/dev/null &" 
+        exec execstr
+        exec "redraw!"
 endfunction
 nmap <Leader>f :call SyncTexForward()<CR>
 
 " adds (not that it works yet) timestamps for TeX files 
 function! LastModified()
-  if &modified
-    let save_cursor = getpos(".")
-    let n = min([8, line("$")])
-    keepjumps exe '1,' . n . 's#^% Last modified: \zs.*# ' . strftime('%H:%M %A, %-d %B %Y') . '#e'
-    call histdel('search', -1)
-    keepjumps call setpos('.', save_cursor)
-  endif
+        if &modified
+                let save_cursor = getpos(".")
+                let n = min([8, line("$")])
+                keepjumps exe '1,' . n . 's#^% Last modified: \zs.*# ' . strftime('%H:%M %A, %-d %B %Y') . '#e'
+                call histdel('search', -1)
+                keepjumps call setpos('.', save_cursor)
+        endif
 endfun
 
 autocmd BufWritePre *.tex call LastModified()
