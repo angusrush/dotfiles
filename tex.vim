@@ -82,7 +82,7 @@ function! InsertArray(vert, horiz)
         execute "normal =".l:totlines."j"
 endfunction
 
-" Same as above, but surrounded by \begin{tabular}[ccc...] etc.
+" Same as above, but surrounded by \begin{tabular}{ccc...} etc.
 function! InsertTable(vert, horiz)
         let l:list = []                     
         let l:args = ""                     
@@ -93,7 +93,7 @@ function! InsertTable(vert, horiz)
                 let l:argcounter += 1
         endwhile
 
-        let l:begintb = "\\begin{tabular}"."[".l:args."]" " create first line of tabular
+        let l:begintb = "\\begin{tabular}"."{".l:args."}" " create first line of tabular
         call add(l:list, l:begintb)                       " add first line to l:list
         let l:counterHoriz = 0
         let l:counterVert = 0
