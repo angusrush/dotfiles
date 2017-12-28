@@ -6,6 +6,8 @@ execute pathogen#infect()
 "Makes editing this file easier
 nmap <leader>v :edit ~/.vimrc<CR>
 
+set nocompatible            " enter the current millenium
+
 set number 				    " enabling both of these
 set relativenumber			" sets the current number as absolute
 
@@ -13,8 +15,6 @@ set tabstop=4				" 4 visual spaces per tab
 set expandtab				" tabs are spaces
 
 set incsearch               " show search matches while typing 
-
-set nocompatible            " enter the current millenium
 
 set linebreak               " intelligent line breaks
 
@@ -30,6 +30,11 @@ set ttyfast                 " re-draw the screen faster
 set spelllang=en            " I speak english
 
 set wildmenu                " makes tab completion in ex mode better
+
+set undofile                " enable persistent undo
+set undodir=$HOME/.vim/undo " where to save undo histories
+set undolevels=1000         " how many undos
+set undoreload=10000        " number of lines to save for undo
 
 " I often don't let go of shift in time
 command WQ wq 
