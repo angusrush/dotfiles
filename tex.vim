@@ -36,89 +36,99 @@ command! -nargs=* IA call InsertArray(<f-args>)
 
 " this redefines a new forward search command, <leader>f, which actually works
 function! SyncTexForward()
-        let execstr = "silent !okular --unique %:p:r.pdf\\#src:".line(".")."%:p &>/dev/null &" 
-        exec execstr
-        exec "redraw!"
+  let execstr = "silent !okular --unique %:p:r.pdf\\#src:".line(".")."%:p &>/dev/null &" 
+  exec execstr
+  exec "redraw!"
 endfunction
 nmap <Leader>f :call SyncTexForward()<CR>
 
 " adds (not that it works yet) timestamps for TeX files 
 function! LastModified()
-        if &modified
-                let save_cursor = getpos(".")
-                let n = min([8, line("$")])
-                keepjumps exe '1,' . n . 's#^% Last modified: \zs.*# ' . strftime('%H:%M %A, %-d %B %Y') . '#e'
-                call histdel('search', -1)
-                keepjumps call setpos('.', save_cursor)
-        endif
+  if &modified
+    let save_cursor = getpos(".")
+    let n = min([8, line("$")])
+    keepjumps exe '1,' . n . 's#^% Last modified: \zs.*# ' . strftime('%H:%M %A, %-d %B %Y') . '#e'
+    call histdel('search', -1)
+    keepjumps call setpos('.', save_cursor)
+  endif
 endfun
 
 autocmd BufWritePre *.tex call LastModified()
 
 " Inserts an array of jump points of size horiz x vert 
 function! InsertArray(vert, horiz)
-        let l:list = []                     " empty array which will hold lines
+  if  a:vert < 1 || a:horiz < 1
+    echoerr "Your matrix won't be big enough!"
+    return
+  endif
 
-        let l:counterHoriz = 0              
-        let l:counterVert = 0
-        let l:str = ""                      " empty string for lines
-        let l:strlast = ""                   " last line will be different from the rest
+  let l:list = []                     " empty array which will hold lines
 
-        while l:counterHoriz < a:horiz - 1      " populate l:str with horiz many jumppoints
-                let l:strlast = l:strlast."<++> & "
-                let l:counterHoriz += 1
-        endwhile
-        let l:strlast = l:strlast."<++> "
+  let l:counterHoriz = 0              
+  let l:counterVert = 0
+  let l:str = ""                      " empty string for lines
+  let l:strlast = ""                   " last line will be different from the rest
 
-        let l:str = l:strlast."\\\\"         " add a newline to end of l:str
-        while l:counterVert < a:vert - 1     " add l:str to l:list horiz-1 many times
-                call add(l:list, l:str)
-                let l:counterVert += 1
-        endwhile
-        call add(l:list, l:strlast)          " add l:strlast at the end
-        call append('.', l:list)             " add this to the file
+  while l:counterHoriz < a:horiz - 1      " populate l:str with horiz many jumppoints
+    let l:strlast = l:strlast."<++> & "
+    let l:counterHoriz += 1
+  endwhile
+  let l:strlast = l:strlast."<++> "
 
-        let l:totlines = a:vert + 1          " indent everything
-        execute "normal =".l:totlines."j"
+  let l:str = l:strlast."\\\\"         " add a newline to end of l:str
+  while l:counterVert < a:vert - 1     " add l:str to l:list horiz-1 many times
+    call add(l:list, l:str)
+    let l:counterVert += 1
+  endwhile
+  call add(l:list, l:strlast)          " add l:strlast at the end
+  call append('.', l:list)             " add this to the file
+
+  let l:totlines = a:vert + 1          " indent everything
+  execute "normal =".l:totlines."j"
 endfunction
 
 " Same as above, but surrounded by \begin{tabular}{ccc...} etc.
 function! InsertTable(vert, horiz)
-        let l:list = []                     
-        let l:args = ""                     
-        let l:argcounter = 0
+  if  a:vert < 1 || a:horiz < 1
+    echoerr "Your matrix won't be big enough!"
+    return
+  endif
 
-        while l:argcounter < a:horiz                      " populate arg list, e.g. cccc
-                let l:args = l:args . "c"
-                let l:argcounter += 1
-        endwhile
+  let l:list = []                     
+  let l:args = ""                     
+  let l:argcounter = 0
 
-        let l:begintb = "\\begin{tabular}"."{".l:args."}" " create first line of tabular
-        call add(l:list, l:begintb)                       " add first line to l:list
-        let l:counterHoriz = 0
-        let l:counterVert = 0
-        let l:str = ""
-        let l:strlast = ""
+  while l:argcounter < a:horiz                      " populate arg list, e.g. cccc
+    let l:args = l:args . "c"
+    let l:argcounter += 1
+  endwhile
 
-        while l:counterHoriz < a:horiz - 1
-                let l:strlast = l:strlast."<++> & "
-                let l:counterHoriz += 1
-        endwhile
-        let l:strlast = l:strlast."<++> "
+  let l:begintb = "\\begin{tabular}"."{".l:args."}" " create first line of tabular
+  call add(l:list, l:begintb)                       " add first line to l:list
+  let l:counterHoriz = 0
+  let l:counterVert = 0
+  let l:str = ""
+  let l:strlast = ""
 
-        let l:str = l:strlast."\\\\"
-        while l:counterVert < a:vert - 1
-                call add(l:list, l:str)
-                let l:counterVert += 1
-        endwhile
-        call add(l:list, l:strlast)
+  while l:counterHoriz < a:horiz - 1
+    let l:strlast = l:strlast."<++> & "
+    let l:counterHoriz += 1
+  endwhile
+  let l:strlast = l:strlast."<++> "
 
-        call add(l:list, "\\end{tabular}")                " add last line of tabular
+  let l:str = l:strlast."\\\\"
+  while l:counterVert < a:vert - 1
+    call add(l:list, l:str)
+    let l:counterVert += 1
+  endwhile
+  call add(l:list, l:strlast)
 
-        call append('.', l:list)
+  call add(l:list, "\\end{tabular}")                " add last line of tabular
 
-        let l:totlines = a:vert + 2
-        execute "normal =".l:totlines."j"
+  call append('.', l:list)
+
+  let l:totlines = a:vert + 2
+  execute "normal =".l:totlines."j"
 endfunction
 
 " }}}
