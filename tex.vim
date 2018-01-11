@@ -32,7 +32,16 @@ command! -nargs=* IA call InsertArray(<f-args>)
 
 " }}}
 
-" Custom functions {{{
+" Custom functions and other long stuff {{{
+
+" adds a text object for latex delimiters
+call textobj#user#plugin('bigdelimiters', {
+\   'bigdelimiters': {
+\     'pattern': ['\\left[(|\[]', '\\right[)|\]]'],
+\     'select-a': 'ad',
+\     'select-i': 'id',
+\   },
+\ })
 
 " this redefines a new forward search command, <leader>f, which actually works
 function! SyncTexForward()
