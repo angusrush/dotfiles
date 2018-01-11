@@ -37,7 +37,7 @@ command! -nargs=* IA call InsertArray(<f-args>)
 " adds a text object for latex delimiters
 call textobj#user#plugin('bigdelimiters', {
 \   'bigdelimiters': {
-\     'pattern': ['\\left[(|\[]', '\\right[)|\]]'],
+\     'pattern': ['\\left[(|\[|\|]', '\\right[)|\]|\|]'],
 \     'select-a': 'ad',
 \     'select-i': 'id',
 \   },
