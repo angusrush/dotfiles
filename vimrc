@@ -145,3 +145,10 @@ let c='a'
    endw
    set timeout ttimeoutlen=50
 " }}}
+
+" Tells vim to search working directory for a .vimrc
+" useful for project-specific settings
+set exrc
+
+" Don't allow external commands to change important settings
+set secure
