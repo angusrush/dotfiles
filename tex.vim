@@ -6,9 +6,10 @@ set sw=2
 " cycle through references
 set iskeyword+=:
 
-" this is to get forward/reverse search working with Okular
-let g:Tex_CompileRule_dvi = 'latex -src-specials -synctex=1 -interaction=nonstopmode $*'
+" compilation rules which ensure that biblatex works correctly
 let g:Tex_CompileRule_pdf = 'pdflatex -src-specials -synctex=1 -interaction=nonstopmode $*'
+let g:Tex_MultipleCompileFormats = 'dvi,pdf'
+let g:Tex_BibtexFlavor = 'biber'
 
 " this makes it so vim-latex can indent half-open intervals correctly
 let g:tex_indent_brace = 0
