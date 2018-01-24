@@ -23,6 +23,8 @@ nmap <leader>s :edit ~/.vim/after/ftplugin/tex.vim<CR>
 
 " augment surround.vim for latex commands
 let g:surround_{char2nr('c')} = "\\\1command\1{\r}"
+let g:surround_{char2nr('b')} = "`\r'"
+let g:surround_{char2nr('B')} = "``\r''"
 
 " sometimes I don't want to move using visual lines
 nnoremap gj j
