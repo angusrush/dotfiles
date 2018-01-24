@@ -140,11 +140,6 @@ filetype indent on
 " changes the default filetype back to 'tex'
 let g:tex_flavor='latex'
 
-" Add my custom commands
-let g:Tex_Com_pder = "\\pder{<++>}{<+>}<++>"
-let g:Tex_Com_tder = "\\tder{<++>}{<+>}<++>"
-let g:Tex_Env_equation = "\\begin{equation}\<CR><++>\<CR>\\end{equation}<++>"
-
 " Black magic to get alt key combinations working
 let c='a'
    while c <= 'z'

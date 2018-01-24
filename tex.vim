@@ -7,6 +7,7 @@ set sw=2
 set iskeyword+=:
 
 " compilation rules which ensure that biblatex works correctly
+let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_CompileRule_pdf = 'pdflatex -src-specials -synctex=1 -interaction=nonstopmode $*'
 let g:Tex_MultipleCompileFormats = 'dvi,pdf'
 let g:Tex_BibtexFlavor = 'biber'
@@ -30,6 +31,11 @@ nnoremap gk k
 " extra commands for adding arrays of jump points
 command! -nargs=* IT call InsertTable(<f-args>)
 command! -nargs=* IA call InsertArray(<f-args>)
+
+" Add my custom commands
+let g:Tex_Com_pder = "\\pder{<++>}{<+>}<++>"
+let g:Tex_Com_tder = "\\tder{<++>}{<+>}<++>"
+let g:Tex_Env_equation = "\\begin{equation}\<CR><++>\<CR>\\end{equation}<++>"
 
 " }}}
 
