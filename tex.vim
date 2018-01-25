@@ -8,7 +8,7 @@ set iskeyword+=:
 
 " compilation rules which ensure that biblatex works correctly
 let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_CompileRule_pdf = 'pdflatex -src-specials -synctex=1 -interaction=nonstopmode $*'
+let g:Tex_CompileRule_pdf = 'ctags -R & pdflatex -src-specials -synctex=1 -interaction=nonstopmode $*'
 let g:Tex_MultipleCompileFormats = 'dvi,pdf'
 let g:Tex_BibtexFlavor = 'biber'
 
@@ -25,6 +25,7 @@ nmap <leader>s :edit ~/.vim/after/ftplugin/tex.vim<CR>
 let g:surround_{char2nr('c')} = "\\\1command\1{\r}"
 let g:surround_{char2nr('b')} = "`\r'"
 let g:surround_{char2nr('B')} = "``\r''"
+
 
 " sometimes I don't want to move using visual lines
 nnoremap gj j
