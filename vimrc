@@ -7,10 +7,10 @@ execute pathogen#infect()
 nmap <leader>v :edit ~/.vimrc<CR>
 
 set nocompatible            " '... make Vim behave in a more useful way'
-set number                  " enabling both of these
-set relativenumber          " sets the current number as absolute
-set tabstop=4               " 4 visual spaces per tab
-set expandtab               " tabs are spaces
+set number 				    " enabling both of these
+set relativenumber			" sets the current number as absolute
+set tabstop=4				" 4 visual spaces per tab
+set expandtab				" tabs are spaces
 set incsearch               " show search matches while typing 
 set linebreak               " intelligent line breaks
 set scrolloff=3             " don't let the cursor get to the bottom of the screen
@@ -61,6 +61,10 @@ onoremap <silent> <Space>j :<C-U>VertigoDown o<CR>
 nnoremap <silent> <Space>k :<C-U>VertigoUp n<CR>
 vnoremap <silent> <Space>k :<C-U>VertigoUp v<CR>
 onoremap <silent> <Space>k :<C-U>VertigoUp o<CR>
+
+" move by wrapped lines, but only if no count is provided
+noremap <expr> j (v:count? 'j' : 'gj')
+noremap <expr> k (v:count? 'k' : 'gk')
 
 " set up indentwise shortcuts
 map [- <Plug>(IndentWisePreviousLesserIndent)
