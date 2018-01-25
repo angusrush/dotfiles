@@ -7,10 +7,10 @@ execute pathogen#infect()
 nmap <leader>v :edit ~/.vimrc<CR>
 
 set nocompatible            " '... make Vim behave in a more useful way'
-set number 				    " enabling both of these
-set relativenumber			" sets the current number as absolute
-set tabstop=4				" 4 visual spaces per tab
-set expandtab				" tabs are spaces
+set number                  " enabling both of these
+set relativenumber          " sets the current number as absolute
+set tabstop=4               " 4 visual spaces per tab
+set expandtab               " tabs are spaces
 set incsearch               " show search matches while typing 
 set linebreak               " intelligent line breaks
 set scrolloff=3             " don't let the cursor get to the bottom of the screen
