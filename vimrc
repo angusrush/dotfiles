@@ -6,31 +6,20 @@ execute pathogen#infect()
 "Makes editing this file easier
 nmap <leader>v :edit ~/.vimrc<CR>
 
-set nocompatible            " enter the current millenium
-
+set nocompatible            " '... make Vim behave in a more useful way'
 set number 				    " enabling both of these
 set relativenumber			" sets the current number as absolute
-
 set tabstop=4				" 4 visual spaces per tab
 set expandtab				" tabs are spaces
-
 set incsearch               " show search matches while typing 
-
 set linebreak               " intelligent line breaks
-
 set scrolloff=3             " don't let the cursor get to the bottom of the screen
-
 set history=200             " save more ex commands -- memory is cheap
-
 set breakindent             " wrapped text respects indentation
 set display=lastline        " show beginning of a line which ends below the screen
-
 set ttyfast                 " re-draw the screen faster
-
 set spelllang=en            " I speak english
-
 set wildmenu                " makes tab completion in ex mode better
-
 set undofile                " enable persistent undo
 set undodir=$HOME/.vim/undo " where to save undo histories
 set undolevels=1000         " how many undos
@@ -55,9 +44,6 @@ nnoremap <silent><leader>c :nohls<CR>
 " yank should behave like d
 map Y y$
 
-" Adds dictionaries so vim can autocomplete better
-au FileType * exec("setlocal dictionary+=".$HOME."/.vim/dictionaries/".expand('<amatch>'))
-
 " We can use <C-p> and <C-n> to cycle through commands
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
@@ -75,10 +61,6 @@ onoremap <silent> <Space>j :<C-U>VertigoDown o<CR>
 nnoremap <silent> <Space>k :<C-U>VertigoUp n<CR>
 vnoremap <silent> <Space>k :<C-U>VertigoUp v<CR>
 onoremap <silent> <Space>k :<C-U>VertigoUp o<CR>
-
-" move by wrapped lines, but only if no count is provided
-noremap <expr> j (v:count? 'j' : 'gj')
-noremap <expr> k (v:count? 'k' : 'gk')
 
 " set up indentwise shortcuts
 map [- <Plug>(IndentWisePreviousLesserIndent)
