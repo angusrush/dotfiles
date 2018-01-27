@@ -52,9 +52,9 @@ set $base0F #fcc09e
 
 # Window Colours
 #                         border       background     text       indicator
-client.focused            $base00      $base00        $base07    $base03
-client.focused_inactive   $base02      $base02        $base03    $base03
-client.unfocused          $base02      $base02        $base03    $base03
+client.focused            $base02      $base02        $base07    $base03
+client.focused_inactive   $base00      $base00        $base07    $base03
+client.unfocused          $base00      $base00        $base07    $base03
 client.urgent 		      $base02      $base08        $base00    $base03
 
 # Start i3bar to display a workspace bar (plus the system information i3status
