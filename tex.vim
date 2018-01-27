@@ -8,7 +8,7 @@ set iskeyword+=:
 
 " compilation rules which ensure that biblatex works correctly
 let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_CompileRule_pdf = 'ctags -R & pdflatex -src-specials -synctex=1 -interaction=nonstopmode $*'
+let g:Tex_CompileRule_pdf = 'ctags -R & pdflatex -shell-escape -src-specials -synctex=1 -interaction=nonstopmode $*'
 let g:Tex_MultipleCompileFormats = 'dvi,pdf'
 let g:Tex_BibtexFlavor = 'biber'
 
