@@ -50,12 +50,14 @@ set $base0E #c0b7f9
 # light orange
 set $base0F #fcc09e
 
-# Window Colours
+# Window Colors
 #                         border       background     text       indicator
 client.focused            $base02      $base02        $base07    $base03
 client.focused_inactive   $base00      $base00        $base07    $base03
 client.unfocused          $base00      $base00        $base07    $base03
 client.urgent 		      $base02      $base08        $base00    $base03
+
+new_window pixel 3
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -77,15 +79,14 @@ bar {
 # Use windows as mod key
 set $mod Mod4
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
+# Font for window titles. Currently zero because I don't want titles
 font pango:Ubuntu 0
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvt
 
 # start firefox
 bindsym $mod+i exec firefox
@@ -261,7 +262,7 @@ exec_always --no-startup-id tlp
 exec killall -q notify-osd
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
-# Make X events catchable -- for 
+# Make X events catchable 
 exec /home/angus/export_x_info 
 
 # Change caps lock into another escape
