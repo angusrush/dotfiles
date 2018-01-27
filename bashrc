@@ -107,7 +107,6 @@ stty -ixon
 
 # User-defined aliases begin here
 alias wttr="curl -s wttr.in/Liverpool"
-alias firefox="firefox & exit"
 alias night="xbright =3"
 alias vim="vim --servername LATEX"     #Get reverse searching working with vim-latex
 alias changenotes="vim ~/Documents/changes_notes"
