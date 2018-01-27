@@ -88,7 +88,7 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # start firefox
-bindsym $mod+i exec chromium-browser
+bindsym $mod+i exec firefox
 
 # kill focused window
 bindsym $mod+Shift+q kill
