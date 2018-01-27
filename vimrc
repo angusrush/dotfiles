@@ -6,6 +6,8 @@ execute pathogen#infect()
 "Makes editing this file easier
 nmap <leader>v :edit ~/.vimrc<CR>
 
+colorscheme ron
+
 set nocompatible            " '... make Vim behave in a more useful way'
 set number 				    " enabling both of these
 set relativenumber			" sets the current number as absolute
