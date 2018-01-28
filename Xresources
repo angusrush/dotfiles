@@ -9,6 +9,9 @@ urxvt*depth: 32
 urxvt*background: rgba:2000/2000/2000/c000
 urxvt*foreground: #DDDDDD
 
+# save more lines
+urxvt.saveLines: 1000000
+
 # clickable urls
 URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/xdg-open
