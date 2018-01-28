@@ -1,4 +1,4 @@
-URxvt.font: xft:monospace:size=10
+URxvt.font: xft:Ubuntu Mono derivative Powerline:size=11
 URxvt.scrollBar: false
 
 urxvt*depth: 32
