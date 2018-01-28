@@ -8,7 +8,7 @@ bindkey -v
 
 ZSH_THEME="gentoo"
 
-# enable plugins
+# Enable plugins
 plugins=(
 git 
 vi-mode
@@ -25,3 +25,5 @@ export KEYTIMEOUT=1
 # Personal aliases go here
 alias wttr="curl -s wttr.in/Liverpool"
 alias sl="sl -e"
+alias vim="vim --servername LATEX"
+
