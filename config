@@ -274,7 +274,7 @@ exec setxkbmap -e 'keysym Print = grave'
 # Turn up trackpoint sensitivity
 exec /home/angus/programming/i3blocks/trackpoint_block/saneTrackpoint
 
-# start f.lux
+# start redshift
 exec redshift
 
 # start htop 
