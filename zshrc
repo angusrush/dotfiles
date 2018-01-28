@@ -11,6 +11,7 @@ ZSH_THEME="gentoo"
 # Enable plugins
 plugins=(
 git 
+history
 vi-mode
 colored-man-pages
 )
@@ -19,8 +20,13 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# Use vim to edit commands
 export EDITOR='vim'
 export KEYTIMEOUT=1
+
+# Share command history between all open urxvt instances
+setopt inc_append_history
+setopt share_history
 
 # Personal aliases go here
 alias wttr="curl -s wttr.in/Liverpool"
