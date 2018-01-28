@@ -278,4 +278,4 @@ exec /home/angus/programming/i3blocks/trackpoint_block/saneTrackpoint
 exec redshift
 
 # start htop 
-exec --no-startup-id gnome-terminal -e htop 'workspace $workspace8'
+exec --no-startup-id urxvt -e htop 'workspace $workspace8'
