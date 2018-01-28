@@ -110,7 +110,9 @@ endfunction
 " set statusline+=%{fugitive#statusline()}
 " }}}
 
-" Vim-latex stuff {{{
+" Plugin stuff {{{
+
+" Vim-latex {{{
 
 " this makes vim invoke Latex-Suite when you open a tex file.
 filetype plugin on
@@ -132,6 +134,21 @@ let c='a'
      let c = nr2char(1+char2nr(c))
    endw
    set timeout ttimeoutlen=50
+ 
+" }}}
+
+" Utilisnips {{{
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" }}}
+
 " }}}
 
 " Tells vim to search working directory for a .vimrc
