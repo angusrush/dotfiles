@@ -111,17 +111,15 @@ endfunction
 " }}}
 
 " Plugin stuff {{{
+"
+" this makes vim invoke the appropriate plugin when you open a file with the
+" corresponding extension.
+filetype plugin indent on
 
 " Vim-latex {{{
 
-" this makes vim invoke Latex-Suite when you open a tex file.
-filetype plugin on
-
 " sets grep to always generate a file-name.
 set grepprg=grep\ -nH\ $*
-
-" this enables automatic indentation as you type.
-filetype indent on
 
 " changes the default filetype back to 'tex'
 let g:tex_flavor='latex'
@@ -137,7 +135,7 @@ let c='a'
  
 " }}}
 
-" Utilisnips {{{
+" Ultisnips {{{
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -145,7 +143,7 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+" let g:UltiSnipsEditSplit="vertical"
 
 " }}}
 
