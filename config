@@ -9,7 +9,7 @@ set $base00 #101218
 set $base01 #1f222d
 
 # slightly lesser black
-set $base02 #323951
+set $base02 #3d4663
 
 # blue-gray
 set $base03 #7780a1
@@ -52,10 +52,10 @@ set $base0F #fcc09e
 
 # Window Colors
 #                         border       background     text       indicator
-client.focused            $base03      $base03        $base07    $base04
-client.focused_inactive   $base00      $base00        $base07    $base04
-client.unfocused          $base00      $base00        $base07    $base04
-client.urgent 		      $base02      $base08        $base00    $base04
+client.focused            $base02      $base02        $base07    $base03
+client.focused_inactive   $base00      $base00        $base07    $base03
+client.unfocused          $base00      $base00        $base07    $base03
+client.urgent 		      $base02      $base08        $base00    $base03
 
 new_window pixel 3
 
