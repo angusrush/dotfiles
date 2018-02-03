@@ -21,7 +21,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # Use vim to edit commands
-export EDITOR='vim'
+export EDITOR='nvim'
 export KEYTIMEOUT=1
 
 # Share command history between all open urxvt instances
@@ -31,5 +31,5 @@ setopt share_history
 # Personal aliases go here
 alias wttr="curl -s wttr.in/Liverpool"
 alias sl="sl -e"
-alias vim="vim --servername LATEX"
+alias vim="NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim"
 
