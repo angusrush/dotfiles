@@ -12,6 +12,7 @@ nmap <leader>v :edit /home/angus/.config/nvim/init.vim<CR>
 
 " I like this colorscheme
 colorscheme ron
+let g:airline_theme="minimalist"
 
 set number 				    " enabling both of these
 set relativenumber			" sets the current number as absolute
@@ -44,7 +45,7 @@ nnoremap gf <C-W>f
 vnoremap gf <C-W>f
 
 " remove highlighting after a search
-nnoremap <silent><leader>c :nohls<CR> 
+nnoremap <silent><C-c> :nohls<CR> 
 
 " yank should behave like d
 map Y y$
@@ -53,23 +54,23 @@ map Y y$
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
-" allows folding in .vimrc
+" allows folding in init.vim
 augroup filetype_vim
         autocmd!
         autocmd FileType vim setlocal foldmethod=marker
 augroup END
 
 " get vertigo working
-nnoremap <silent> <Space>j :<C-U>VertigoDown n<CR>
-vnoremap <silent> <Space>j :<C-U>VertigoDown v<CR>
-onoremap <silent> <Space>j :<C-U>VertigoDown o<CR>
-nnoremap <silent> <Space>k :<C-U>VertigoUp n<CR>
-vnoremap <silent> <Space>k :<C-U>VertigoUp v<CR>
-onoremap <silent> <Space>k :<C-U>VertigoUp o<CR>
+nnoremap <silent><Space>j :<C-U>VertigoDown n<CR>
+vnoremap <silent><Space>j :<C-U>VertigoDown v<CR>
+onoremap <silent><Space>j :<C-U>VertigoDown o<CR>
+nnoremap <silent><Space>k :<C-U>VertigoUp n<CR>
+vnoremap <silent><Space>k :<C-U>VertigoUp v<CR>
+onoremap <silent><Space>k :<C-U>VertigoUp o<CR>
 
 " move by wrapped lines, but only if no count is provided
-noremap <expr> j (v:count? 'j' : 'gj')
-noremap <expr> k (v:count? 'k' : 'gk')
+noremap <silent> <expr> j (v:count? 'j' : 'gj')
+noremap <silent> <expr> k (v:count? 'k' : 'gk')
 
 " set up indentwise shortcuts
 map [- <Plug>(IndentWisePreviousLesserIndent)
