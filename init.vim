@@ -1,15 +1,18 @@
 " General settings {{{
 
+" For the time being, still use the vim folders for everything
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath = &runtimepath
+
 " Pathogen automatically loads plugins
 execute pathogen#infect()
 
 "Makes editing this file easier
-nmap <leader>v :edit ~/.vimrc<CR>
+nmap <leader>v :edit /home/angus/.config/nvim/init.vim<CR>
 
 " I like this colorscheme
 colorscheme ron
 
-set nocompatible            " '... make Vim behave in a more useful way'
 set number 				    " enabling both of these
 set relativenumber			" sets the current number as absolute
 set tabstop=4				" 4 visual spaces per tab
@@ -20,7 +23,6 @@ set scrolloff=3             " don't let the cursor get to the bottom of the scre
 set history=200             " save more ex commands -- memory is cheap
 set breakindent             " wrapped text respects indentation
 set display=lastline        " show beginning of a line which ends below the screen
-set ttyfast                 " re-draw the screen faster
 set spelllang=en            " I speak english
 set wildmenu                " makes tab completion in ex mode better
 set undofile                " enable persistent undo
@@ -91,26 +93,6 @@ endfunction
 
 " }}}
 
-" No longer used settings {{{
-
-" set shellcmdflag=-c       " Read .bashrc to get aliases
-" set clipboard=unnamedplus  " Yank to system clipboard
-" noremap  <buffer> <silent> k gk
-" noremap  <buffer> <silent> j gj
-" noremap  <buffer> <silent> 0 g0
-" noremap  <buffer> <silent> $ g$
-" let g:netrw_banner = 0    " Get rid of horrible netrw banner 
-
-" set iskeyword+=/          " Tells vim to include 
-" set iskeyword+=<
-" set iskeyword+=+
-" set iskeyword+=>
-
-" " add a statusbar showing git status at the bottom of vim
-" set laststatus=2
-" set statusline+=%{fugitive#statusline()}
-" }}}
-
 " Plugin stuff {{{
 "
 " this makes vim invoke the appropriate plugin when you open a file with the
@@ -124,17 +106,6 @@ set grepprg=grep\ -nH\ $*
 
 " changes the default filetype back to 'tex'
 let g:tex_flavor='latex'
-
-" Black magic to get alt key combinations working
-if !has('nvim')
-  let c='a'
-  while c <= 'z'
-    exec "set <A-".c.">=\e".c
-    exec "imap \e".c." <A-".c.">"
-    let c = nr2char(1+char2nr(c))
-  endw
-  set timeout ttimeoutlen=50
-endif
 
 " }}}
 
@@ -151,6 +122,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " }}}
 
 " {{{ fim-fugitive
+
+" :Gcommit doesn't work in nvim -- temporary hack
 if (len($SECURITYSESSIONID) || len($DISPLAY)) && empty($SSH_ASKPASS)
   let s:gui_askpass = system("git --exec-path")[0:-2] . "/git-gui--askpass"
   if executable(s:gui_askpass)
