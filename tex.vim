@@ -23,7 +23,7 @@ nmap <leader>s :edit ~/.vim/after/ftplugin/tex.vim<CR>
 
 " augment surround.vim for latex commands
 let g:surround_{char2nr('c')} = "\\\1command\1{\r}"
-let g:surround_{char2nr('b')} = "`\r'"
+let g:surround_{char2nr('q')} = "`\r'"
 let g:surround_{char2nr('Q')} = "``\r''"
 
 
