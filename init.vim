@@ -30,6 +30,7 @@ set undofile                " enable persistent undo
 set undodir=$HOME/.vim/undo " where to save undo histories
 set undolevels=1000         " how many undos
 set undoreload=10000        " number of lines to save for undo
+set inccommand=nosplit      " show substitute changes live
 
 " Toggle the undo tree
 nnoremap <leader>u :UndotreeToggle<cr>
@@ -132,6 +133,14 @@ if (len($SECURITYSESSIONID) || len($DISPLAY)) && empty($SSH_ASKPASS)
   elseif executable("ssh-askpass")
     let $SSH_ASKPASS = "ssh-askpass"
   endif
+endif
+
+" }}}
+
+" {{{ ack.vim
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
 endif
 
 " }}}
