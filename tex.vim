@@ -35,11 +35,6 @@ nnoremap gk k
 command! -nargs=* IT call InsertTable(<f-args>)
 command! -nargs=* IA call InsertArray(<f-args>)
 
-" Add my custom commands
-let g:Tex_Com_pder = "\\pder{<++>}{<+>}<++>"
-let g:Tex_Com_tder = "\\tder{<++>}{<+>}<++>"
-let g:Tex_Env_equation = "\\begin{equation}\<CR><++>\<CR>\\end{equation}<++>"
-
 " }}}
 
 " Custom functions and other long stuff {{{
