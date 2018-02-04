@@ -50,13 +50,13 @@ call textobj#user#plugin('bigdelimiters', {
 
 " this redefines a new forward search command, <leader>f, which actually works
 function! SyncTexForward()
-  let execstr = "silent !okular --unique %:p:r.pdf\\#src:".line(".")."%:p &>/dev/null &" 
+  let execstr = "silent !okular --unique %:p:r.pdf\\#src:".line(".")."%:p &>/dev/null &"
   exec execstr
   exec "redraw!"
 endfunction
 nmap <Leader>f :call SyncTexForward()<CR>
 
-" adds (not that it works yet) timestamps for TeX files 
+" adds (not that it works yet) timestamps for TeX files
 function! LastModified()
   if &modified
     let save_cursor = getpos(".")
@@ -69,7 +69,7 @@ endfun
 
 autocmd BufWritePre *.tex call LastModified()
 
-" Inserts an array of jump points of size horiz x vert 
+" Inserts an array of jump points of size horiz x vert
 function! InsertArray(vert, horiz)
   if  a:vert < 1 || a:horiz < 1
     echoerr "Your matrix won't be big enough!"
@@ -78,7 +78,7 @@ function! InsertArray(vert, horiz)
 
   let l:list = []                     " empty array which will hold lines
 
-  let l:counterHoriz = 0              
+  let l:counterHoriz = 0
   let l:counterVert = 0
   let l:str = ""                      " empty string for lines
   let l:strlast = ""                   " last line will be different from the rest
@@ -108,8 +108,8 @@ function! InsertTable(vert, horiz)
     return
   endif
 
-  let l:list = []                     
-  let l:args = ""                     
+  let l:list = []
+  let l:args = ""
   let l:argcounter = 0
 
   while l:argcounter < a:horiz                      " populate arg list, e.g. cccc
