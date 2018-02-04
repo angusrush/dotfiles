@@ -47,6 +47,7 @@ vnoremap gf <C-W>f
 
 " remove highlighting after a search
 nnoremap <silent><C-c> :nohls<CR>
+inoremap <silent><C-c> <C-o>:nohls<CR>
 
 " yank should behave like d
 map Y y$
