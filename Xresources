@@ -1,25 +1,25 @@
-# font compatible with powerline
+! font compatible with powerline
 URxvt.font: xft:Ubuntu Mono derivative Powerline:size=11
 
-# disable scrollbar
+! disable scrollbar
 URxvt.scrollBar: false
 
-# translucent background
+! translucent background
 urxvt*depth: 32
 urxvt*background: rgba:2000/2000/2000/c000
 urxvt*foreground: #DDDDDD
 
-# save more lines
+! save more lines
 urxvt.saveLines: 1000000
 
-# clickable urls
+! clickable urls
 URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 1
 
-##################################################
-# Set up color scheme
-##################################################
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Set up color scheme
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 *.cursorColor:  #c5c8c6
 
