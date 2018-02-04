@@ -1,18 +1,24 @@
-# {{{ Environments
+# Environments
 
-snippet env "Simple environment latex snippet" b
+snippet env "Insert enviromnent" b
 \begin{$1}
   ${VISUAL}$0
 \end{$1}
 endsnippet
 
-snippet eq* "Simple unnumbered equation latex snippet" b
+snippet eq* "Unnumbered equation" b
 \begin{equation*}
   ${VISUAL}$0
 \end{equation*}
 endsnippet
 
-snippet ecd "Simple tikzcd latex snippet" b
+snippet eq "Unnumbered equation" b
+\begin{equation*}
+  ${VISUAL}$0
+\end{equation*}
+endsnippet
+
+snippet ecd "tikzcd" b
 \begin{equation*}
   \begin{tikzcd}
     ${VISUAL}$0
@@ -20,130 +26,122 @@ snippet ecd "Simple tikzcd latex snippet" b
 \end{equation*}
 endsnippet
 
-snippet def "Simple definition latex snippet" b
+snippet def "definition environment" b
 \begin{definition}
   \label{def:$1}
   ${VISUAL}$0
 \end{definition}
 endsnippet
 
-snippet mat "Simple matrix latex snippet" b
+snippet mat "generic matrix" b
 \begin{$1matrix}
   $2${VISUAL}
 \end{$1matrix}
 endsnippet
 
-snippet cas "Simple matrix latex snippet" b
+snippet cas "cases" b
 \begin{cases}
   $1${VISUAL}
 \end{cases}
 endsnippet
 
-# }}}
+# Fonts
 
-# }}} fonts
-
-snippet mcl "insert mathcal"
+snippet mcl "mathcal"
 \mathcal{$1${VISUAL}}$2
 endsnippet
 
-snippet mfk "insert mathfrak"
+snippet mfk "mathfrak"
 \mathfrak{$1${VISUAL}}$2
 endsnippet
 
-snippet mrm "insert mathrm"
+snippet mrm "mathrm"
 \mathrm{$1${VISUAL}}$2
 endsnippet
 
-snippet msc "insert mathscr"
+snippet msc "mathscr"
 \mathscr{$1${VISUAL}}$2
 endsnippet
 
-snippet mbb "insert mathbb"
+snippet mbb "mathbb"
 \mathbb{$1${VISUAL}}$2
 endsnippet
 
-snippet mbf "insert mathbf"
+snippet mbf "mathbf"
 \mathbf{$1${VISUAL}}$2
 endsnippet
 
-snippet msf "insert mathsf"
+snippet msf "mathsf"
 \mathsf{$1${VISUAL}}$2
 endsnippet
 
-# }}}
+# Text mode shortcuts
 
-# {{{ Text mode shortcuts
-
-snippet def "Simple definition latex snippet"
+snippet def "inline definition"
 \defn{$0}$1
 endsnippet
 
-snippet href "Simple hyperref latex snippet"
+snippet href "hyperref"
 \hyperref[$1]{$2 \ref*{$1}}$3
 endsnippet
 
-snippet : "Inserts \colon" i
+snippet : "colon" i
 \colon
 endsnippet
 
-snippet $ "Inserts inline math environment" i
+snippet $ "inline mathmode" i
 $${VISUAL}$1$$2
 endsnippet
 
-# }}}
+# Delimiters
 
-# {{{ Delimiters
-
-snippet ( "Inserts parentheses" i
+snippet ( "small parentheses" i
 (${VISUAL}$1)$2
 endsnippet
 
-snippet ) "Inserts big parentheses" i
+snippet ) "big parentheses" i
 \left( ${VISUAL}$1 \right)$2
 endsnippet
 
-snippet > "Inserts big langle" i
+snippet > "big langles" i
 \left\langle ${VISUAL}$1 \right\rangle$2
 endsnippet
 
-snippet [ "Inserts square braces" i
+snippet [ "small square braces" i
 [${VISUAL}$1]$2
 endsnippet
 
-snippet ] "Inserts big square braces" i
+snippet ] "big square braces" i
 \left[ ${VISUAL}$1 \right]$2
 endsnippet
 
-snippet { "Inserts curly braces" i
+snippet { "small curly braces" i
 \{${VISUAL}$1\}$2
 endsnippet
 
-snippet B "Inserts escaped curly braces" i
+snippet B "escaped escaped curly braces" i
 \\{${VISUAL}$1\\}$2
 endsnippet
 
-snippet } "Inserts big curly braces" i
+snippet } "big curly braces" i
 \left\{ ${VISUAL}$1 \right\}$2
 endsnippet
 
-snippet ev "Inserts evaluation symbol" i
+snippet ev "big evaluate at pipe" i
 \left. ${VISUAL}$1 \right|$2
 endsnippet
 
-snippet | "Inserts absolute value" i
+snippet | "small absolute value" i
 |${VISUAL}$1|$2
 endsnippet
 
-snippet abs "Inserts absolute value" i
+snippet abs "absolute value" i
 \abs{${VISUAL}$1}$2
 endsnippet
 
-# }}}
+# Math mode shortcuts
 
-# }}} Math mode shortcuts
-
-snippet ^ "Inserts exponent" i
+snippet ^ "inserts exponent" i
 ^{${VISUAL}$1}$2
 endsnippet
 
@@ -151,200 +149,196 @@ snippet arr "Simple arrow latex snippet"
 \arrow[$1]$2
 endsnippet
 
-snippet _ "Inserts inline underscore" i
+snippet _ "inline underscore" i
 _{${VISUAL}$1}$2
 endsnippet
 
-snippet ~ "Inserts \tilde{}" i
+snippet ~ "\tilde{}" i
 \tilde{${VISUAL}$1}$2
 endsnippet
 
-snippet ; "Inserts \dot{}" i
+snippet ; "\dot{}" i
 \dot{${VISUAL}$1}$2
 endsnippet
 
-snippet te "Inserts \text{}" i
+snippet te "\text{}" i
 \text{${VISUAL}$1}$2
 endsnippet
 
-snippet hat "Inserts \hat{}" i
+snippet hat "\hat{}" i
 \hat{${VISUAL}$1}$2
 endsnippet
 
-snippet int "Inserts integral" i
+snippet int "integral" i
 \int_{$1}^{$2}$3
 endsnippet
 
-snippet sum "Inserts sum" i
+snippet sum "sum" i
 \sum_{$1}^{$2}$3
 endsnippet
 
-snippet / "Inserts fraction" i
+snippet / "fraction" i
 \frac{$1}{$2}$3
 endsnippet
 
-snippet 2 "Inserts square root" i
+snippet 2 "square root" i
 \sqrt{$1}$2
 endsnippet
 
-snippet 6 "Inserts partial" i
+snippet 6 "partial" i
 \partial
 endsnippet
 
-snippet 8 "Inserts infinity" i
+snippet 8 "infinity" i
 \infty
 endsnippet
 
-snippet \ "Inserts setminus" i
+snippet \ "setminus" i
 \setminus
 endsnippet
 
-snippet . "Inserts cdot" i
+snippet . "cdot" i
 \cdot
 endsnippet
 
-snippet qq "Inserts qquad" i
+snippet qq "qquad" i
 \qquad
 endsnippet
 
-# }}}
+# Greek letters
 
-# }}} Greek letters
-
-snippet al "Inserts \alpha" i
+snippet al "\alpha" i
 \alpha
 endsnippet
 
-snippet be "Inserts \beta" i
+snippet be "\beta" i
 \beta
 endsnippet
 
-snippet ga "Inserts \gamma" i
+snippet ga "\gamma" i
 \gamma
 endsnippet
 
-snippet de "Inserts \delta" i
+snippet de "\delta" i
 \delta
 endsnippet
 
-snippet ep "Inserts \epsilon" i
+snippet ep "\epsilon" i
 \epsilon
 endsnippet
 
-snippet ze "Inserts \zeta" i
+snippet ze "\zeta" i
 \zeta
 endsnippet
 
-snippet et "Inserts \eta" i
+snippet et "\eta" i
 \eta
 endsnippet
 
-snippet th "Inserts \theta" i
+snippet th "\theta" i
 \theta
 endsnippet
 
-snippet io "Inserts \iota" i
+snippet io "\iota" i
 \iota
 endsnippet
 
-snippet ka "Inserts \kappa" i
+snippet ka "\kappa" i
 \kappa
 endsnippet
 
-snippet la "Inserts \lambda" i
+snippet la "\lambda" i
 \lambda
 endsnippet
 
-snippet mu "Inserts \mu" i
+snippet mu "\mu" i
 \mu
 endsnippet
 
-snippet nu "Inserts \nu" i
+snippet nu "\nu" i
 \nu
 endsnippet
 
-snippet xi "Inserts \xi" i
+snippet xi "\xi" i
 \xi
 endsnippet
 
-snippet pi "Inserts \pi" i
+snippet pi "\pi" i
 \pi
 endsnippet
 
-snippet rh "Inserts \rho" i
+snippet rh "\rho" i
 \rho
 endsnippet
 
-snippet si "Inserts \sigma" i
+snippet si "\sigma" i
 \sigma
 endsnippet
 
-snippet ta "Inserts \tau" i
+snippet ta "\tau" i
 \tau
 endsnippet
 
-snippet up "Inserts \upsilon" i
+snippet up "\upsilon" i
 \upsilon
 endsnippet
 
-snippet ph "Inserts \phi" i
+snippet ph "\phi" i
 \phi
 endsnippet
 
-snippet ch "Inserts \ch" i
+snippet ch "\ch" i
 \chi
 endsnippet
 
-snippet ps "Inserts \ps" i
+snippet ps "\ps" i
 \psi
 endsnippet
 
-snippet om "Inserts \omega" i
+snippet om "\omega" i
 \omega
 endsnippet
 
-snippet Ga "Inserts \Gamma" i
+snippet Ga "\Gamma" i
 \Gamma
 endsnippet
 
-snippet De "Inserts \Delta" i
+snippet De "\Delta" i
 \Delta
 endsnippet
 
-snippet Th "Inserts \Theta" i
+snippet Th "\Theta" i
 \Theta
 endsnippet
 
-snippet La "Inserts \Lambda" i
+snippet La "\Lambda" i
 \Lambda
 endsnippet
 
-snippet Xi "Inserts \Xi" i
+snippet Xi "\Xi" i
 \Xi
 endsnippet
 
-snippet Pi "Inserts \Pi" i
+snippet Pi "\Pi" i
 \Pi
 endsnippet
 
-snippet Si "Inserts \Sigma" i
+snippet Si "\Sigma" i
 \Sigma
 endsnippet
 
-snippet Up "Inserts \Upsilon" i
+snippet Up "\Upsilon" i
 \Upsilon
 endsnippet
 
-snippet Ph "Inserts \Phi" i
+snippet Ph "\Phi" i
 \Phi
 endsnippet
 
-snippet Ps "Inserts \Psi" i
+snippet Ps "\Psi" i
 \Psi
 endsnippet
 
-snippet Om "Inserts \Omega" i
+snippet Om "\Omega" i
 \Omega
 endsnippet
-
-# }}}
