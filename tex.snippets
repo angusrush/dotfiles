@@ -1,3 +1,5 @@
+# {{{ Environments
+
 snippet env "Simple environment latex snippet" b
 \begin{$1}
   ${VISUAL}$0
@@ -27,17 +29,54 @@ endsnippet
 
 snippet mat "Simple matrix latex snippet" b
 \begin{$1matrix}
-  $2
-  ${VISUAL}$0
+  $2${VISUAL}
 \end{$1matrix}
 endsnippet
 
-snippet arr "Simple arrow latex snippet"
-\arrow[$1]$2
+snippet cas "Simple matrix latex snippet" b
+\begin{cases}
+  $1${VISUAL}
+\end{cases}
 endsnippet
 
+# }}}
+
+# }}} fonts
+
+snippet mcl "insert mathcal"
+\mathcal{$1${VISUAL}}$2
+endsnippet
+
+snippet mfk "insert mathfrak"
+\mathfrak{$1${VISUAL}}$2
+endsnippet
+
+snippet mrm "insert mathrm"
+\mathrm{$1${VISUAL}}$2
+endsnippet
+
+snippet msc "insert mathscr"
+\mathscr{$1${VISUAL}}$2
+endsnippet
+
+snippet mbb "insert mathbb"
+\mathbb{$1${VISUAL}}$2
+endsnippet
+
+snippet mbf "insert mathbf"
+\mathbf{$1${VISUAL}}$2
+endsnippet
+
+snippet msf "insert mathsf"
+\mathsf{$1${VISUAL}}$2
+endsnippet
+
+# }}}
+
+# {{{ Text mode shortcuts
+
 snippet def "Simple definition latex snippet"
-\defn{$0}
+\defn{$0}$1
 endsnippet
 
 snippet href "Simple hyperref latex snippet"
@@ -52,16 +91,20 @@ snippet $ "Inserts inline math environment" i
 $${VISUAL}$1$$2
 endsnippet
 
-snippet _ "Inserts inline underscore" i
-_{${VISUAL}$1}$2
-endsnippet
+# }}}
+
+# {{{ Delimiters
 
 snippet ( "Inserts parentheses" i
 (${VISUAL}$1)$2
 endsnippet
 
-snippet ) "Inserts parentheses" i
+snippet ) "Inserts big parentheses" i
 \left( ${VISUAL}$1 \right)$2
+endsnippet
+
+snippet > "Inserts big langle" i
+\left\langle ${VISUAL}$1 \right\rangle$2
 endsnippet
 
 snippet [ "Inserts square braces" i
@@ -76,13 +119,97 @@ snippet { "Inserts curly braces" i
 \{${VISUAL}$1\}$2
 endsnippet
 
-snippet } "Inserts curly braces" i
+snippet B "Inserts escaped curly braces" i
+\\{${VISUAL}$1\\}$2
+endsnippet
+
+snippet } "Inserts big curly braces" i
 \left\{ ${VISUAL}$1 \right\}$2
 endsnippet
 
-snippet ~ "Inserts \tilde{}" i
-\tilde{$1}$2
+snippet ev "Inserts evaluation symbol" i
+\left. ${VISUAL}$1 \right|$2
 endsnippet
+
+snippet | "Inserts absolute value" i
+|${VISUAL}$1|$2
+endsnippet
+
+snippet abs "Inserts absolute value" i
+\abs{${VISUAL}$1}$2
+endsnippet
+
+# }}}
+
+# }}} Math mode shortcuts
+
+snippet ^ "Inserts exponent" i
+^{${VISUAL}$1}$2
+endsnippet
+
+snippet arr "Simple arrow latex snippet"
+\arrow[$1]$2
+endsnippet
+
+snippet _ "Inserts inline underscore" i
+_{${VISUAL}$1}$2
+endsnippet
+
+snippet ~ "Inserts \tilde{}" i
+\tilde{${VISUAL}$1}$2
+endsnippet
+
+snippet ; "Inserts \dot{}" i
+\dot{${VISUAL}$1}$2
+endsnippet
+
+snippet te "Inserts \text{}" i
+\text{${VISUAL}$1}$2
+endsnippet
+
+snippet hat "Inserts \hat{}" i
+\hat{${VISUAL}$1}$2
+endsnippet
+
+snippet int "Inserts integral" i
+\int_{$1}^{$2}$3
+endsnippet
+
+snippet sum "Inserts sum" i
+\sum_{$1}^{$2}$3
+endsnippet
+
+snippet / "Inserts fraction" i
+\frac{$1}{$2}$3
+endsnippet
+
+snippet 2 "Inserts square root" i
+\sqrt{$1}$2
+endsnippet
+
+snippet 6 "Inserts partial" i
+\partial
+endsnippet
+
+snippet 8 "Inserts infinity" i
+\infty
+endsnippet
+
+snippet \ "Inserts setminus" i
+\setminus
+endsnippet
+
+snippet . "Inserts cdot" i
+\cdot
+endsnippet
+
+snippet qq "Inserts qquad" i
+\qquad
+endsnippet
+
+# }}}
+
+# }}} Greek letters
 
 snippet al "Inserts \alpha" i
 \alpha
@@ -130,6 +257,10 @@ endsnippet
 
 snippet mu "Inserts \mu" i
 \mu
+endsnippet
+
+snippet nu "Inserts \nu" i
+\nu
 endsnippet
 
 snippet xi "Inserts \xi" i
@@ -215,3 +346,5 @@ endsnippet
 snippet Om "Inserts \Omega" i
 \Omega
 endsnippet
+
+# }}}
