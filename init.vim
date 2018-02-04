@@ -18,7 +18,7 @@ set number 				    " enabling both of these
 set relativenumber			" sets the current number as absolute
 set tabstop=4				" 4 visual spaces per tab
 set expandtab				" tabs are spaces
-set incsearch               " show search matches while typing 
+set incsearch               " show search matches while typing
 set linebreak               " intelligent line breaks
 set scrolloff=3             " don't let the cursor get to the bottom of the screen
 set history=200             " save more ex commands -- memory is cheap
@@ -36,17 +36,17 @@ set inccommand=nosplit      " show substitute changes live
 nnoremap <leader>u :UndotreeToggle<cr>
 
 " I often don't let go of shift in time
-command WQ wq 
+command WQ wq
 command Wq wq
 command W w
 command Q q
 
 " Search for word under cursor faster
-nnoremap gf <C-W>f      
+nnoremap gf <C-W>f
 vnoremap gf <C-W>f
 
 " remove highlighting after a search
-nnoremap <silent><C-c> :nohls<CR> 
+nnoremap <silent><C-c> :nohls<CR>
 
 " yank should behave like d
 map Y y$
