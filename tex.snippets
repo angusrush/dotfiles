@@ -1,18 +1,18 @@
 # Environments
 
-snippet env "Insert enviromnent" b
+snippet env "generic enviromnent" b
 \begin{$1}
   ${VISUAL}$0
 \end{$1}
 endsnippet
 
-snippet eq* "Unnumbered equation" b
+snippet eq* "unnumbered equation" b
 \begin{equation*}
   ${VISUAL}$0
 \end{equation*}
 endsnippet
 
-snippet eq "Unnumbered equation" b
+snippet eq "unnumbered equation" b
 \begin{equation*}
   ${VISUAL}$0
 \end{equation*}
@@ -28,7 +28,7 @@ endsnippet
 
 snippet def "definition environment" b
 \begin{definition}
-  \label{def:$1}
+  \label{${1:def:}}
   ${VISUAL}$0
 \end{definition}
 endsnippet
@@ -45,7 +45,7 @@ snippet cas "cases" b
 \end{cases}
 endsnippet
 
-# Fonts
+# Math Fonts
 
 snippet mcl "mathcal"
 \mathcal{$1${VISUAL}}$2
@@ -75,10 +75,24 @@ snippet msf "mathsf"
 \mathsf{$1${VISUAL}}$2
 endsnippet
 
+# Text fonts
+
+snippet tbf "textbf"
+\textbf{$1${VISUAL}}$2
+endsnippet
+
+snippet tit "textit"
+\textit{$1${VISUAL}}$2
+endsnippet
+
+snippet emp "emph"
+\emph{$1${VISUAL}}$2
+endsnippet
+
 # Text mode shortcuts
 
 snippet def "inline definition"
-\defn{$0}$1
+\defn{$1${VISUAL}}$2
 endsnippet
 
 snippet href "hyperref"
@@ -90,7 +104,11 @@ snippet : "colon" i
 endsnippet
 
 snippet $ "inline mathmode" i
-$${VISUAL}$1$$2
+\$${VISUAL}$1\$$2
+endsnippet
+
+snippet " "inline mathmode" i
+"${VISUAL}$1"$2
 endsnippet
 
 # Delimiters
@@ -124,7 +142,7 @@ snippet B "escaped escaped curly braces" i
 endsnippet
 
 snippet } "big curly braces" i
-\left\{ ${VISUAL}$1 \right\}$2
+\left\\\{ ${VISUAL}$1 \right\\\}$2
 endsnippet
 
 snippet ev "big evaluate at pipe" i
