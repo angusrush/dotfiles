@@ -139,6 +139,7 @@ endif
 
 " {{{ ack.vim
 
+" Use ag instead, which is better
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
