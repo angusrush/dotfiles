@@ -119,9 +119,6 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
-let g:UltiSnipsEditSplit="vertical"
-
-" If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="horizontal"
 
 " }}}

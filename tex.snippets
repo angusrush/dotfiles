@@ -28,7 +28,7 @@ endsnippet
 
 snippet def "definition environment" b
 \begin{definition}
-  \label{${1:def:}}
+  \label{def:${1}}
   ${VISUAL}$0
 \end{definition}
 endsnippet
@@ -47,56 +47,60 @@ endsnippet
 
 # Math Fonts
 
-snippet mcl "mathcal"
+snippet mcl "mathcal" i
 \mathcal{$1${VISUAL}}$2
 endsnippet
 
-snippet mfk "mathfrak"
+snippet mfk "mathfrak" i
 \mathfrak{$1${VISUAL}}$2
 endsnippet
 
-snippet mrm "mathrm"
+snippet mrm "mathrm" i
 \mathrm{$1${VISUAL}}$2
 endsnippet
 
-snippet msc "mathscr"
+snippet msc "mathscr" i
 \mathscr{$1${VISUAL}}$2
 endsnippet
 
-snippet mbb "mathbb"
+snippet mbb "mathbb" i
 \mathbb{$1${VISUAL}}$2
 endsnippet
 
-snippet mbf "mathbf"
+snippet mbf "mathbf" i
 \mathbf{$1${VISUAL}}$2
 endsnippet
 
-snippet msf "mathsf"
+snippet msf "mathsf" i
 \mathsf{$1${VISUAL}}$2
 endsnippet
 
 # Text fonts
 
-snippet tbf "textbf"
+snippet tbf "textbf" i
 \textbf{$1${VISUAL}}$2
 endsnippet
 
-snippet tit "textit"
+snippet tit "textit" i
 \textit{$1${VISUAL}}$2
 endsnippet
 
-snippet emp "emph"
+snippet emp "emph" i
 \emph{$1${VISUAL}}$2
 endsnippet
 
 # Text mode shortcuts
 
-snippet def "inline definition"
+snippet idef "inline definition" i
 \defn{$1${VISUAL}}$2
 endsnippet
 
-snippet href "hyperref"
+snippet href "hyperref" i
 \hyperref[$1]{$2 \ref*{$1}}$3
+endsnippet
+
+snippet lab "label" i
+\label{$1}$2
 endsnippet
 
 snippet : "colon" i
@@ -109,6 +113,18 @@ endsnippet
 
 snippet " "inline mathmode" i
 "${VISUAL}$1"$2
+endsnippet
+
+snippet cha "chapter" i
+\chapter{$1}
+endsnippet
+
+snippet sec "section" i
+\section{$1}
+endsnippet
+
+snippet ssc "subsection" i
+\subsection{$1}
 endsnippet
 
 # Delimiters
@@ -171,7 +187,7 @@ snippet _ "inline underscore" i
 _{${VISUAL}$1}$2
 endsnippet
 
-snippet ~ "\tilde{}" i
+snippet ti "\tilde{}" i
 \tilde{${VISUAL}$1}$2
 endsnippet
 
@@ -199,6 +215,10 @@ snippet / "fraction" i
 \frac{$1}{$2}$3
 endsnippet
 
+snippet pdr "partial derivative" i
+\pder{$1}{$2}$3
+endsnippet
+
 snippet 2 "square root" i
 \sqrt{$1}$2
 endsnippet
@@ -224,6 +244,10 @@ snippet qq "qquad" i
 endsnippet
 
 # Greek letters
+
+snippet na "\nabla" i
+\nabla
+endsnippet
 
 snippet al "\alpha" i
 \alpha
