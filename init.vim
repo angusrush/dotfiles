@@ -14,6 +14,9 @@ nmap <leader>v :edit /home/angus/.config/nvim/init.vim<CR>
 colorscheme ron
 let g:airline_theme="minimalist"
 
+" I can't envision a use case for ex mode
+nnoremap Q <nop>
+
 set number 				    " enabling both of these
 set relativenumber			" sets the current number as absolute
 set tabstop=4				" 4 visual spaces per tab
