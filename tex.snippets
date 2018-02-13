@@ -1,35 +1,103 @@
 # Environments
 
-snippet env "generic enviromnent" b
-\begin{$1}
-  ${VISUAL}$0
+snippet pac "Package" b
+\usepackage`!p snip.rv='[' if t[1] else ""`${1:options}`!p snip.rv = ']' if t[1] else ""`{${2:package}}$0
+endsnippet
+
+snippet cha "Chapter" b
+\chapter{${1:chapter name}}
+\label{ch:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+
+$0
+endsnippet
+
+snippet sec "Section" b
+\section{${1:section name}}
+\label{sec:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+
+$0
+endsnippet
+
+snippet ssc "Subsection" b
+\subsection{${1:subsection name}}
+\label{ssc:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+
+$0
+endsnippet
+
+snippet prop "proposition enviromnent" b
+\begin{proposition}
+  ${VISUAL}$1
+\end{proposition}
+endsnippet
+
+snippet thm "theorem enviromnent" b
+\begin{theorem}
+  ${VISUAL}$1
+\end{theorem}
+endsnippet
+
+snippet lemma "lemma enviromnent" b
+\begin{lemma}
+  \label{lemma:$1}
+  ${VISUAL}$2
+\end{lemma}
+endsnippet
+
+snippet proof "proof enviromnent" b
+\begin{proof}
+  ${VISUAL}$1
+\end{proof}
+endsnippet
+
+snippet cor "corollary enviromnent" b
+\begin{corollary}
+  ${VISUAL}$1
+\end{corollary}
+endsnippet
+
+snippet eg "example enviromnent" b
+\begin{example}
+  ${VISUAL}$1
+\end{example}
+endsnippet
+
+snippet note "note enviromnent" b
+\begin{note}
+  ${VISUAL}$1
+\end{note}
+endsnippet
+
+snippet "eq(uation)?" "unnumbered equation" br
+\begin{equation*}
+  ${VISUAL}$1
+\end{equation*}
+endsnippet
+
+snippet "b(egin)?" "generic environment" br
+\begin{${1:something}}
+	${0:${VISUAL}}
 \end{$1}
 endsnippet
 
-snippet eq* "unnumbered equation" b
-\begin{equation*}
-  ${VISUAL}$0
-\end{equation*}
-endsnippet
-
-snippet eq "unnumbered equation" b
-\begin{equation*}
-  ${VISUAL}$0
-\end{equation*}
+snippet al* "unnumbered align" b
+\begin{align*}
+  ${VISUAL}$1
+\end{align*}
 endsnippet
 
 snippet ecd "tikzcd" b
 \begin{equation*}
   \begin{tikzcd}
-    ${VISUAL}$0
+    ${VISUAL}$1
   \end{tikzcd}
 \end{equation*}
 endsnippet
 
-snippet def "definition environment" b
-\begin{definition}
-  \label{def:${1}}
-  ${VISUAL}$0
+snippet def "definition" b
+\begin{definition}[${1:definition name}]
+  \label{def:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+  $0
 \end{definition}
 endsnippet
 
@@ -37,6 +105,18 @@ snippet mat "generic matrix" b
 \begin{$1matrix}
   $2${VISUAL}
 \end{$1matrix}
+endsnippet
+
+snippet enum "enumerate" b
+\begin{enumerate}
+  \item $1${VISUAL}
+\end{enumerate}
+endsnippet
+
+snippet item "itemize" b
+\begin{itemize}
+  \item $1${VISUAL}
+\end{itemize}
 endsnippet
 
 snippet cas "cases" b
@@ -48,183 +128,171 @@ endsnippet
 # Math Fonts
 
 snippet mcl "mathcal" i
-\mathcal{$1${VISUAL}}$2
+\mathcal{$1${VISUAL}}
 endsnippet
 
 snippet mfk "mathfrak" i
-\mathfrak{$1${VISUAL}}$2
+\mathfrak{$1${VISUAL}}
 endsnippet
 
 snippet mrm "mathrm" i
-\mathrm{$1${VISUAL}}$2
+\mathrm{$1${VISUAL}}
 endsnippet
 
 snippet msc "mathscr" i
-\mathscr{$1${VISUAL}}$2
+\mathscr{$1${VISUAL}}
 endsnippet
 
 snippet mbb "mathbb" i
-\mathbb{$1${VISUAL}}$2
+\mathbb{$1${VISUAL}}
 endsnippet
 
 snippet mbf "mathbf" i
-\mathbf{$1${VISUAL}}$2
+\mathbf{$1${VISUAL}}
 endsnippet
 
 snippet msf "mathsf" i
-\mathsf{$1${VISUAL}}$2
+\mathsf{$1${VISUAL}}
 endsnippet
 
 # Text fonts
 
 snippet tbf "textbf" i
-\textbf{$1${VISUAL}}$2
+\textbf{$1${VISUAL}}
 endsnippet
 
 snippet tit "textit" i
-\textit{$1${VISUAL}}$2
+\textit{$1${VISUAL}}
 endsnippet
 
 snippet emp "emph" i
-\emph{$1${VISUAL}}$2
+\emph{$1${VISUAL}}
 endsnippet
 
 # Text mode shortcuts
 
 snippet idef "inline definition" i
-\defn{$1${VISUAL}}$2
+\defn{$1${VISUAL}}
 endsnippet
 
 snippet href "hyperref" i
-\hyperref[$1]{$2 \ref*{$1}}$3
+\hyperref[$1]{$2 \ref*{$1}}
 endsnippet
 
 snippet lab "label" i
-\label{$1}$2
+\label{$1}
+endsnippet
+
+snippet $ "inline mathmode" i
+\$${VISUAL}$1\$
+endsnippet
+
+snippet " "inline mathmode" i
+"${VISUAL}$1"
+endsnippet
+
+
+# Delimiters
+
+snippet ( "small parentheses" i
+(${VISUAL}$1)
+endsnippet
+
+snippet ) "big parentheses" i
+\left( ${VISUAL}$1 \right)
+endsnippet
+
+snippet > "big langles" i
+\left\langle ${VISUAL}$1 \right\rangle
+endsnippet
+
+snippet [ "small square braces" i
+[${VISUAL}$1]
+endsnippet
+
+snippet ] "big square braces" i
+\left[ ${VISUAL}$1 \right]
+endsnippet
+
+snippet { "small curly braces" i
+\{${VISUAL}$1\}
+endsnippet
+
+snippet B "escaped escaped curly braces" i
+\\{${VISUAL}$1\\}
+endsnippet
+
+snippet } "big curly braces" i
+\left\\\{ ${VISUAL}$1 \right\\\}
+endsnippet
+
+snippet ev "big evaluate at pipe" i
+\left. ${VISUAL}$1 \right|
+
+snippet abs "absolute value" i
+\abs{${VISUAL}$1}
+endsnippet
+
+# Math mode shortcuts
+
+snippet ^ "inserts exponent" i
+^{${VISUAL}$1}
+endsnippet
+
+snippet vec "inserts vector symbol" i
+\vec{${VISUAL}$1}
+endsnippet
+
+snippet arr "Simple arrow latex snippet"
+\arrow[$1]
+endsnippet
+
+snippet to "To"
+\to
+endsnippet
+
+snippet _ "inline underscore" i
+_{${VISUAL}$1}
+endsnippet
+
+snippet ti "\tilde{}" i
+\tilde{${VISUAL}$1}
 endsnippet
 
 snippet : "colon" i
 \colon
 endsnippet
 
-snippet $ "inline mathmode" i
-\$${VISUAL}$1\$$2
-endsnippet
-
-snippet " "inline mathmode" i
-"${VISUAL}$1"$2
-endsnippet
-
-snippet cha "chapter" i
-\chapter{$1}
-endsnippet
-
-snippet sec "section" i
-\section{$1}
-endsnippet
-
-snippet ssc "subsection" i
-\subsection{$1}
-endsnippet
-
-# Delimiters
-
-snippet ( "small parentheses" i
-(${VISUAL}$1)$2
-endsnippet
-
-snippet ) "big parentheses" i
-\left( ${VISUAL}$1 \right)$2
-endsnippet
-
-snippet > "big langles" i
-\left\langle ${VISUAL}$1 \right\rangle$2
-endsnippet
-
-snippet [ "small square braces" i
-[${VISUAL}$1]$2
-endsnippet
-
-snippet ] "big square braces" i
-\left[ ${VISUAL}$1 \right]$2
-endsnippet
-
-snippet { "small curly braces" i
-\{${VISUAL}$1\}$2
-endsnippet
-
-snippet B "escaped escaped curly braces" i
-\\{${VISUAL}$1\\}$2
-endsnippet
-
-snippet } "big curly braces" i
-\left\\\{ ${VISUAL}$1 \right\\\}$2
-endsnippet
-
-snippet ev "big evaluate at pipe" i
-\left. ${VISUAL}$1 \right|$2
-endsnippet
-
-snippet | "small absolute value" i
-|${VISUAL}$1|$2
-endsnippet
-
-snippet abs "absolute value" i
-\abs{${VISUAL}$1}$2
-endsnippet
-
-# Math mode shortcuts
-
-snippet ^ "inserts exponent" i
-^{${VISUAL}$1}$2
-endsnippet
-
-snippet arr "Simple arrow latex snippet"
-\arrow[$1]$2
-endsnippet
-
-snippet _ "inline underscore" i
-_{${VISUAL}$1}$2
-endsnippet
-
-snippet ti "\tilde{}" i
-\tilde{${VISUAL}$1}$2
-endsnippet
-
 snippet ; "\dot{}" i
-\dot{${VISUAL}$1}$2
+\dot{${VISUAL}$1}
 endsnippet
 
-snippet te "\text{}" i
-\text{${VISUAL}$1}$2
+snippet text "\text{}" i
+\text{${VISUAL}$1}
 endsnippet
 
 snippet hat "\hat{}" i
-\hat{${VISUAL}$1}$2
+\hat{${VISUAL}$1}
 endsnippet
 
 snippet int "integral" i
-\int_{$1}^{$2}$3
+\int_{$1}^{$2}
 endsnippet
 
 snippet sum "sum" i
-\sum_{$1}^{$2}$3
+\sum_{$1}^{$2}
 endsnippet
 
 snippet / "fraction" i
-\frac{$1}{$2}$3
+\frac{${VISUAL}$1}{$2}
 endsnippet
 
 snippet pdr "partial derivative" i
-\pder{$1}{$2}$3
+\pder{$1}{$2}
 endsnippet
 
 snippet 2 "square root" i
-\sqrt{$1}$2
-endsnippet
-
-snippet 6 "partial" i
-\partial
+\sqrt{$1}
 endsnippet
 
 snippet 8 "infinity" i
@@ -261,12 +329,20 @@ snippet ga "\gamma" i
 \gamma
 endsnippet
 
+snippet gav "\digamma" i
+\digamma
+endsnippet
+
 snippet de "\delta" i
 \delta
 endsnippet
 
 snippet ep "\epsilon" i
 \epsilon
+endsnippet
+
+snippet epv "\varepsilon" i
+\varepsilon
 endsnippet
 
 snippet ze "\zeta" i
@@ -281,6 +357,11 @@ snippet th "\theta" i
 \theta
 endsnippet
 
+snippet thv "\vartheta" i
+\vartheta
+endsnippet
+
+
 snippet io "\iota" i
 \iota
 endsnippet
@@ -288,6 +369,11 @@ endsnippet
 snippet ka "\kappa" i
 \kappa
 endsnippet
+
+snippet kav "\varkappa" i
+\varkappa
+endsnippet
+
 
 snippet la "\lambda" i
 \lambda
@@ -309,12 +395,24 @@ snippet pi "\pi" i
 \pi
 endsnippet
 
+snippet piv "\varpi" i
+\varpi
+endsnippet
+
 snippet rh "\rho" i
 \rho
 endsnippet
 
+snippet rhv "\varrho" i
+\varrho
+endsnippet
+
 snippet si "\sigma" i
 \sigma
+endsnippet
+
+snippet siv "\sigma" i
+\varsigma
 endsnippet
 
 snippet ta "\tau" i
@@ -327,6 +425,10 @@ endsnippet
 
 snippet ph "\phi" i
 \phi
+endsnippet
+
+snippet phv "\varphi" i
+\varphi
 endsnippet
 
 snippet ch "\ch" i
@@ -345,15 +447,31 @@ snippet Ga "\Gamma" i
 \Gamma
 endsnippet
 
+snippet Gav "\varGamma" i
+\varGamma
+endsnippet
+
 snippet De "\Delta" i
 \Delta
+endsnippet
+
+snippet Dev "\varDelta" i
+\varDelta
 endsnippet
 
 snippet Th "\Theta" i
 \Theta
 endsnippet
 
+snippet Thv "\varTheta" i
+\varTheta
+endsnippet
+
 snippet La "\Lambda" i
+\Lambda
+endsnippet
+
+snippet Lav "\varLambda" i
 \Lambda
 endsnippet
 
@@ -361,26 +479,54 @@ snippet Xi "\Xi" i
 \Xi
 endsnippet
 
+snippet Xiv "\varXi" i
+\varXi
+endsnippet
+
 snippet Pi "\Pi" i
 \Pi
+endsnippet
+
+snippet Piv "\varPi" i
+\varPi
 endsnippet
 
 snippet Si "\Sigma" i
 \Sigma
 endsnippet
 
+snippet Siv "\varSigma" i
+\varSigma
+endsnippet
+
 snippet Up "\Upsilon" i
 \Upsilon
+endsnippet
+
+snippet Upv "\varUpsilon" i
+\varUpsilon
 endsnippet
 
 snippet Ph "\Phi" i
 \Phi
 endsnippet
 
+snippet Phv "\varPhi" i
+\varPhi
+endsnippet
+
 snippet Ps "\Psi" i
 \Psi
 endsnippet
 
+snippet Psv "\varPsi" i
+\varPsi
+endsnippet
+
 snippet Om "\Omega" i
 \Omega
+endsnippet
+
+snippet Omv "\varOmega" i
+\varOmega
 endsnippet
