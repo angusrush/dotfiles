@@ -33,3 +33,18 @@ alias wttr="curl -s wttr.in/Liverpool"
 alias sl="sl -e"
 alias vim="NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim"
 alias rmsock="rm -r /tmp/nvimsocket*"
+
+# Enable more vim-style text objects, i.e. ci", ci}, etc.
+autoload -U select-bracketed
+autoload -U select-quoted
+zle -N select-quoted
+zle -N select-bracketed
+for km in visual viopp; do
+    bindkey -M $km -- '-' vi-up-line-or-history
+    for c in {a,i}${(s..)^:-\'\"\`\|,./:;-=+@}; do
+        bindkey -M $km $c select-quoted
+    done
+    for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
+        bindkey -M $km $c select-bracketed
+    done
+done
