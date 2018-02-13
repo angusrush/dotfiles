@@ -12,14 +12,15 @@ let g:Tex_CompileRule_pdf = 'ctags -R & pdflatex -shell-escape -src-specials -sy
 let g:Tex_MultipleCompileFormats = 'dvi,pdf'
 let g:Tex_BibtexFlavor = 'biber'
 
+" load up all theorem-type labels into the quickfix list so I can find what
+" I'm looking for
+command! Results :Ack! '\\label\{(thm|prop|lemma):' %
+
 " this makes it so vim-latex can indent half-open intervals correctly
 let g:tex_indent_brace = 0
 
 " makes editing this file easier
 nmap <leader>e :edit ~/.vim/ftplugin/tex.vim<CR>
-
-" makes editing custom shortcuts easier
-nmap <leader>s :edit ~/.vim/after/ftplugin/tex.vim<CR>
 
 " augment surround.vim for latex commands
 let g:surround_{char2nr('c')} = "\\\1command\1{\r}"
@@ -146,6 +147,3 @@ function! InsertTable(vert, horiz)
 endfunction
 
 " }}}
-"
-" User-defined vim-latex shortcuts should be put in
-" ~/.vim/after/ftplugin/tex.vim
