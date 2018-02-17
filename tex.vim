@@ -6,27 +6,12 @@ set sw=2
 " cycle through references
 set iskeyword+=:
 
-" compilation rules which ensure that biblatex works correctly
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_CompileRule_pdf = 'ctags -R & pdflatex -shell-escape -src-specials -synctex=1 -interaction=nonstopmode -file-line-error-style $*'
-let g:Tex_MultipleCompileFormats = 'dvi,pdf'
-let g:Tex_BibtexFlavor = 'biber'
-
 " load up all theorem-type labels into the quickfix list so I can find what
 " I'm looking for
 command! Results :Ack! '\\label\{(thm|prop|lemma):' %
 
-" this makes it so vim-latex can indent half-open intervals correctly
-let g:tex_indent_brace = 0
-
 " makes editing this file easier
 nmap <leader>e :edit ~/.vim/ftplugin/tex.vim<CR>
-
-" augment surround.vim for latex commands
-let g:surround_{char2nr('c')} = "\\\1command\1{\r}"
-let g:surround_{char2nr('q')} = "`\r'"
-let g:surround_{char2nr('Q')} = "``\r''"
-
 
 " sometimes I don't want to move using visual lines
 nnoremap gj j
@@ -40,15 +25,6 @@ command! -nargs=* IA call InsertArray(<f-args>)
 
 " Custom functions and other long stuff {{{
 
-" adds a text object for latex delimiters
-call textobj#user#plugin('bigdelimiters', {
-\   'bigdelimiters': {
-\     'pattern': ['\\left[(|\[|\|]', '\\right[)|\]|\|]'],
-\     'select-a': 'ad',
-\     'select-i': 'id',
-\   },
-\ })
-
 " this redefines a new forward search command, <leader>f, which actually works
 function! SyncTexForward()
   let execstr = "silent !okular --unique %:p:r.pdf\\#src:".line(".")."%:p &>/dev/null &"
@@ -56,19 +32,6 @@ function! SyncTexForward()
   exec "redraw!"
 endfunction
 nmap <Leader>f :call SyncTexForward()<CR>
-
-" adds (not that it works yet) timestamps for TeX files
-function! LastModified()
-  if &modified
-    let save_cursor = getpos(".")
-    let n = min([8, line("$")])
-    keepjumps exe '1,' . n . 's#^% Last modified: \zs.*# ' . strftime('%H:%M %A, %-d %B %Y') . '#e'
-    call histdel('search', -1)
-    keepjumps call setpos('.', save_cursor)
-  endif
-endfun
-
-autocmd BufWritePre *.tex call LastModified()
 
 " Inserts an array of jump points of size horiz x vert
 function! InsertArray(vert, horiz)
