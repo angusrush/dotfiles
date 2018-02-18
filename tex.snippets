@@ -183,6 +183,10 @@ snippet lab "label" i
 \label{$1}
 endsnippet
 
+snippet it "item" i
+\item
+endsnippet
+
 snippet $ "inline mathmode" i
 \$${VISUAL}$1\$
 endsnippet
@@ -529,4 +533,158 @@ endsnippet
 
 snippet Omv "\varOmega" i
 \varOmega
+endsnippet
+
+# Templates
+
+snippet homework "Homework" b
+\documentclass[a4paper]{scrartcl}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{amstext}
+\usepackage{array}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usetikzlibrary{cd}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{mathrsfs}
+\usepackage{eucal}
+\usepackage{braket}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.14}
+\usepackage{soul}
+\usepackage{hyperref}
+\usepackage{todonotes}
+\usepackage{enumitem}
+\usepackage{braids}
+\usepackage{epigraph}
+\usepackage[makeroom]{cancel}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{.5em}
+\setlength{\headheight}{14.0pt}
+
+% Set up hyperref colors
+\hypersetup{
+colorlinks,
+linkcolor={blue!50!black},
+citecolor={blue!50!black},
+urlcolor={blue!80!black}
+}
+
+\pagestyle{fancy}
+\lhead{Angus Rush}
+\chead{Math$1 Homework $2}
+\rhead{\today}
+
+\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\tder}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+
+\begin{document}
+$3${VISUAL}
+\end{document}
+endsnippet
+
+snippet notes "Notes" b
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath} 
+\usepackage{amsfonts}
+\usepackage{amssymb} 
+\usepackage{fancyhdr} 
+\usepackage{amstext}
+\usepackage{array} 
+\usepackage{amsthm} 
+\usepackage{tikz} 
+\usepackage{bm}
+\usepackage{mathrsfs} 
+\usepackage{mathrsfs} 
+\usepackage{eucal}
+\usepackage{braket} 
+\usepackage{pgfplots} 
+\usepackage{soul}
+\usepackage{hyperref}
+\usepackage{todonotes}
+\usepackage{enumitem}
+\usepackage{braids}
+\usepackage{epigraph}
+\usepackage{biblatex}
+
+%bibliography location
+\addbibresource{/home/angus/Documents/latex/sources.bib}
+
+% Set up hyperref colors
+\hypersetup{
+    colorlinks,
+    linkcolor={blue!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+% Good practice to set the version so updates don't break old documents
+\pgfplotsset{compat=1.14}
+
+% load tikz-cd
+\usetikzlibrary{cd}
+
+% Makes indentation more note-ish
+\setlength{\parindent}{0em} 
+\setlength{\parskip}{.5em}
+\setlength{\headheight}{14.0pt}
+
+% Page headers
+\pagestyle{fancy} 
+\lhead{Angus Rush} 
+\chead{$1 notes} 
+\rhead{\today}
+
+% My commands
+\newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\tder}[2]{\frac{\text{d} #1}{\text{d} #2}}
+\newcommand{\R}{\mathbb{R}} 
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}} 
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}} 
+\newcommand{\dd}{\text{d}} 
+\newcommand{\Mod}[1]{\(\text{mod}#1\)}
+\newcommand{\defn}[1]{\ul{#1}}
+\newcommand{\abs}[1]{\left| #1 \right|}
+
+% Second level of list uses empty bullets
+\renewcommand{\labelitemii}{$\circ$}
+
+% Declare theorem styles
+\theoremstyle{definition} 
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{counterexample}{Counterexample}[section]
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+
+\theoremstyle{remark}
+\newtheorem{claim}{Claim}[section]
+\newtheorem{recipe}{Recipe}[section]
+\newtheorem{note}{Note}[section]
+\newtheorem{notation}{Notation}[section]
+\newtheorem{joke}{Joke}[section]
+
+\begin{document} 
+$0${VISUAL}
+%\printbibliography
+\end{document}
 endsnippet
