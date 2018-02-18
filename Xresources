@@ -12,6 +12,11 @@ urxvt*foreground: #DDDDDD
 ! save more lines
 urxvt.saveLines: 1000000
 
+! Scrolling works correctly
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+URxvt.secondaryWheel: 1
+
 ! clickable urls
 URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/xdg-open
