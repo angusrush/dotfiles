@@ -17,23 +17,20 @@ let g:airline_theme="minimalist"
 " I can't envision a use case for ex mode
 nnoremap Q <nop>
 
-set number 				    " enabling both of these
-set relativenumber			" sets the current number as absolute
-set tabstop=4				" 4 visual spaces per tab
-set expandtab				" tabs are spaces
-set incsearch               " show search matches while typing
-set linebreak               " intelligent line breaks
-set scrolloff=3             " don't let the cursor get to the bottom of the screen
-set history=200             " save more ex commands -- memory is cheap
 set breakindent             " wrapped text respects indentation
 set display=lastline        " show beginning of a line which ends below the screen
+set expandtab				" tabs are spaces
+set inccommand=nosplit      " show substitute changes live
+set linebreak               " intelligent line breaks
+set number 				    " enabling both of these
+set relativenumber			" sets the current number as absolute
+set scrolloff=3             " don't let the cursor get to the bottom of the screen
 set spelllang=en            " I speak english
-set wildmenu                " makes tab completion in ex mode better
-set undofile                " enable persistent undo
+set tabstop=4				" 4 visual spaces per tab
 set undodir=$HOME/.vim/undo " where to save undo histories
+set undofile                " enable persistent undo
 set undolevels=1000         " how many undos
 set undoreload=10000        " number of lines to save for undo
-set inccommand=nosplit      " show substitute changes live
 
 " Toggle the undo tree
 nnoremap <leader>u :UndotreeToggle<cr>
