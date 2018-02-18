@@ -105,7 +105,7 @@ endfunction
 " corresponding extension.
 filetype plugin indent on
 
-" Vim-latex {{{
+" Vimtex {{{
 
 " sets grep to always generate a file-name.
 set grepprg=grep\ -nH\ $*
@@ -122,7 +122,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
-let g:UltiSnipsEditSplit="horizontal"
+let g:UltiSnipsEditSplit="context"
 
 " }}}
 
