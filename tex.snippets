@@ -195,7 +195,6 @@ snippet " "inline mathmode" i
 "${VISUAL}$1"
 endsnippet
 
-
 # Delimiters
 
 snippet ( "small parentheses" i
@@ -243,6 +242,10 @@ snippet ^ "inserts exponent" i
 ^{${VISUAL}$1}
 endsnippet
 
+snippet ^^ "inserts exponent" iA
+^{${VISUAL}$1}
+endsnippet
+
 snippet vec "inserts vector symbol" i
 \vec{${VISUAL}$1}
 endsnippet
@@ -256,6 +259,10 @@ snippet to "To"
 endsnippet
 
 snippet _ "inline underscore" i
+_{${VISUAL}$1}
+endsnippet
+
+snippet __ "inline underscore" iA
 _{${VISUAL}$1}
 endsnippet
 
@@ -365,7 +372,6 @@ snippet thv "\vartheta" i
 \vartheta
 endsnippet
 
-
 snippet io "\iota" i
 \iota
 endsnippet
@@ -377,7 +383,6 @@ endsnippet
 snippet kav "\varkappa" i
 \varkappa
 endsnippet
-
 
 snippet la "\lambda" i
 \lambda
