@@ -6,7 +6,7 @@ URxvt.scrollBar: false
 
 ! translucent background
 urxvt*depth: 32
-urxvt*background: rgba:1010/1212/1818/AAAA
+urxvt*background: rgba:1000/1200/1800/AA00
 urxvt*foreground: #DDDDDD
 
 ! save more lines
