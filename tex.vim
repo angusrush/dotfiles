@@ -1,10 +1,5 @@
-" General settings {{{
-
 " set indent to 2 spaces
 set sw=2
-
-" cycle through references
-set iskeyword+=:
 
 " okular is the better viewer
 let g:vimtex_view_general_viewer = 'okular'
@@ -44,10 +39,3 @@ nmap <leader>e :edit ~/.vim/ftplugin/tex.vim<CR>
 " sometimes I don't want to move using visual lines
 nnoremap gj j
 nnoremap gk k
-
-" extra commands for adding arrays of jump points
-command! -nargs=* IT call InsertTable(<f-args>)
-command! -nargs=* IA call InsertArray(<f-args>)
-
-" }}}
-
