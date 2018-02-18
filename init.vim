@@ -124,20 +124,6 @@ let g:UltiSnipsEditSplit="context"
 
 " }}}
 
-" {{{ fim-fugitive
-
-" :Gcommit doesn't work in nvim -- temporary hack
-if (len($SECURITYSESSIONID) || len($DISPLAY)) && empty($SSH_ASKPASS)
-  let s:gui_askpass = system("git --exec-path")[0:-2] . "/git-gui--askpass"
-  if executable(s:gui_askpass)
-    let $SSH_ASKPASS = s:gui_askpass
-  elseif executable("ssh-askpass")
-    let $SSH_ASKPASS = "ssh-askpass"
-  endif
-endif
-
-" }}}
-
 " {{{ ack.vim
 
 " Use ag instead, which is better
