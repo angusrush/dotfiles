@@ -12,7 +12,7 @@ let g:vimtex_compiler_latexmk = {
       \ 'background' : 1,
       \ 'build_dir' : '',
       \ 'callback' : 1,
-      \ 'continuous' : 0,
+      \ 'continuous' : 1,
       \ 'executable' : 'latexmk',
       \ 'options' : [
       \   '-pdf',
@@ -26,6 +26,8 @@ let g:vimtex_compiler_latexmk = {
 " load up all theorem-type labels into the quickfix list so I can find what
 " I'm looking for
 command! Results :Ack! '\\label\{(thm|prop|lemma):' %
+
+nnoremap <leader>ls :call vimtex#compiler#compile_ss()<CR>
 
 " augment surround.vim for latex commands
 let g:surround_{char2nr('c')} = "\\\1command\1{\r}"
