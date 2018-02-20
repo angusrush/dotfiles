@@ -61,7 +61,7 @@ client.unfocused          $base00t     $base00t       $base07    $base03
 client.urgent 		      $base02      $base08        $base00    $base03
 
 # gaps and borders
-new_window pixel 2
+new_window pixel 3
 gaps inner 10
 gaps outer 5
 smart_gaps on
