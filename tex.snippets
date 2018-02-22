@@ -231,9 +231,18 @@ endsnippet
 
 snippet ev "big evaluate at pipe" i
 \left. ${VISUAL}$1 \right|
+endsnippet
 
 snippet abs "absolute value" i
 \abs{${VISUAL}$1}
+endsnippet
+
+snippet bar "bar" i
+\bar{${VISUAL}$1}
+endsnippet
+
+snippet norm "norm" i
+\norm{${VISUAL}$1}
 endsnippet
 
 # Math mode shortcuts
@@ -278,12 +287,16 @@ snippet ; "\dot{}" i
 \dot{${VISUAL}$1}
 endsnippet
 
-snippet text "\text{}" i
-\text{${VISUAL}$1}
+snippet abs "\abs{}" i
+\abs{${VISUAL}$1}
 endsnippet
 
 snippet hat "\hat{}" i
 \hat{${VISUAL}$1}
+endsnippet
+
+snippet text "\text{}" i
+\text{${VISUAL}$1}
 endsnippet
 
 snippet int "integral" i
