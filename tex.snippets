@@ -44,6 +44,13 @@ snippet lemma "lemma enviromnent" b
 \end{lemma}
 endsnippet
 
+snippet fact "fact enviromnent" b
+\begin{fact}
+  \label{fact:$1}
+  ${VISUAL}$2
+\end{fact}
+endsnippet
+
 snippet proof "proof enviromnent" b
 \begin{proof}
   ${VISUAL}$1
@@ -187,6 +194,10 @@ snippet it "item" i
 \item
 endsnippet
 
+snippet ale "aligned equals (&=)" i
+&=
+endsnippet
+
 snippet $ "inline mathmode" i
 \$${VISUAL}$1\$
 endsnippet
@@ -287,10 +298,6 @@ snippet ; "\dot{}" i
 \dot{${VISUAL}$1}
 endsnippet
 
-snippet abs "\abs{}" i
-\abs{${VISUAL}$1}
-endsnippet
-
 snippet hat "\hat{}" i
 \hat{${VISUAL}$1}
 endsnippet
@@ -323,8 +330,8 @@ snippet 8 "infinity" i
 \infty
 endsnippet
 
-snippet \ "setminus" i
-\setminus
+snippet \ "smallsetminus" i
+\smallsetminus
 endsnippet
 
 snippet . "cdot" i
