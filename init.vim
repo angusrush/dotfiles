@@ -32,6 +32,7 @@ set undofile                " enable persistent undo
 set undolevels=1000         " how many undos
 set undoreload=10000        " number of lines to save for undo
 set mouse=a                 " Mouse wheel should scroll the buffer
+set wildmode=longest,list,full " tab completion should behave like in the terminal
 
 " Command to get rid of trailing spaces
 nnoremap <leader>s :silent! %s/\s\+$//g<CR> :w<CR>
@@ -135,6 +136,7 @@ if executable('ag')
 endif
 
 " }}}
+"
 
 " Tells vim to search working directory for a .vimrc
 " useful for project-specific settings
