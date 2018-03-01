@@ -1,5 +1,9 @@
 " General settings {{{
 
+packloadall
+
+silent! helptags all
+
 " For the time being, still use the vim folders for everything
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
@@ -136,7 +140,18 @@ if executable('ag')
 endif
 
 " }}}
-"
+
+" {{{ ale
+
+" map keys to use wrapping.
+nnoremap <silent><Leader>ap :ALEPrevious<CR>
+nnoremap <silent><Leader>an :ALENext<CR>
+
+" only lint when file is saved. Prevents ridiculous slowdown.
+let g:ale_lint_on_text_changed = 'never'
+
+" }}}
+
 
 " Tells vim to search working directory for a .vimrc
 " useful for project-specific settings

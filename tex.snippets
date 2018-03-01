@@ -5,22 +5,19 @@ snippet pac "Package" b
 endsnippet
 
 snippet cha "Chapter" b
-\chapter{${1:chapter name}}
-\label{ch:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\chapter{${1:chapter name}}\label{ch:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
 
 $0
 endsnippet
 
 snippet sec "Section" b
-\section{${1:section name}}
-\label{sec:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\section{${1:section name}}\label{sec:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
 
 $0
 endsnippet
 
 snippet ssc "Subsection" b
-\subsection{${1:subsection name}}
-\label{ssc:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\subsection{${1:subsection name}}\label{ssc:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
 
 $0
 endsnippet
@@ -38,15 +35,13 @@ snippet thm "theorem enviromnent" b
 endsnippet
 
 snippet lemma "lemma enviromnent" b
-\begin{lemma}
-  \label{lemma:$1}
+\begin{lemma}\label{lemma:$1}
   ${VISUAL}$2
 \end{lemma}
 endsnippet
 
 snippet fact "fact enviromnent" b
-\begin{fact}
-  \label{fact:$1}
+\begin{fact}\label{fact:$1}
   ${VISUAL}$2
 \end{fact}
 endsnippet
@@ -102,8 +97,7 @@ snippet ecd "tikzcd" b
 endsnippet
 
 snippet def "definition" b
-\begin{definition}[${1:definition name}]
-  \label{def:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\begin{definition}[${1:definition name}]\label{def:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
   $0
 \end{definition}
 endsnippet
@@ -183,7 +177,7 @@ snippet idef "inline definition" i
 endsnippet
 
 snippet href "hyperref" i
-\hyperref[$1]{$2 \ref*{$1}}
+\hyperref[$1]{$2~\ref*{$1}}
 endsnippet
 
 snippet lab "label" i
