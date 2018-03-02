@@ -1,7 +1,7 @@
 " General settings {{{
 
+" Generate help files
 packloadall
-
 silent! helptags all
 
 " For the time being, still use the vim folders for everything
@@ -11,7 +11,7 @@ let &packpath = &runtimepath
 " Pathogen automatically loads plugins
 execute pathogen#infect()
 
-"Makes editing this file easier
+" Makes editing this file easier
 nmap <leader>v :edit /home/angus/.config/nvim/init.vim<CR>
 
 " I like this colorscheme
@@ -149,6 +149,14 @@ nnoremap <silent><Leader>an :ALENext<CR>
 
 " only lint when file is saved. Prevents ridiculous slowdown.
 let g:ale_lint_on_text_changed = 'never'
+
+" }}}
+"
+" {{{ airline
+
+" Enable tabline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 1
 
 " }}}
 

@@ -188,10 +188,6 @@ snippet it "item" i
 \item
 endsnippet
 
-snippet ale "aligned equals (&=)" i
-&=
-endsnippet
-
 snippet $ "inline mathmode" i
 \$${VISUAL}$1\$
 endsnippet
@@ -252,6 +248,10 @@ endsnippet
 
 # Math mode shortcuts
 
+snippet ale "aligned equals (&=)" i
+&=
+endsnippet
+
 snippet ^ "inserts exponent" i
 ^{${VISUAL}$1}
 endsnippet
@@ -264,12 +264,20 @@ snippet vec "inserts vector symbol" i
 \vec{${VISUAL}$1}
 endsnippet
 
+snippet dot "inserts dot symbol" i
+\dot{${VISUAL}$1}
+endsnippet
+
 snippet arr "Simple arrow latex snippet"
 \arrow[$1]
 endsnippet
 
 snippet to "To"
 \to
+endsnippet
+
+snippet imp "Implies"
+\implies
 endsnippet
 
 snippet _ "inline underscore" i
@@ -314,6 +322,10 @@ endsnippet
 
 snippet pdr "partial derivative" i
 \pder{$1}{$2}
+endsnippet
+
+snippet tdr "total derivative" i
+\tder{$1}{$2}
 endsnippet
 
 snippet 2 "square root" i

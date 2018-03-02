@@ -1,5 +1,5 @@
 ! font compatible with powerline
-URxvt.font: xft:Ubuntu Mono derivative Powerline:size=11
+URxvt.font: xft:Ubuntu Mono derivative Powerline:size=10
 
 ! disable scrollbar
 URxvt.scrollBar: false
