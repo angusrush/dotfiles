@@ -290,3 +290,5 @@ exec redshift
 
 # start htop
 exec --no-startup-id urxvt -e htop 'workspace $workspace8'
+
+# vim:filetype=i3
