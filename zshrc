@@ -34,6 +34,18 @@ alias sl="sl -e"
 alias vim="NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim"
 alias rmsock="rm -r /tmp/nvimsocket*"
 
+# Function to update pathogen plugins
+function update_pathogen() {
+        cd ~/.vim/bundle/
+        for i in `ls`; do
+                cd "$i"
+                echo "Updating $i"
+                echo ""
+                git pull
+                cd ..
+        done
+}
+
 # Enable more vim-style text objects, i.e. ci", ci}, etc.
 autoload -U select-bracketed
 autoload -U select-quoted
