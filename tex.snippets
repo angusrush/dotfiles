@@ -76,6 +76,12 @@ snippet "eq(uation)?" "unnumbered equation" br
 \end{equation*}
 endsnippet
 
+snippet "gat" "unnumbered gather" br
+\begin{gather*}
+  ${VISUAL}$1
+\end{gather*}
+endsnippet
+
 snippet "b(egin)?" "generic environment" br
 \begin{${1:something}}
 	${0:${VISUAL}}
@@ -596,6 +602,10 @@ snippet homework "Homework" b
 \usepackage{epigraph}
 \usepackage[makeroom]{cancel}
 
+% chktex-file 18
+% chktex-file 6
+% chktex-file 23
+
 \setlength{\parindent}{0em}
 \setlength{\parskip}{.5em}
 \setlength{\headheight}{14.0pt}
@@ -675,12 +685,15 @@ snippet notes "Notes" b
 \addbibresource{/home/angus/Documents/latex/sources.bib}
 
 % Set up hyperref colors
-\hypersetup{
-    colorlinks,
+\hypersetup{colorlinks,
     linkcolor={blue!50!black},
     citecolor={blue!50!black},
     urlcolor={blue!80!black}
 }
+
+% chktex-file 18
+% chktex-file 23
+% chktex-file 6
 
 % Good practice to set the version so updates don't break old documents
 \pgfplotsset{compat=1.14}
