@@ -31,7 +31,7 @@ setopt share_history
 # Personal aliases go here
 alias wttr="curl -s wttr.in/Liverpool"
 alias sl="sl -e"
-alias vim="NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim"
+alias vim="NVIM_LISTEN_ADDRESS=/tmp/vim nvim"
 alias rmsock="rm -r /tmp/nvimsocket*"
 
 # Function to update pathogen plugins
