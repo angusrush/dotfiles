@@ -1,0 +1,5 @@
+map + zoom in
+map - zoom out
+
+set font "Ubuntu 10"
+set guioptions ""
