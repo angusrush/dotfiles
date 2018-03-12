@@ -38,6 +38,8 @@ set undoreload=10000        " number of lines to save for undo
 set mouse=a                 " Mouse wheel should scroll the buffer
 set wildmode=longest,list,full " tab completion should behave like in the terminal
 
+au TermOpen * setlocal nonumber norelativenumber
+
 " Command to get rid of trailing spaces
 nnoremap <leader>s :silent! %s/\s\+$//g<CR> :w<CR>
 
@@ -71,29 +73,9 @@ augroup filetype_vim
         autocmd FileType vim setlocal foldmethod=marker
 augroup END
 
-" get vertigo working
-nnoremap <silent><Space>j :<C-U>VertigoDown n<CR>
-vnoremap <silent><Space>j :<C-U>VertigoDown v<CR>
-onoremap <silent><Space>j :<C-U>VertigoDown o<CR>
-nnoremap <silent><Space>k :<C-U>VertigoUp n<CR>
-vnoremap <silent><Space>k :<C-U>VertigoUp v<CR>
-onoremap <silent><Space>k :<C-U>VertigoUp o<CR>
-
 " move by wrapped lines, but only if no count is provided
 noremap <silent> <expr> j (v:count? 'j' : 'gj')
 noremap <silent> <expr> k (v:count? 'k' : 'gk')
-
-" set up indentwise shortcuts
-map [- <Plug>(IndentWisePreviousLesserIndent)
-map [= <Plug>(IndentWisePreviousEqualIndent)
-map [+ <Plug>(IndentWisePreviousGreaterIndent)
-map ]- <Plug>(IndentWiseNextLesserIndent)
-map ]= <Plug>(IndentWiseNextEqualIndent)
-map ]+ <Plug>(IndentWiseNextGreaterIndent)
-map [_ <Plug>(IndentWisePreviousAbsoluteIndent)
-map ]_ <Plug>(IndentWiseNextAbsoluteIndent)
-map [% <Plug>(IndentWiseBlockScopeBoundaryBegin)
-map ]% <Plug>(IndentWiseBlockScopeBoundaryEnd)
 
 " A little function to diff swap files
 command! DiffAgainstFileOnDisk call DiffAgainstFileOnDisk()
@@ -103,6 +85,13 @@ function! DiffAgainstFileOnDisk()
   exec "!diff /tmp/working_copy %"
 endfunction
 
+" Tells vim to search working directory for a .vimrc
+" useful for project-specific settings
+set exrc
+
+" Don't allow external commands to change important settings
+set secure
+
 " }}}
 
 " Plugin stuff {{{
@@ -111,33 +100,20 @@ endfunction
 " corresponding extension.
 filetype plugin indent on
 
-" Vimtex {{{
-
-" sets grep to always generate a file-name.
-set grepprg=grep\ -nH\ $*
-
-" changes the default filetype back to 'tex'
-let g:tex_flavor='latex'
-
-" }}}
-
-" Ultisnips {{{
-
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
-let g:UltiSnipsEditSplit="context"
-
-" }}}
-
 " {{{ ack.vim
 
 " Use ag instead, which is better
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+" }}}
+
+" {{{ airline
+
+" Enable tabline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 1
 
 " }}}
 
@@ -155,19 +131,55 @@ let g:ale_linters = {
       \}
 
 " }}}
-"
-" {{{ airline
 
-" Enable tabline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 1
+" indentwise {{{
+
+" set up indentwise shortcuts
+map [- <Plug>(IndentWisePreviousLesserIndent)
+map [= <Plug>(IndentWisePreviousEqualIndent)
+map [+ <Plug>(IndentWisePreviousGreaterIndent)
+map ]- <Plug>(IndentWiseNextLesserIndent)
+map ]= <Plug>(IndentWiseNextEqualIndent)
+map ]+ <Plug>(IndentWiseNextGreaterIndent)
+map [_ <Plug>(IndentWisePreviousAbsoluteIndent)
+map ]_ <Plug>(IndentWiseNextAbsoluteIndent)
+map [% <Plug>(IndentWiseBlockScopeBoundaryBegin)
+map ]% <Plug>(IndentWiseBlockScopeBoundaryEnd)
 
 " }}}
 
+" Ultisnips {{{
 
-" Tells vim to search working directory for a .vimrc
-" useful for project-specific settings
-set exrc
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
+let g:UltiSnipsEditSplit="context"
 
-" Don't allow external commands to change important settings
-set secure
+" }}}
+
+" vertigo {{{
+
+" get vertigo working
+
+nnoremap <silent><Space>j :<C-U>VertigoDown n<CR>
+vnoremap <silent><Space>j :<C-U>VertigoDown v<CR>
+onoremap <silent><Space>j :<C-U>VertigoDown o<CR>
+nnoremap <silent><Space>k :<C-U>VertigoUp n<CR>
+vnoremap <silent><Space>k :<C-U>VertigoUp v<CR>
+onoremap <silent><Space>k :<C-U>VertigoUp o<CR>
+
+" }}}
+
+" Vimtex {{{
+
+" sets grep to always generate a file-name.
+set grepprg=grep\ -nH\ $*
+
+" changes the default filetype back to 'tex'
+let g:tex_flavor='latex'
+
+" }}}
+
+" }}}
