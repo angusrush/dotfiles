@@ -32,7 +32,7 @@ setopt share_history
 alias wttr="curl -s wttr.in/Liverpool"
 alias sl="sl -e"
 alias vim="NVIM_LISTEN_ADDRESS=/tmp/vim nvim"
-alias rmsock="rm -r /tmp/vim"
+alias rmsock="rm -r /tmp/vim* /tmp/nvim*"
 
 # Function to update pathogen plugins
 function update_pathogen() {
