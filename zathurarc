@@ -3,3 +3,5 @@ map - zoom out
 
 set font "Ubuntu 10"
 set guioptions ""
+
+set highlight-transparency 0.7
