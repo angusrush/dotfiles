@@ -270,6 +270,10 @@ snippet vec "inserts vector symbol" i
 \vec{${VISUAL}$1}
 endsnippet
 
+snippet ten "tensor" i
+\tensor{${VISUAL}$1}{$2}
+endsnippet
+
 snippet dot "inserts dot symbol" i
 \dot{${VISUAL}$1}
 endsnippet
@@ -282,8 +286,20 @@ snippet to "To"
 \to
 endsnippet
 
+snippet mto "mapsto"
+\mapsto
+endsnippet
+
 snippet imp "Implies"
 \implies
+endsnippet
+
+snippet l.. "ldots" iA
+\ldots
+endsnippet
+
+snippet c.. "ldots" iA
+\cdots
 endsnippet
 
 snippet _ "inline underscore" i
@@ -298,8 +314,16 @@ snippet ti "\tilde{}" i
 \tilde{${VISUAL}$1}
 endsnippet
 
+snippet tiw "\widetilde{}" i
+\widetilde{${VISUAL}$1}
+endsnippet
+
 snippet : "colon" i
 \colon
+endsnippet
+
+snippet pa "partial" i
+\partial
 endsnippet
 
 snippet ; "\dot{}" i
@@ -574,6 +598,12 @@ endsnippet
 
 snippet Omv "\varOmega" i
 \varOmega
+endsnippet
+
+# Misc
+
+snippet nc "newcommand" i
+\newcommand{$1}
 endsnippet
 
 # Templates
