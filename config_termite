@@ -1,5 +1,5 @@
 [options]
-font = Source Code Pro for Powerline 10
+font = Ubuntu Mono derivative Powerline 10
 
 [colors]
 foreground = #D8DEE9
