@@ -73,7 +73,7 @@ smart_borders no_gaps
 # finds out, if available)
 bar {
         status_command i3blocks -c /home/angus/.config/i3/i3blocks.conf
-        font pango:Ubuntu 10
+        font pango:Ubuntu 9
         i3bar_command i3bar -t
         colors {
                 separator            $base03
