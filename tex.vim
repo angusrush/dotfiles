@@ -40,3 +40,8 @@ nmap <leader>e :edit ~/.vim/ftplugin/tex.vim<CR>
 " sometimes I don't want to move using visual lines
 nnoremap gj j
 nnoremap gk k
+
+" Set conceallevel for possibly prettier viewing
+set conceallevel=2
+highlight Conceal guifg=NONE 
+highlight Conceal guibg=NONE
