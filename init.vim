@@ -1,9 +1,5 @@
 " General settings {{{
 
-" Generate help files
-packloadall
-silent! helptags all
-
 " For the time being, still use the vim folders for everything
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
@@ -15,27 +11,31 @@ execute pathogen#infect()
 nmap <leader>v :edit /home/angus/.config/nvim/init.vim<CR>
 
 " I like this colorscheme
-colorscheme ron
-let g:airline_theme="minimalist"
+set termguicolors
+let g:nord_comment_brightness = 10
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
+
+colorscheme nord
 
 " I can't envision a use case for ex mode
 nnoremap Q <nop>
 
-set breakindent             " wrapped text respects indentation
-set display=lastline        " show beginning of a line which ends below the screen
-set expandtab				" tabs are spaces
-set inccommand=nosplit      " show substitute changes live
-set linebreak               " intelligent line breaks
-set number 				    " enabling both of these
-set relativenumber			" sets the current number as absolute
-set scrolloff=3             " don't let the cursor get to the bottom of the screen
-set spelllang=en            " I speak english
-set tabstop=4				" 4 visual spaces per tab
-set undodir=$HOME/.vim/undo " where to save undo histories
-set undofile                " enable persistent undo
-set undolevels=1000         " how many undos
-set undoreload=10000        " number of lines to save for undo
-set mouse=a                 " Mouse wheel should scroll the buffer
+set breakindent                " wrapped text respects indentation
+set display=lastline           " show beginning of a line which ends below the screen
+set expandtab				   " tabs are spaces
+set inccommand=nosplit         " show substitute changes live
+set linebreak                  " intelligent line breaks
+set number 				       " enabling both of these
+set relativenumber			   " sets the current number as absolute
+set scrolloff=3                " don't let the cursor get to the bottom of the screen
+set spelllang=en               " I speak english
+set tabstop=4				   " 4 visual spaces per tab
+set undodir=$HOME/.vim/undo    " where to save undo histories
+set undofile                   " enable persistent undo
+set undolevels=1000            " how many undos
+set undoreload=10000           " number of lines to save for undo
+set mouse=a                    " Mouse wheel should scroll the buffer
 set wildmode=longest,list,full " tab completion should behave like in the terminal
 
 au TermOpen * setlocal nonumber norelativenumber
@@ -131,13 +131,14 @@ let g:ale_lint_on_text_changed = 'never'
 
 let g:ale_linters = {
       \ 'tex':['chktex', 'proselint'],
+      \ 'vim':['vint'],
       \}
 
 " }}}
 
 " {{{ denite
 
-" open denite with enter
+" open denite with <C-p>
 nnoremap <C-p> :DeniteProjectDir file_rec<CR>
 
 " }}}
