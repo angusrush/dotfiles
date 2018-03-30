@@ -6,7 +6,6 @@ let g:vimtex_view_general_viewer = 'zathura'
 let g:vimtex_view_method='zathura'
 let g:vimtex_compiler_progname = 'nvr'
 
-
 " Tweak a few compiler settings
 let g:vimtex_compiler_latexmk = {
       \ 'backend' : 'nvim',
