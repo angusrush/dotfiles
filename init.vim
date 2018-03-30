@@ -123,12 +123,22 @@ let g:airline#extensions#tabline#show_buffers = 1
 nnoremap <silent><Leader>ap :ALEPrevious<CR>
 nnoremap <silent><Leader>an :ALENext<CR>
 
+"Disabled by default. Toggle with :ALEToggle
+let g:ale_enabled=0
+
 " only lint when file is saved. Prevents ridiculous slowdown.
 let g:ale_lint_on_text_changed = 'never'
 
 let g:ale_linters = {
       \ 'tex':['chktex', 'proselint'],
       \}
+
+" }}}
+
+" {{{ denite
+
+" open denite with enter
+nnoremap <C-p> :DeniteProjectDir file_rec<CR>
 
 " }}}
 
