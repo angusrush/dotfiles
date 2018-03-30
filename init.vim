@@ -38,7 +38,10 @@ set undoreload=10000           " number of lines to save for undo
 set mouse=a                    " Mouse wheel should scroll the buffer
 set wildmode=longest,list,full " tab completion should behave like in the terminal
 
+" Terminal mappings
 au TermOpen * setlocal nonumber norelativenumber
+tnoremap <C-t> <C-\><C-n>
+
 
 " Command to get rid of trailing spaces
 nnoremap <leader>s :silent! %s/\s\+$//g<CR> :w<CR>
@@ -69,8 +72,8 @@ cnoremap <C-n> <Down>
 
 " allows folding in init.vim
 augroup filetype_vim
-        autocmd!
-        autocmd FileType vim setlocal foldmethod=marker
+  autocmd!
+  autocmd FileType vim setlocal foldmethod=marker
 augroup END
 
 " move by wrapped lines, but only if no count is provided
