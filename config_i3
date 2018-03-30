@@ -97,7 +97,7 @@ font pango:Ubuntu 0
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec termite
 
 # start firefox
 bindsym $mod+i exec firefox

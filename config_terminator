@@ -13,8 +13,6 @@
 [profiles]
   [[default]]
     background_color = "#2e3440"
-    background_darkness = 0.9
-    background_type = transparent
     cursor_color = "#D8DEE9"
     font = Ubuntu Mono derivative Powerline 20
     foreground_color = "#d8dee9"
