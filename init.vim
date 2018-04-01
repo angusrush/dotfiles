@@ -40,14 +40,20 @@ set wildmode=longest,list,full " tab completion should behave like in the termin
 
 " Terminal mappings
 au TermOpen * setlocal nonumber norelativenumber
-tnoremap <C-t> <C-\><C-n>
+tnoremap <M-n> <C-\><C-n>
 
+" Buffer navigation mappings
+nnoremap <M-h> <C-w>h
+nnoremap <M-j> <C-w>j
+nnoremap <M-k> <C-w>k
+nnoremap <M-l> <C-w>l
+nnoremap <M-H> <C-w>H
+nnoremap <M-J> <C-w>J
+nnoremap <M-K> <C-w>K
+nnoremap <M-L> <C-w>L
 
 " Command to get rid of trailing spaces
 nnoremap <leader>s :silent! %s/\s\+$//g<CR> :w<CR>
-
-" Toggle the undo tree
-nnoremap <leader>u :UndotreeToggle<cr>
 
 " I often don't let go of shift in time
 command WQ wq
@@ -63,20 +69,20 @@ vnoremap gf <C-W>f
 nnoremap <silent><C-c> :nohls<CR>
 inoremap <silent><C-c> <C-o>:nohls<CR>
 
-" yank should behave like d
+" Yank should behave like d
 map Y y$
 
 " We can use <C-p> and <C-n> to cycle through commands
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
-" allows folding in init.vim
+" Allows folding in init.vim
 augroup filetype_vim
   autocmd!
   autocmd FileType vim setlocal foldmethod=marker
 augroup END
 
-" move by wrapped lines, but only if no count is provided
+" Move by wrapped lines, but only if no count is provided
 noremap <silent> <expr> j (v:count? 'j' : 'gj')
 noremap <silent> <expr> k (v:count? 'k' : 'gk')
 
@@ -132,6 +138,8 @@ nnoremap <silent><Leader>an :ALENext<CR>
 "Disabled by default. Toggle with :ALEToggle
 let g:ale_enabled=0
 
+let g:ale_sign_warning="⚠"
+
 " only lint when file is saved. Prevents ridiculous slowdown.
 let g:ale_lint_on_text_changed = 'never'
 
@@ -146,6 +154,7 @@ let g:ale_linters = {
 
 " open denite with <C-p>
 nnoremap <C-p> :DeniteProjectDir file_rec<CR>
+nnoremap <C-t> :DeniteProjectDir buffer<CR>
 
 " }}}
 
@@ -165,14 +174,10 @@ map ]% <Plug>(IndentWiseBlockScopeBoundaryEnd)
 
 " }}}
 
-" Ultisnips {{{
+" UndoTree {{{
 
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsSnippetDirectories = ['~/.vim/UltiSnips', 'UltiSnips']
-let g:UltiSnipsEditSplit="context"
+" Toggle the undo tree
+nnoremap <leader>u :UndotreeToggle<cr>
 
 " }}}
 
