@@ -2,6 +2,58 @@
 # Set up a color scheme
 ##################################################
 
+# dark gray
+set $color0   #3B4252
+
+# red
+set $color1   #BF616A
+
+# green
+set $color2   #A3BE8C
+
+# orange
+set $color3   #EBCB8B
+
+# gray blue
+set $color4   #81A1C1
+
+# lilac
+set $color5   #B48EAD
+
+# light blue
+set $color6   #88C0D0
+
+# light gray
+set $color7   #E5E9F0
+
+# medium gray
+set $color8   #4C566A
+
+# red again
+set $color9   #BF616A
+
+# green again
+set $color10  #A3BE8C
+
+# orange again
+set $color11  #EBCB8B
+
+# gray blue again
+set $color12  #81A1C1
+
+# lilac again
+set $color13  #B48EAD
+
+# green-blue
+set $color14  #8FBCBB
+
+# very light gray
+set $color15  #ECEFF4
+
+##################################################
+# old colors
+##################################################
+
 # transparent
 set $baset #00000000
 
@@ -58,10 +110,10 @@ set $base0F #fcc09e
 
 # Window Colors
 #                         border       background     text       indicator
-client.focused            $base03      $base02        $base07    $base03
-client.focused_inactive   $base03      $base00t       $base07    $base03
-client.unfocused          $base00      $base00t       $base07    $base03
-client.urgent 		      $base05      $base08        $base00    $base03
+client.focused            $color4      $base02        $base07    $base03
+client.focused_inactive   $color4      $base00t       $base07    $base03
+client.unfocused          $color0      $base00t       $base07    $base03
+client.urgent 		      $color1      $base08        $base00    $base03
 
 # gaps and borders
 gaps inner 10
