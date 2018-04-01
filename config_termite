@@ -1,5 +1,5 @@
 [options]
-font = Ubuntu Mono derivative Powerline 10
+font = Droid Sans Mono for Powerline 9
 
 [colors]
 foreground = #D8DEE9
