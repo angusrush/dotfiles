@@ -58,15 +58,16 @@ set $base0F #fcc09e
 
 # Window Colors
 #                         border       background     text       indicator
-client.focused            $base02      $base02        $base07    $base03
-client.focused_inactive   $base00t     $base00t       $base07    $base03
-client.unfocused          $base00t     $base00t       $base07    $base03
-client.urgent 		      $base02      $base08        $base00    $base03
+client.focused            $base03      $base02        $base07    $base03
+client.focused_inactive   $base03      $base00t       $base07    $base03
+client.unfocused          $base00      $base00t       $base07    $base03
+client.urgent 		      $base05      $base08        $base00    $base03
 
 # gaps and borders
 gaps inner 10
 gaps outer 0
 smart_gaps on
+default_border pixel 3
 smart_borders no_gaps
 
 # Start i3bar to display a workspace bar (plus the system information i3status
