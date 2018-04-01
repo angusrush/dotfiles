@@ -27,6 +27,7 @@ let g:vimtex_compiler_latexmk = {
 " I'm looking for
 command! Results :Ack! '\\label\{(thm|prop|lemma):' %
 
+" one-shot compilation
 nnoremap <leader>ls :call vimtex#compiler#compile_ss()<CR>
 
 " augment surround.vim for latex commands
