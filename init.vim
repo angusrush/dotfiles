@@ -41,6 +41,14 @@ set wildmode=longest,list,full " tab completion should behave like in the termin
 " Terminal mappings
 au TermOpen * setlocal nonumber norelativenumber
 tnoremap <M-n> <C-\><C-n>
+tnoremap <M-h> <C-\><C-n><C-w>h
+tnoremap <M-j> <C-\><C-n><C-w>j
+tnoremap <M-k> <C-\><C-n><C-w>k
+tnoremap <M-l> <C-\><C-n><C-w>l
+tnoremap <M-H> <C-\><C-n><C-w>H
+tnoremap <M-J> <C-\><C-n><C-w>J
+tnoremap <M-K> <C-\><C-n><C-w>K
+tnoremap <M-L> <C-\><C-n><C-w>L
 
 " Buffer navigation mappings
 nnoremap <M-h> <C-w>h
