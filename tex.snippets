@@ -84,7 +84,7 @@ endsnippet
 
 snippet "b(egin)?" "generic environment" br
 \begin{${1:something}}
-	${0:${VISUAL}}
+  ${0:${VISUAL}}
 \end{$1}
 endsnippet
 
@@ -176,81 +176,6 @@ snippet emp "emph" i
 \emph{$1${VISUAL}}
 endsnippet
 
-# Text mode shortcuts
-
-snippet idef "inline definition" i
-\defn{$1${VISUAL}}
-endsnippet
-
-snippet href "hyperref" i
-\hyperref[$1]{$2~\ref*{$1}}
-endsnippet
-
-snippet lab "label" i
-\label{$1}
-endsnippet
-
-snippet it "item" i
-\item `!v execute("normal =j")`
-endsnippet
-
-snippet $ "inline mathmode" i
-\$${VISUAL}$1\$
-endsnippet
-
-snippet " "inline mathmode" i
-"${VISUAL}$1"
-endsnippet
-
-# Delimiters
-
-snippet ( "small parentheses" i
-(${VISUAL}$1)
-endsnippet
-
-snippet ) "big parentheses" i
-\left( ${VISUAL}$1 \right)
-endsnippet
-
-snippet > "big langles" i
-\left\langle ${VISUAL}$1 \right\rangle
-endsnippet
-
-snippet [ "small square braces" i
-[${VISUAL}$1]
-endsnippet
-
-snippet ] "big square braces" i
-\left[ ${VISUAL}$1 \right]
-endsnippet
-
-snippet { "small curly braces" i
-\{${VISUAL}$1\}
-endsnippet
-
-snippet B "escaped escaped curly braces" i
-\\{${VISUAL}$1\\}
-endsnippet
-
-snippet } "big curly braces" i
-\left\\\{ ${VISUAL}$1 \right\\\}
-endsnippet
-
-snippet ev "big evaluate at pipe" i
-\left. ${VISUAL}$1 \right|
-endsnippet
-
-snippet abs "absolute value" i
-\abs{${VISUAL}$1}
-endsnippet
-
-snippet bar "bar" i
-\bar{${VISUAL}$1}
-endsnippet
-
-snippet norm "norm" i
-\norm{${VISUAL}$1}
-endsnippet
 
 # Math mode shortcuts
 
@@ -380,6 +305,82 @@ endsnippet
 
 snippet qq "qquad" i
 \qquad
+endsnippet
+
+# Text mode shortcuts
+
+snippet idef "inline definition" i
+\defn{$1${VISUAL}}
+endsnippet
+
+snippet href "hyperref" i
+\hyperref[$1]{$2~\ref*{$1}}
+endsnippet
+
+snippet lab "label" i
+\label{$1}
+endsnippet
+
+snippet it "item" i
+\item `!v execute("normal =j")`
+endsnippet
+
+snippet $ "inline mathmode" i
+\$${VISUAL}$1\$
+endsnippet
+
+snippet " "inline mathmode" i
+"${VISUAL}$1"
+endsnippet
+
+# Delimiters
+
+snippet ( "small parentheses" i
+(${VISUAL}$1)
+endsnippet
+
+snippet ) "big parentheses" i
+\left( ${VISUAL}$1 \right)
+endsnippet
+
+snippet > "big langles" i
+\left\langle ${VISUAL}$1 \right\rangle
+endsnippet
+
+snippet [ "small square braces" i
+[${VISUAL}$1]
+endsnippet
+
+snippet ] "big square braces" i
+\left[ ${VISUAL}$1 \right]
+endsnippet
+
+snippet { "small curly braces" i
+\{${VISUAL}$1\}
+endsnippet
+
+snippet B "escaped escaped curly braces" i
+\\{${VISUAL}$1\\}
+endsnippet
+
+snippet } "big curly braces" i
+\left\\\{ ${VISUAL}$1 \right\\\}
+endsnippet
+
+snippet ev "big evaluate at pipe" i
+\left. ${VISUAL}$1 \right|
+endsnippet
+
+snippet abs "absolute value" i
+\abs{${VISUAL}$1}
+endsnippet
+
+snippet bar "bar" i
+\bar{${VISUAL}$1}
+endsnippet
+
+snippet norm "norm" i
+\norm{${VISUAL}$1}
 endsnippet
 
 # Greek letters
@@ -668,7 +669,7 @@ urlcolor={blue!80!black}
 \newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
 
 % Declare theorem styles
-\theoremstyle{definition} 
+\theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 \newtheorem{example}{Example}[section]
 \newtheorem{counterexample}{Counterexample}[section]
@@ -691,21 +692,21 @@ $3${VISUAL}
 endsnippet
 
 snippet notes "Notes" b
-\usepackage[margin=1in]{geometry} 
-\usepackage{amsmath} 
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
 \usepackage{amsfonts}
-\usepackage{amssymb} 
-\usepackage{fancyhdr} 
+\usepackage{amssymb}
+\usepackage{fancyhdr}
 \usepackage{amstext}
-\usepackage{array} 
-\usepackage{amsthm} 
-\usepackage{tikz} 
+\usepackage{array}
+\usepackage{amsthm}
+\usepackage{tikz}
 \usepackage{bm}
-\usepackage{mathrsfs} 
-\usepackage{mathrsfs} 
+\usepackage{mathrsfs}
+\usepackage{mathrsfs}
 \usepackage{eucal}
-\usepackage{braket} 
-\usepackage{pgfplots} 
+\usepackage{braket}
+\usepackage{pgfplots}
 \usepackage{soul}
 \usepackage{hyperref}
 \usepackage{todonotes}
@@ -736,25 +737,25 @@ snippet notes "Notes" b
 \usetikzlibrary{cd}
 
 % Makes indentation more note-ish
-\setlength{\parindent}{0em} 
+\setlength{\parindent}{0em}
 \setlength{\parskip}{.5em}
 \setlength{\headheight}{14.0pt}
 
 % Page headers
-\pagestyle{fancy} 
-\lhead{Angus Rush} 
-\chead{$1 notes} 
+\pagestyle{fancy}
+\lhead{Angus Rush}
+\chead{$1 notes}
 \rhead{\today}
 
 % My commands
 \newcommand{\pder}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\tder}[2]{\frac{\text{d} #1}{\text{d} #2}}
-\newcommand{\R}{\mathbb{R}} 
+\newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
-\newcommand{\Z}{\mathbb{Z}} 
+\newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
-\newcommand{\N}{\mathbb{N}} 
-\newcommand{\dd}{\text{d}} 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\dd}{\text{d}}
 \newcommand{\Mod}[1]{\(\text{mod}#1\)}
 \newcommand{\defn}[1]{\ul{#1}}
 \newcommand{\abs}[1]{\left| #1 \right|}
@@ -763,7 +764,7 @@ snippet notes "Notes" b
 \renewcommand{\labelitemii}{$\circ$}
 
 % Declare theorem styles
-\theoremstyle{definition} 
+\theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
 \newtheorem{example}{Example}[section]
 \newtheorem{counterexample}{Counterexample}[section]
@@ -780,7 +781,7 @@ snippet notes "Notes" b
 \newtheorem{notation}{Notation}[section]
 \newtheorem{joke}{Joke}[section]
 
-\begin{document} 
+\begin{document}
 $0${VISUAL}
 %\printbibliography
 \end{document}
