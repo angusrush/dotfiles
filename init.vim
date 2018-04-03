@@ -15,28 +15,27 @@ set termguicolors
 let g:nord_comment_brightness = 10
 let g:nord_italic = 1
 let g:nord_italic_comments = 1
-
 colorscheme nord
 
 " I can't envision a use case for ex mode
 nnoremap Q <nop>
 
-set breakindent                " wrapped text respects indentation
-set display=lastline           " show beginning of a line which ends below the screen
-set expandtab				   " tabs are spaces
-set inccommand=nosplit         " show substitute changes live
-set linebreak                  " intelligent line breaks
-set number 				       " enabling both of these
-set relativenumber			   " sets the current number as absolute
-set scrolloff=3                " don't let the cursor get to the bottom of the screen
+set breakindent                " Wrapped text respects indentation
+set display=lastline           " Show beginning of a line which ends below the screen
+set expandtab				   " Tabs are spaces
+set inccommand=nosplit         " Show substitute changes live
+set linebreak                  " Intelligent line breaks
+set number 				       " Enabling both of these...
+set relativenumber			   "     sets the current number as absolute
+set scrolloff=3                " Don't let the cursor get to the bottom of the screen
 set spelllang=en               " I speak english
 set tabstop=4				   " 4 visual spaces per tab
-set undodir=$HOME/.vim/undo    " where to save undo histories
-set undofile                   " enable persistent undo
-set undolevels=1000            " how many undos
-set undoreload=10000           " number of lines to save for undo
+set undodir=$HOME/.vim/undo    " Where to save undo histories
+set undofile                   " Enable persistent undo
+set undolevels=1000            " How many undos
+set undoreload=10000           " Number of lines to save for undo
 set mouse=a                    " Mouse wheel should scroll the buffer
-set wildmode=longest,list,full " tab completion should behave like in the terminal
+set wildmode=longest,list,full " Tab completion should behave like in the terminal
 
 " Terminal mappings
 au TermOpen * setlocal nonumber norelativenumber
@@ -73,18 +72,18 @@ command Q q
 nnoremap gf <C-W>f
 vnoremap gf <C-W>f
 
-" remove highlighting after a search
+" Remove highlighting after a search
 nnoremap <silent><C-c> :nohls<CR>
 inoremap <silent><C-c> <C-o>:nohls<CR>
 
 " Yank should behave like d
 map Y y$
 
-" We can use <C-p> and <C-n> to cycle through commands
+" U:se <C-p> and <C-n> to cycle through commands
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
-" Allows folding in init.vim
+" Allow folding in init.vim
 augroup filetype_vim
   autocmd!
   autocmd FileType vim setlocal foldmethod=marker
@@ -94,20 +93,9 @@ augroup END
 noremap <silent> <expr> j (v:count? 'j' : 'gj')
 noremap <silent> <expr> k (v:count? 'k' : 'gk')
 
-" A little function to diff swap files
-command! DiffAgainstFileOnDisk call DiffAgainstFileOnDisk()
-
-function! DiffAgainstFileOnDisk()
-  :w! /tmp/working_copy
-  exec "!diff /tmp/working_copy %"
-endfunction
-
-" Tells vim to search working directory for a .vimrc
-" useful for project-specific settings
-set exrc
-
-" Don't allow external commands to change important settings
-set secure
+" Set path for easy file opening using :find
+set path+=~/Documents/latex/**
+set path+=~/Dropbox/rc
 
 " }}}
 
@@ -155,14 +143,6 @@ let g:ale_linters = {
       \ 'tex':['chktex', 'proselint'],
       \ 'vim':['vint'],
       \}
-
-" }}}
-
-" {{{ denite
-
-" open denite with <C-p>
-nnoremap <C-p> :DeniteProjectDir file_rec<CR>
-nnoremap <C-t> :DeniteProjectDir buffer<CR>
 
 " }}}
 
