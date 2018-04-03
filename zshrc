@@ -40,8 +40,8 @@ function update_pathogen() {
         cd ~/.vim/bundle/
         for i in `ls`; do
                 cd "$i"
-                echo "Updating $i"
                 echo ""
+                echo "Updating $i"
                 git pull
                 cd ..
         done
