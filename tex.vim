@@ -44,5 +44,5 @@ nnoremap gk k
 
 " Set conceallevel for possibly prettier viewing
 set conceallevel=2
-highlight Conceal guifg=NONE 
+highlight Conceal guifg=NONE
 highlight Conceal guibg=NONE
