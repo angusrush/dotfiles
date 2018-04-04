@@ -23,10 +23,6 @@ let g:vimtex_compiler_latexmk = {
       \ ],
       \}
 
-" load up all theorem-type labels into the quickfix list so I can find what
-" I'm looking for
-command! Results :Ack! '\\label\{(thm|prop|lemma):' %
-
 " one-shot compilation
 nnoremap <leader>ls :call vimtex#compiler#compile_ss()<CR>
 
