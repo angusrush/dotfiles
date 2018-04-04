@@ -35,7 +35,7 @@ set undofile                   " Enable persistent undo
 set undolevels=1000            " How many undos
 set undoreload=10000           " Number of lines to save for undo
 set mouse=a                    " Mouse wheel should scroll the buffer
-set wildmode=longest,list,full " Tab completion should behave like in the terminal
+set wildmode=longest:list,full " Tab completion should behave like in the terminal
 
 " Terminal mappings
 au TermOpen * setlocal nonumber norelativenumber
@@ -93,9 +93,13 @@ augroup END
 noremap <silent> <expr> j (v:count? 'j' : 'gj')
 noremap <silent> <expr> k (v:count? 'k' : 'gk')
 
-" Set path for easy file opening using :find
-set path+=~/Documents/latex/**
-set path+=~/Dropbox/rc
+" Set path and wildignore for easy file opening using :find
+ set path=~/Dropbox/rc,~/Documents/latex/**
+ set wildignore+=*.aux,*.fdb_latexmk,*.fls,*.log,*.out,*.synctex.gz,*.pdf,tags,*.bcf,*.bbl,*.blg*,*.toc,*.run.xml,core,*.dvi,*.orig,*.tkzparfct.gnuplot
+ set wildignorecase
+
+" Leader map for :find
+nnoremap <leader>f :find *
 
 " }}}
 
@@ -118,10 +122,6 @@ endif
 
 " Use powerline symbols
 let g:airline_powerline_fonts = 1
-
-" Enable tabline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 1
 
 " }}}
 
