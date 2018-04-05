@@ -1,119 +1,34 @@
 ##################################################
-# Set up a color scheme
+# Nord colors
 ##################################################
+# nord0 - nord3 are dark - less dark gray
+# nord4 - nord6 are grey - almost white
+# nord7 - nord10 are green - blue
+# nord11 - nord15 are red, orange, yellow, green, purple
 
-# dark gray
-set $color0   #3B4252
-
-# red
-set $color1   #BF616A
-
-# green
-set $color2   #A3BE8C
-
-# orange
-set $color3   #EBCB8B
-
-# gray blue
-set $color4   #81A1C1
-
-# lilac
-set $color5   #B48EAD
-
-# light blue
-set $color6   #88C0D0
-
-# light gray
-set $color7   #E5E9F0
-
-# medium gray
-set $color8   #4C566A
-
-# red again
-set $color9   #BF616A
-
-# green again
-set $color10  #A3BE8C
-
-# orange again
-set $color11  #EBCB8B
-
-# gray blue again
-set $color12  #81A1C1
-
-# lilac again
-set $color13  #B48EAD
-
-# green-blue
-set $color14  #8FBCBB
-
-# very light gray
-set $color15  #ECEFF4
-
-##################################################
-# old colors
-##################################################
-
-# transparent
-set $baset #00000000
-
-# almost black
-set $base00 #101218
-
-# almost black transparent
-set $base00t #101218AA
-
-# slightly less black
-set $base01 #1f222d
-
-# slightly lesser black
-set $base02 #3d4663
-
-# blue-gray
-set $base03 #7780a1
-
-# lighter blue-gray
-set $base04 #C0C5CE
-
-# very light blue gray
-set $base05 #d1d4e0
-
-# almost the same color
-set $base06 #C9CCDB
-
-# white
-set $base07 #ffffff
-
-# red
-set $base08 #ee829f
-
-# orange
-set $base09 #f99170
-
-# light yellow-orange
-set $base0A #ffefcc
-
-# light green
-set $base0B #a5ffe1
-
-# light blue
-set $base0C #97e0ff
-
-# blue
-set $base0D #97bbf7
-
-# light purple
-set $base0E #c0b7f9
-
-# light orange
-set $base0F #fcc09e
+set $nord0  #2e3440
+set $nord1  #3b4252
+set $nord2  #434c5e
+set $nord3  #4c566a
+set $nord4  #d8dee9
+set $nord5  #e5e9f0
+set $nord6  #eceff4
+set $nord7  #8fbcbb
+set $nord8  #88c0d0
+set $nord9  #81a1c1
+set $nord10 #5e81ac
+set $nord11 #bf616a
+set $nord12 #d08770
+set $nord13 #ebcb8b
+set $nord14 #a3be8c
+set $nord15 #b48ead
 
 # Window Colors
 #                         border       background     text       indicator
-client.focused            $color4      $base02        $base07    $base03
-client.focused_inactive   $color4      $base00t       $base07    $base03
-client.unfocused          $color0      $base00t       $base07    $base03
-client.urgent 		      $color1      $base08        $base00    $base03
+client.focused            $nord3       $nord3         $nord6     $nord10
+client.focused_inactive   $nord0       $nord0         $nord6     $nord10
+client.unfocused          $nord0       $nord0         $nord6     $nord10
+client.urgent 		      $nord7       $nord7         $nord0     $nord10
 
 # gaps and borders
 gaps inner 10
@@ -129,19 +44,22 @@ bar {
         font pango:Ubuntu 9
         i3bar_command i3bar -t
         colors {
-                separator            $base03
-                background           $base00t
-                statusline           $base05
-#                                    border       background    text
-                focused_workspace    $base00t     $base00t      $base07
-                active_workspace     $base00t     $base00t      $base03
-                inactive_workspace   $base00t     $base00t      $base03
-                urgent_workspace     $base00t     $base00t      $base08
+                separator            $nord3
+                background           $nord0
+                statusline           $nord4
+#                                    border     background  text
+                focused_workspace    $nord0     $nord0      $nord6
+                active_workspace     $nord0     $nord0      $nord9
+                inactive_workspace   $nord0     $nord0      $nord9
+                urgent_workspace     $nord0     $nord0      $nord11
         }
 }
 
 # Use windows as mod key
 set $mod Mod4
+
+# Toggle bar always-on-ness
+bindsym $mod+m bar mode toggle
 
 # Font for window titles. Currently zero because I don't want titles
 font pango:Ubuntu 0
@@ -212,7 +130,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Background image location
-set $backgroundimage /home/angus/Pictures/seattle-wallpaper-10.jpg
+set $backgroundimage /home/angus/Pictures/hamburg-germany-nicolas-kamp-hd-wallpaper_0.jpg
 
 # dedicated workspace definitions
 set $workspace7 "7: Skype"
