@@ -1,5 +1,7 @@
 ##################################################
 # Nord colors
+#
+# see https://github.com/arcticicestudio/nord
 ##################################################
 # nord0 - nord3 are dark - less dark gray
 # nord4 - nord6 are grey - almost white
@@ -22,6 +24,9 @@ set $nord12 #d08770
 set $nord13 #ebcb8b
 set $nord14 #a3be8c
 set $nord15 #b48ead
+
+# This one is mine
+set $nord16 #73809b
 
 # Window Colors
 #                         border       background     text       indicator
@@ -49,8 +54,8 @@ bar {
                 statusline           $nord4
 #                                    border     background  text
                 focused_workspace    $nord0     $nord0      $nord6
-                active_workspace     $nord0     $nord0      $nord9
-                inactive_workspace   $nord0     $nord0      $nord9
+                active_workspace     $nord0     $nord0      $nord16
+                inactive_workspace   $nord0     $nord0      $nord16
                 urgent_workspace     $nord0     $nord0      $nord11
         }
 }
@@ -260,6 +265,6 @@ exec /home/angus/programming/i3blocks/trackpoint_block/saneTrackpoint
 exec redshift
 
 # start htop
-exec --no-startup-id urxvt -e htop 'workspace $workspace8'
+exec --no-startup-id termite -e htop 'workspace $workspace8'
 
 # vim:filetype=i3
