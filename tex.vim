@@ -38,7 +38,3 @@ nmap <leader>e :edit ~/.vim/ftplugin/tex.vim<CR>
 nnoremap gj j
 nnoremap gk k
 
-" Set conceallevel for possibly prettier viewing
-" set conceallevel=2
-" highlight Conceal guifg=NONE
-" highlight Conceal guibg=NONE
