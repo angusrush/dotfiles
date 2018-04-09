@@ -5,3 +5,7 @@ set font "Ubuntu 10"
 set guioptions ""
 
 set highlight-transparency 0.7
+
+set default-bg \#2e3440
+set statusbar-bg \#2e3440
+set statusbar-fg \#73809b
