@@ -60,7 +60,7 @@ nnoremap <M-K> <C-w>K
 nnoremap <M-L> <C-w>L
 
 " Command to get rid of trailing spaces
-nnoremap <leader>s :silent! %s/\s\+$//g<CR>
+nnoremap <leader>s :silent! %s/\s\+$//g<CR> :set nohlsearch<CR>
 
 " I often don't let go of shift in time
 command WQ wq
