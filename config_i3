@@ -210,7 +210,7 @@ bindsym XF86MonBrightnessUp exec xbright +50 5 && pkill -SIGRTMIN+12 i3blocks # 
 bindsym XF86MonBrightnessDown exec xbright -50 && pkill -SIGRTMIN+12 i3blocks # decrease screen brightness
 
 # toggle touchpad
-bindsym XF86Display exec pkill -SIGRTMIN+13 i3blocks
+bindsym XF86Display exec pkill -SIGRTMIN+13 i3blocks && xdotool mousemove 3200 1800
 
 # Media player controls
 bindsym XF86Search exec Downloads/playerctl-master/playerctl/playerctl play-pause && pkill -SIGRTMIN+14 i3blocks
