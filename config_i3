@@ -81,8 +81,8 @@ bindsym $mod+i exec firefox
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+# start rofi (a program launcher)
+bindsym $mod+d exec rofi -show run
 
 # change focus
 bindsym $mod+h focus left
