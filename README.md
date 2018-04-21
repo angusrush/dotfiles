@@ -1,2 +1,2 @@
 # Dotfiles
-This is a repository which contains most of my dotfiles. 
+This is where I keep most of my dotfiles.
