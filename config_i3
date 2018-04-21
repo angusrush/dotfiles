@@ -82,7 +82,7 @@ bindsym $mod+i exec firefox
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec rofi -show drun
 
 # change focus
 bindsym $mod+h focus left
