@@ -38,9 +38,9 @@ client.urgent 		      $nord7       $nord7         $nord0     $nord10
 # gaps and borders
 gaps inner 10
 gaps outer 0
-smart_gaps on
+#smart_gaps on
 default_border pixel 3
-smart_borders no_gaps
+#smart_borders no_gaps
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -135,7 +135,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Background image location
-set $backgroundimage /home/angus/Pictures/hamburg-germany-nicolas-kamp-hd-wallpaper_0.jpg
+set $backgroundimage /home/angus/Pictures/mount_rainier.jpg
 
 # dedicated workspace definitions
 set $workspace7 "7: Skype"
