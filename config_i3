@@ -30,10 +30,10 @@ set $nord16 #73809b
 
 # Window Colors
 #                         border       background     text       indicator
-client.focused            $nord3       $nord3         $nord6     $nord10
-client.focused_inactive   $nord0       $nord0         $nord6     $nord10
-client.unfocused          $nord0       $nord0         $nord6     $nord10
-client.urgent 		      $nord7       $nord7         $nord0     $nord10
+client.focused            $nord10      $nord10        $nord6     $nord8
+client.focused_inactive   $nord0       $nord0         $nord6     $nord8
+client.unfocused          $nord0       $nord0         $nord6     $nord8
+client.urgent             $nord7       $nord7         $nord0     $nord8
 
 # gaps and borders
 gaps inner 10
