@@ -31,9 +31,6 @@ let g:surround_{char2nr('c')} = "\\\1command\1{\r}"
 let g:surround_{char2nr('q')} = "`\r'"
 let g:surround_{char2nr('Q')} = "``\r''"
 
-" makes editing this file easier
-nmap <leader>e :edit ~/.vim/ftplugin/tex.vim<CR>
-
 " sometimes I don't want to move using visual lines
 nnoremap gj j
 nnoremap gk k

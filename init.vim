@@ -7,9 +7,6 @@ let &packpath = &runtimepath
 " Pathogen automatically loads plugins
 execute pathogen#infect()
 
-" Makes editing this file easier
-nmap <leader>v :edit /home/angus/.config/nvim/init.vim<CR>
-
 " I like this colorscheme
 set termguicolors
 let g:nord_comment_brightness = 10
