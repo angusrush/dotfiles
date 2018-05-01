@@ -53,7 +53,7 @@ bar {
                 background           $nord0
                 statusline           $nord4
 #                                    border     background  text
-                focused_workspace    $nord0     $nord0      $nord6
+                focused_workspace    $nord0     $nord0      $nord8
                 active_workspace     $nord0     $nord0      $nord16
                 inactive_workspace   $nord0     $nord0      $nord16
                 urgent_workspace     $nord0     $nord0      $nord11
