@@ -8,11 +8,14 @@ set guioptions ""
 
 set highlight-transparency 0.5
 
-# nord colors
-set default-bg                  "#2e3440"
-set statusbar-bg                "#88c0d0"
-set statusbar-fg                "#2e3440"
+##################################################
+# colors
+##################################################
 
+# color `behind' pdf
+set default-bg                  "#4c566a"
+
+# Notifications and errors
 set notification-error-bg       "#2e3440"
 set notification-error-fg       "#bf616a"
 set notification-warning-bg     "#2e3440"
@@ -29,12 +32,15 @@ set recolor                     true
 set recolor-lightcolor          "#2e3440"
 set recolor-darkcolor           "#eceff4"
 
+# Colon commands color
 set inputbar-bg                 "#2e3440"
 set inputbar-fg                 "#d8dee9"
 
+# Statusbar -- hidden, so it doesn't matter what's here
 set statusbar-bg                "#2e3440"
 set statusbar-fg                "#d8dee9"
 
+# Completion menu colors
 set completion-group-bg         "#3b4252"
 set completion-group-fg         "#d8dee9"
 set completion-bg               "#4c566a"
@@ -42,8 +48,10 @@ set completion-fg               "#eceff4"
 set completion-highlight-bg     "#4c566a"
 set completion-highlight-fg     "#88c0d0"
 
-## Define the color in index mode
+## Color in index mode
 #set index-bg                   "#073642" # base02
 #set index-fg                   "#93a1a1" # base1
 #set index-active-bg             "#2e3440" # base01
 #set index-active-fg             "#eee8d5" # base2
+
+# vim:filetype=i3
