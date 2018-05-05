@@ -40,10 +40,19 @@ gaps inner 10
 gaps outer 0
 #smart_gaps on
 default_border pixel 3
-#smart_borders no_gaps
+smart_borders no_gaps
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# Add a mode triggered by $mod+y to toggle gaps
+set $mode_gaps Toggle gaps: (1) on (0) off
+bindsym $mod+y mode "$mode_gaps"
+mode "$mode_gaps" {
+    bindsym 0 mode "default", gaps inner all set 0, gaps outer all set 1
+    bindsym 1 mode "default", gaps inner all set 10, gaps outer all set 1
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# Start i3bar to display a workspace bar
 bar {
         status_command i3blocks -c /home/angus/.config/i3/i3blocks.conf
         font pango:Ubuntu 9
