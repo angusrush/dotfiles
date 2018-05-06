@@ -76,7 +76,7 @@ inoremap <silent><C-c> <C-o>:nohls<CR>
 " Yank should behave like d
 map Y y$
 
-" U:se <C-p> and <C-n> to cycle through commands
+" Use <C-p> and <C-n> to cycle through commands
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 
