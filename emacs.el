@@ -1,4 +1,3 @@
-
 ;; add package archives
 (require 'package)
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
@@ -13,7 +12,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (evil-exchange nord-theme evil-surround evil auctex ##))))
+    (linum-relative evil-exchange nord-theme evil-surround evil auctex ##))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -35,6 +34,7 @@
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
+(toggle-scroll-bar -1)
 
 (set-default-font "Source Code Pro for Powerline 10")
 
