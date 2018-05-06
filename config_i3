@@ -31,15 +31,15 @@ set $nord16 #73809b
 # Window Colors
 #                         border       background     text       indicator
 client.focused            $nord10      $nord10        $nord6     $nord8
-client.focused_inactive   $nord0       $nord0         $nord6     $nord8
-client.unfocused          $nord0       $nord0         $nord6     $nord8
-client.urgent             $nord7       $nord7         $nord0     $nord8
+client.focused_inactive   $nord1       $nord1         $nord6     $nord8
+client.unfocused          $nord1       $nord1         $nord6     $nord8
+client.urgent             $nord7       $nord7         $nord1     $nord8
 
 # gaps and borders
 gaps inner 10
 gaps outer 0
 #smart_gaps on
-default_border pixel 3
+default_border pixel 2
 smart_borders no_gaps
 
 # Add a mode triggered by $mod+y to toggle gaps
