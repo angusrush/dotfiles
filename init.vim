@@ -19,14 +19,14 @@ nnoremap Q <nop>
 
 set breakindent                " Wrapped text respects indentation
 set display=lastline           " Show beginning of a line which ends below the screen
-set expandtab				   " Tabs are spaces
+set expandtab                  " Tabs are spaces
 set inccommand=nosplit         " Show substitute changes live
 set linebreak                  " Intelligent line breaks
-set number 				       " Enabling both of these...
-set relativenumber			   "     sets the current number as absolute
+set number                     " Enabling both of these...
+set relativenumber             "     sets the current number as absolute
 set scrolloff=3                " Don't let the cursor get to the bottom of the screen
 set spelllang=en               " I speak english
-set tabstop=4				   " 4 visual spaces per tab
+set tabstop=4                  " 4 visual spaces per tab
 set undodir=$HOME/.vim/undo    " Where to save undo histories
 set undofile                   " Enable persistent undo
 set undolevels=1000            " How many undos
