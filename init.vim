@@ -92,7 +92,7 @@ noremap <silent> <expr> k (v:count? 'k' : 'gk')
 
 " Set path and wildignore for easy file opening using :find
  set path=~/Dropbox/rc,~/Documents/latex/**
- set wildignore+=*.aux,*.fdb_latexmk,*.fls,*.log,*.out,*.synctex.gz,*.pdf,tags,*.bcf,*.bbl,*.blg*,*.toc,*.run.xml,core,*.dvi,*.orig,*.tkzparfct.gnuplot,*.png,*.jpg
+ set wildignore+=*.aux,*.fdb_latexmk,*.fls,*.log,*.out,*.synctex.gz,*.pdf,tags,*.bcf,*.bbl,*.blg*,*.toc,*.run.xml,core,*.dvi,*.orig,*.tkzparfct.gnuplot,*.png,*.jpg,*_region_*
  set wildignorecase
 
 " Leader map for :find
