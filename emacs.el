@@ -1,3 +1,9 @@
+;; My peersonal lisp directory
+(add-to-list 'load-path "~/.emacs.d/lisp/")
+
+;;(load "evil-latex-textobjects")
+;;(add-hook 'LaTeX-mode-hook 'turn-on-evil-latex-textobjects-mode)
+
 ;; add package archives
 (require 'package)
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
@@ -12,7 +18,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (yasnippet adaptive-wrap linum-relative evil-exchange nord-theme evil-surround evil auctex ##))))
+    (powerline-evil helm yasnippet adaptive-wrap linum-relative evil-exchange nord-theme evil-surround evil auctex ##))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -27,6 +33,22 @@
 (setq evil-normal-state-modes (append evil-motion-state-modes evil-normal-state-modes))
 (setq evil-motion-state-modes nil)
 
+;; Escape should abort commands
+(defun minibuffer-keyboard-quit ()
+  (interactive)
+  (if (and delete-selection-mode transient-mark-mode mark-active)
+      (setq deactivate-mark  t)
+    (when (get-buffer "*Completions*") (delete-windows-on "*Completions*"))
+    (abort-recursive-edit)))
+(define-key evil-normal-state-map [escape] 'keyboard-quit)
+(define-key evil-visual-state-map [escape] 'keyboard-quit)
+(define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
+(global-set-key [escape] 'evil-exit-emacs-state)
+
 ;; Ultisnips for emacs
 (require 'evil-exchange)
 
@@ -36,11 +58,15 @@
 ;; Evil surround
 (global-evil-surround-mode 1)
 
+;; Evil exchange
 (require 'evil-exchange)
 (evil-exchange-install)
 
 ;; Nice color scheme
 (require 'nord-theme)
+
+;; Show matching parens
+(show-paren-mode t)
 
 ;; Relative Line numbers
 (linum-relative-global-mode)
@@ -54,7 +80,7 @@
 (require 'adaptive-wrap)
 (adaptive-wrap-prefix-mode)
 
-;; Disable gui nonsense
+;; Disable gui
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (toggle-scroll-bar -1)
