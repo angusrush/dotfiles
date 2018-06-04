@@ -22,6 +22,12 @@ snippet ssc "Subsection" b
 $0
 endsnippet
 
+snippet sss "Subsubsection" b
+\subsection{${1:subsection name}}\label{ssc:${2:${1/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+
+$0
+endsnippet
+
 snippet prop "proposition enviromnent" b
 \begin{proposition}
   ${VISUAL}$1
