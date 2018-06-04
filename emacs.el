@@ -18,7 +18,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (powerline-evil helm yasnippet adaptive-wrap linum-relative evil-exchange nord-theme evil-surround evil auctex ##))))
+    (evil-easymotion evil-collection powerline-evil helm yasnippet adaptive-wrap linum-relative evil-exchange nord-theme evil-surround evil auctex ##))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -28,6 +28,7 @@
  )
 
 ;; Evil mode!
+(setq evil-want-integration nil)
 (require 'evil)
 (evil-mode 1)
 (setq evil-normal-state-modes (append evil-motion-state-modes evil-normal-state-modes))
@@ -49,7 +50,10 @@
 (define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
 (global-set-key [escape] 'evil-exit-emacs-state)
 
-;; Ultisnips for emacs
+;; Evil keybindings for most modes
+(evil-collection-init)
+
+;; vim-exchange for emacs
 (require 'evil-exchange)
 
 ;; Spaces instead of tabs
