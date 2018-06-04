@@ -40,14 +40,13 @@ gaps inner 10
 gaps outer 0
 #smart_gaps on
 default_border pixel 2
-smart_borders no_gaps
 
 # Add a mode triggered by $mod+y to toggle gaps
 set $mode_gaps Toggle gaps: (1) on (0) off
 bindsym $mod+y mode "$mode_gaps"
 mode "$mode_gaps" {
-    bindsym 0 mode "default", gaps inner all set 0, gaps outer all set 1
-    bindsym 1 mode "default", gaps inner all set 10, gaps outer all set 1
+    bindsym 0 mode "default", gaps inner all set 0, gaps outer all set 0
+    bindsym 1 mode "default", gaps inner all set 10, gaps outer all set 0
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
@@ -92,6 +91,7 @@ bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
 bindsym $mod+d exec rofi -show drun
+bindsym $mod+D exec rofi -show run
 
 # change focus
 bindsym $mod+h focus left
@@ -152,7 +152,8 @@ set $workspace8 "8: Htop"
 set $workspace9 "9: Thunderbird"
 set $workspace10 "10: Spotify"
 
-assign [class="Spotify"] $workspace10
+for_window [class="Spotify"] move to workspace $workspace10
+for_window [class="Spotify"] move to workspace $workspace10
 
 # switch to workspace
 bindsym $mod+1 workspace 1
