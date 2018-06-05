@@ -14,6 +14,7 @@ git
 history
 vi-mode
 colored-man-pages
+zsh-vimode-visual
 )
 
 source $ZSH/oh-my-zsh.sh
