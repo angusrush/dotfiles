@@ -1,7 +1,8 @@
 ##################################################
-# Nord colors
 #
+# Nord colors
 # see https://github.com/arcticicestudio/nord
+#
 ##################################################
 # nord0 - nord3 are dark - less dark gray
 # nord4 - nord6 are grey - almost white
@@ -25,7 +26,7 @@ set $nord13 #ebcb8b
 set $nord14 #a3be8c
 set $nord15 #b48ead
 
-# This one is mine
+# Mine -- gray-blue
 set $nord16 #73809b
 
 # Window Colors
@@ -37,7 +38,7 @@ client.urgent             $nord7       $nord7         $nord1     $nord8
 
 # gaps and borders
 gaps inner 10
-gaps outer 0
+gaps outer 5
 #smart_gaps on
 default_border pixel 2
 
@@ -46,7 +47,7 @@ set $mode_gaps Toggle gaps: (1) on (0) off
 bindsym $mod+y mode "$mode_gaps"
 mode "$mode_gaps" {
     bindsym 0 mode "default", gaps inner all set 0, gaps outer all set 0
-    bindsym 1 mode "default", gaps inner all set 10, gaps outer all set 0
+    bindsym 1 mode "default", gaps inner all set 10, gaps outer all set 5
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
@@ -55,7 +56,7 @@ mode "$mode_gaps" {
 bar {
         status_command i3blocks -c /home/angus/.config/i3/i3blocks.conf
         font pango:Ubuntu 9
-        i3bar_command i3bar -t
+        i3bar_command i3bar
         colors {
                 separator            $nord3
                 background           $nord0
@@ -144,7 +145,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Background image location
-set $backgroundimage /home/angus/Pictures/mount_rainier.jpg
+set $backgroundimage /home/angus/Pictures/wallpaper1.jpg
 
 # dedicated workspace definitions
 set $workspace7 "7: Skype"
