@@ -1,6 +1,6 @@
 
 [global]
-    font = Ubuntu 20
+    font = Ubuntu 12
 
     # Allow a small subset of html markup in notifications and formats:
     #   <b>bold</b>
