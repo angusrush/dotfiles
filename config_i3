@@ -216,7 +216,7 @@ bindsym $mod+shift+x exec "/home/angus/programming/screenlocker/screenlocker.sh"
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q sset Master 10%+ unmute && pkill -SIGRTMIN+11 i3blocks #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q sset Master 10%- unmute && pkill -SIGRTMIN+11 i3blocks #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle toggle && pkill -SIGRTMIN+11 i3blocks # mute sound
+bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle && pkill -SIGRTMIN+11 i3blocks # mute sound
 
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec xbright +50 5 && pkill -SIGRTMIN+12 i3blocks # increase screen brightness
