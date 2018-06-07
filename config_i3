@@ -53,21 +53,23 @@ mode "$mode_gaps" {
 }
 
 # Start i3bar to display a workspace bar
-bar {
-        status_command i3blocks -c /home/angus/.config/i3/i3blocks.conf
-        font pango:Ubuntu 9
-        i3bar_command i3bar
-        colors {
-                separator            $nord3
-                background           $nord0
-                statusline           $nord4
-#                                    border     background  text
-                focused_workspace    $nord0     $nord0      $nord8
-                active_workspace     $nord0     $nord0      $nord16
-                inactive_workspace   $nord0     $nord0      $nord16
-                urgent_workspace     $nord0     $nord0      $nord11
-        }
-}
+#bar {
+#        status_command i3blocks -c /home/angus/.config/i3/i3blocks.conf
+#        #status_command i3status
+#        tray_output primary
+#        font pango:Ubuntu 7
+#        i3bar_command i3bar
+#        colors {
+#                separator            $nord3
+#                background           $nord0
+#                statusline           $nord4
+##                                    border     background  text
+#                focused_workspace    $nord0     $nord0      $nord8
+#                active_workspace     $nord0     $nord0      $nord16
+#                inactive_workspace   $nord0     $nord0      $nord16
+#                urgent_workspace     $nord0     $nord0      $nord11
+#        }
+#}
 
 # Use windows as mod key
 set $mod Mod4
@@ -92,7 +94,7 @@ bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
 bindsym $mod+d exec rofi -show drun
-bindsym $mod+D exec rofi -show run
+bindsym $mod+Shift+d exec rofi -show run
 
 # change focus
 bindsym $mod+h focus left
@@ -212,9 +214,9 @@ bindsym $mod+r mode "resize"
 bindsym $mod+shift+x exec "/home/angus/programming/screenlocker/screenlocker.sh"
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && pkill -SIGRTMIN+11 i3blocks #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && pkill -SIGRTMIN+11 i3blocks #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && pkill -SIGRTMIN+11 i3blocks # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q sset Master 10%+ unmute && pkill -SIGRTMIN+11 i3blocks #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q sset Master 10%- unmute && pkill -SIGRTMIN+11 i3blocks #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle toggle && pkill -SIGRTMIN+11 i3blocks # mute sound
 
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec xbright +50 5 && pkill -SIGRTMIN+12 i3blocks # increase screen brightness
@@ -224,23 +226,26 @@ bindsym XF86MonBrightnessDown exec xbright -50 && pkill -SIGRTMIN+12 i3blocks # 
 bindsym XF86Display exec pkill -SIGRTMIN+13 i3blocks && xdotool mousemove 3200 1800
 
 # Media player controls
-bindsym XF86Search exec Downloads/playerctl-master/playerctl/playerctl play-pause && pkill -SIGRTMIN+14 i3blocks
-bindsym XF86LaunchA exec Downloads/playerctl-master/playerctl/playerctl previous
-bindsym XF86Explorer exec Downloads/playerctl-master/playerctl/playerctl next
+bindsym XF86Search exec playerctl play-pause && pkill -SIGRTMIN+14 i3blocks
+bindsym XF86LaunchA exec playerctl previous
+bindsym XF86Explorer exec playerctl next
 
 # Toggle day/night settings
-bindsym $mod+n exec /home/angus/programming/i3blocks/brightness_block/coolBrightness
+bindsym $mod+n exec /home/angus/programming/my-i3blocks/brightness_block/coolBrightness
 
 
 ##################################################
 # Startup programs begin here
 ##################################################
 
+# scale application sizes
+#exec_always xrandr --dpi 196
+
 # set wallpaper
 exec_always feh --bg-scale $backgroundimage
 
 # open wifi widget -- currently broken
-exec_always --no-startup-id nm_applet
+exec --no-startup-id nm_applet --sm-disable
 
 # make opacity work
 exec compton -f
@@ -248,20 +253,8 @@ exec compton -f
 # start dropbox
 exec dropbox start
 
-# scale application sizes
-exec_always xrandr --output eDP-1 --scale 1.25x1.25
-exec_always xrandr --output eDP-1 --panning 3200x1800 # = 2560*1.25 x 1440*1.25
-exec_always xrandr --dpi 196
-
-# battery management
-exec_always --no-startup-id tlp
-
-# kill ubuntu notifications, open my own
-exec killall -q notify-osd
+# start notifications
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
-
-# Make X events catchable
-exec /home/angus/export_x_info
 
 # Change caps lock into another escape
 exec setxkbmap -option caps:escape
@@ -269,11 +262,14 @@ exec setxkbmap -option caps:escape
 # Change prtscr into another grave
 exec setxkbmap -e 'keysym Print = grave'
 
-# Turn up trackpoint sensitivity
-exec /home/angus/programming/i3blocks/trackpoint_block/saneTrackpoint
-
 # start redshift
 exec redshift
+
+# possible pulseaudio bug workaround?
+exec pulseaudio -D
+
+# polybar
+exec_always --no-startup-id /home/angus/.config/polybar/launch.sh
 
 # start htop
 exec --no-startup-id termite -e htop 'workspace $workspace8'
