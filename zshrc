@@ -3,6 +3,8 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/angus/.oh-my-zsh
+export PATH=$PATH:~/.local/bin
+export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 
 bindkey -v
 
@@ -33,7 +35,7 @@ setopt share_history
 alias wttr="curl -s wttr.in/Liverpool"
 alias sl="sl -e"
 alias okular="zathura"
-alias vim="NVIM_LISTEN_ADDRESS=/tmp/vim nvim"
+alias vim="nvim"
 alias rmsock="rm -r /tmp/vim/ tmp/vim*"
 alias gs="git status"
 
