@@ -39,17 +39,9 @@ alias vim="nvim"
 alias rmsock="rm -r /tmp/vim/ tmp/vim*"
 alias gs="git status"
 
-# Function to update pathogen plugins
-function update_pathogen() {
-        cd ~/.vim/bundle/
-        for i in `ls`; do
-                cd "$i"
-                echo ""
-                echo "Updating $i"
-                git pull
-                cd ..
-        done
-}
+# Enable visual mode
+bindkey -M vicmd v visual-mode
+bindkey -M vicmd V edit-command-line
 
 # Enable more vim-style text objects, i.e. ci", ci}, etc.
 autoload -U select-bracketed
