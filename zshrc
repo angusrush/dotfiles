@@ -3,7 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/angus/.oh-my-zsh
-export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/.local/bin:$HOME/bin:/home/angus/anaconda3/bin/
 export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 
 bindkey -v
