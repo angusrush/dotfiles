@@ -38,6 +38,7 @@ alias okular="zathura"
 alias vim="nvim"
 alias rmsock="rm -r /tmp/vim/ tmp/vim*"
 alias gs="git status"
+alias sps="sudo pacman -Syu"
 
 # Enable visual mode
 bindkey -M vicmd v visual-mode
