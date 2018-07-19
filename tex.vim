@@ -1,6 +1,9 @@
 " set indent to 2 spaces
 set sw=2
 
+" maplocalleader is also space
+let maplocalleader = "\<Space>"
+
 " Zathura settings
 let g:vimtex_view_general_viewer = 'zathura'
 let g:vimtex_view_method='zathura'
@@ -34,6 +37,10 @@ let g:surround_{char2nr('Q')} = "``\r''"
 " sometimes I don't want to move using visual lines
 nnoremap gj j
 nnoremap gk k
+
+" compile current document on angus-server
+nnoremap <leader>lr :Dispatch!<CR>
+let g:dispatch = 'server-compile %:r'
 
 " Reformat lines (getting the spacing correct) {{{
 fun! TeX_fmt()
