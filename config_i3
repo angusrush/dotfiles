@@ -250,10 +250,10 @@ exec dropbox start
 # start notifications
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
-# Change caps lock into another escape
-exec setxkbmap -option caps:escape
 # Change prtscr into compose key (for diacritics)
 exec setxkbmap -option compose:prsc
+# Change caps lock into another escape
+exec setxkbmap -option caps:escape
 
 # start redshift
 exec redshift
