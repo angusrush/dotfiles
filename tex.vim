@@ -40,7 +40,7 @@ nnoremap gk k
 
 " compile current document on angus-server
 nnoremap <leader>lr :Dispatch!<CR>
-let g:dispatch = 'server-compile %:r'
+let b:dispatch = 'server-compile %:r'
 
 " Reformat lines (getting the spacing correct) {{{
 fun! TeX_fmt()
