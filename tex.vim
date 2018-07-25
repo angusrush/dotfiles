@@ -42,6 +42,9 @@ nnoremap gk k
 nnoremap <leader>lr :Dispatch!<CR>
 let b:dispatch = 'server-compile %:r'
 
+" Make latex highlighting a bit less blue
+highlight link texBeginEndName String
+
 " Reformat lines (getting the spacing correct) {{{
 fun! TeX_fmt()
   if (getline(".") != "")
@@ -63,7 +66,7 @@ fun! TeX_fmt()
     endtry
     norm gq
     let &wrapscan = op_wrapscan
-    call setpos('.', save_cursor) 
+    call setpos('.', save_cursor)
   endif
 endfun
 
