@@ -42,8 +42,15 @@ nnoremap gk k
 nnoremap <leader>lr :Dispatch!<CR>
 let b:dispatch = 'server-compile %:r'
 
-" Make latex highlighting a bit less blue
+" Make latex highlighting a bit more interesting
+highlight link texBeginEndModifier texDocTypeArgs
 highlight link texBeginEndName String
+highlight link texInputFile String
+highlight link texInputFileOpt Number
+"highlight link texMathMatcher String
+highlight link texMatcher String
+highlight link texMatcherNM String
+highlight link texOnlyMath healthError
 
 " Reformat lines (getting the spacing correct) {{{
 fun! TeX_fmt()
