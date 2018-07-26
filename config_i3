@@ -71,6 +71,12 @@ mode "$mode_gaps" {
 #        }
 #}
 
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
 # Use windows as mod key
 set $mod Mod4
 
@@ -265,6 +271,7 @@ exec pulseaudio -D
 exec_always --no-startup-id /home/angus/.config/polybar/launch.sh
 
 # start htop
-exec --no-startup-id termite -e htop 'workspace $workspace8'
+exec --no-startup-id termite -e htop
+for_window [class="Termite" instance="termite" title="htop"] move scratchpad
 
 # vim:filetype=i3
