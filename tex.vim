@@ -26,6 +26,12 @@ let g:vimtex_compiler_latexmk = {
       \ ],
       \}
 
+
+" Disable overfull/underfull \hbox and all package warnings
+let g:vimtex_quickfix_latexlog = {
+      \ 'overfull' : 0,
+      \ 'underfull' : 0,
+      \}
 " one-shot compilation
 nnoremap <leader>ls :call vimtex#compiler#compile_ss()<CR>
 
@@ -47,7 +53,7 @@ highlight link texBeginEndModifier texDocTypeArgs
 highlight link texBeginEndName String
 highlight link texInputFile String
 highlight link texInputFileOpt Number
-"highlight link texMathMatcher String
+highlight link texMathMatcher String
 highlight link texMatcher String
 highlight link texMatcherNM String
 highlight link texOnlyMath healthError
