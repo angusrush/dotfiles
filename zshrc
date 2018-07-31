@@ -39,6 +39,7 @@ alias rmsock="rm -r /tmp/vim/ tmp/vim*"
 alias gs="git status"
 alias sps="sudo pacman -S"
 alias syu="sudo pacman -Syu"
+alias et="edittex"
 
 # Enable visual mode
 bindkey -M vicmd v visual-mode
