@@ -250,9 +250,6 @@ exec_always feh --bg-scale $backgroundimage
 # make opacity work
 exec compton -f
 
-# start dropbox
-exec dropbox start
-
 # start notifications
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
