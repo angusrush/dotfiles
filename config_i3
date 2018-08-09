@@ -225,8 +225,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q sset Master 10%- unm
 bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle && pkill -SIGRTMIN+11 i3blocks # mute sound
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec xbright +50 5 && pkill -SIGRTMIN+12 i3blocks # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbright -50 && pkill -SIGRTMIN+12 i3blocks # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbright +85 5 && pkill -SIGRTMIN+12 i3blocks # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbright -85 && pkill -SIGRTMIN+12 i3blocks # decrease screen brightness
 
 # toggle touchpad
 bindsym XF86Display exec toggletouchpad && togglecursor
@@ -253,10 +253,8 @@ exec compton -f
 # start notifications
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
-# Change prtscr into compose key (for diacritics)
-exec setxkbmap -option compose:prsc
-# Change caps lock into another escape
-exec setxkbmap -option caps:escape
+# Change prtscr into compose key (for diacritics) and caps lock into another escape
+exec_always setxkbmap -option caps:escape -option compose:prsc
 
 # start redshift
 exec redshift
