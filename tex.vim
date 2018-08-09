@@ -26,7 +26,6 @@ let g:vimtex_compiler_latexmk = {
       \ ],
       \}
 
-
 " Disable overfull/underfull \hbox and all package warnings
 let g:vimtex_quickfix_latexlog = {
       \ 'overfull' : 0,
@@ -45,8 +44,8 @@ nnoremap gj j
 nnoremap gk k
 
 " compile current document on angus-server
-nnoremap <leader>lr :Dispatch!<CR>
-let b:dispatch = 'server-compile %:r'
+nnoremap <leader>lr :Dispatch<CR>
+let b:dispatch = 'server-compile %:p'
 
 " Make latex highlighting a bit more interesting
 highlight link texBeginEndModifier texDocTypeArgs
