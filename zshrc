@@ -41,6 +41,7 @@ alias sps="sudo pacman -S"
 alias syu="sudo pacman -Syu"
 alias et="edittex"
 alias wm="sudo wifi-menu"
+alias ssha="ssh angus@angus-server.duckdns.org -t 'tmux attach || tmux'"
 
 # Enable visual mode
 bindkey -M vicmd v visual-mode

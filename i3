@@ -265,6 +265,9 @@ exec pulseaudio -D
 # polybar
 exec_always --no-startup-id /home/angus/.config/polybar/launch.sh
 
+# run script which enables tap-to-click
+exec enabletapping
+
 # start htop
 exec --no-startup-id termite -e htop
 for_window [class="Termite" instance="termite" title="htop"] move scratchpad

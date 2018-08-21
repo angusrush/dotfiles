@@ -1385,6 +1385,8 @@ c.url.searchengines = {
         'gteg': 'https://translate.google.com/#en/de/{}',
         'gtge': 'https://translate.google.com/#de/en/{}',
         'you': 'https://www.youtube.com/results?search_query={}',
+        'wiki': 'https://en.wikipedia.org/wiki/{}',
+        'nlab': 'https://ncatlab.org/nlab/search?query={}',
         'arch': 'https://wiki.archlinux.org/index.php?search={}&title=Special%3ASearch&go=Go'
         }
 
