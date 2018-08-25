@@ -1387,7 +1387,7 @@ c.url.searchengines = {
         'you': 'https://www.youtube.com/results?search_query={}',
         'wiki': 'https://en.wikipedia.org/wiki/{}',
         'nlab': 'https://ncatlab.org/nlab/search?query={}',
-        'arch': 'https://wiki.archlinux.org/index.php?search={}&title=Special%3ASearch&go=Go'
+        'aw': 'https://wiki.archlinux.org/index.php?search={}&title=Special%3ASearch&go=Go'
         }
 
 ## Page(s) to open at the start.
