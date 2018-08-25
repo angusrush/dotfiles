@@ -1,12 +1,12 @@
-# If you come from bash you might have to change your $PATH.
-
-# Path to your oh-my-zsh installation.
+# Path to oh-my-zsh installation.
 export ZSH=/home/angus/.oh-my-zsh
 export PATH=$PATH:~/.local/bin
 export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 
+# Use vim keybindings
 bindkey -v
 
+# A good-looking, understated theme
 ZSH_THEME="gentoo"
 
 # Enable plugins
@@ -20,13 +20,15 @@ zsh-vimode-visual
 
 source $ZSH/oh-my-zsh.sh
 
+##################################################
 # User configuration
+##################################################
 
-# Use vim to edit commands
+# Use neovim to edit commands
 export EDITOR='nvim'
 export KEYTIMEOUT=1
 
-# Share command history between all open urxvt instances
+# Share command history between all open terminal instances
 setopt inc_append_history
 setopt share_history
 
