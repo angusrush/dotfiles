@@ -75,7 +75,9 @@ mode "$mode_gaps" {
 bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window
-bindsym $mod+minus scratchpad show
+bindsym $mod+minus [instance="htop"] scratchpad show
+bindsym $mod+equal [instance="scratchpad"] scratchpad show
+
 
 # Use windows as mod key
 set $mod Mod4
@@ -269,7 +271,11 @@ exec_always --no-startup-id /home/angus/.config/polybar/launch.sh
 exec enabletapping
 
 # start htop
-exec --no-startup-id termite -e htop
-for_window [class="Termite" instance="termite" title="htop"] move scratchpad
+exec --no-startup-id termite -e htop --name=htop
+for_window [class="Termite" instance="termite" title="htop" instance="htop"] move scratchpad
+
+# start scratch terminal
+exec --no-startup-id termite --name=scratchpad
+for_window [class="Termite" instance="termite" instance="scratchpad"] move scratchpad
 
 # vim:filetype=i3
