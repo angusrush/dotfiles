@@ -67,3 +67,7 @@ for km in visual viopp; do
         bindkey -M $km $c select-bracketed
     done
 done
+
+# fzf shortcuts
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh

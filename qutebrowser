@@ -771,39 +771,39 @@ c.editor.command = ['nvim', '{file}', '-c', 'normal {line}G{column0}l']
 
 ## Font used in the completion categories.
 ## Type: Font
-c.fonts.completion.category = 'bold 14pt monospace'
+c.fonts.completion.category = 'bold 11pt monospace'
 
 ## Font used in the completion widget.
 ## Type: Font
-c.fonts.completion.entry = '14pt monospace'
+c.fonts.completion.entry = '11pt monospace'
 
 ## Font used for the debugging console.
 ## Type: QtFont
-c.fonts.debug_console = '14pt monospace'
+c.fonts.debug_console = '11pt monospace'
 
 ## Font used for the downloadbar.
 ## Type: Font
-c.fonts.downloads = '14pt monospace'
+c.fonts.downloads = '11pt monospace'
 
 ## Font used for the hints.
 ## Type: Font
-c.fonts.hints = 'bold 14pt monospace'
+c.fonts.hints = 'bold 11pt monospace'
 
 ## Font used in the keyhint widget.
 ## Type: Font
-c.fonts.keyhint = '14pt monospace'
+c.fonts.keyhint = '11pt monospace'
 
 ## Font used for error messages.
 ## Type: Font
-c.fonts.messages.error = '14pt monospace'
+c.fonts.messages.error = '11pt monospace'
 
 ## Font used for info messages.
 ## Type: Font
-c.fonts.messages.info = '14pt monospace'
+c.fonts.messages.info = '11pt monospace'
 
 ## Font used for warning messages.
 ## Type: Font
-c.fonts.messages.warning = '14pt monospace'
+c.fonts.messages.warning = '11pt monospace'
 
 ## Default monospace fonts. Whenever "monospace" is used in a font
 ## setting, it's replaced with the fonts listed here.
@@ -812,15 +812,15 @@ c.fonts.monospace = 'Source Code Pro'
 
 ## Font used for prompts.
 ## Type: Font
-c.fonts.prompts = '14pt sans-serif'
+c.fonts.prompts = '11pt sans-serif'
 
 ## Font used in the statusbar.
 ## Type: Font
-c.fonts.statusbar = '14pt monospace'
+c.fonts.statusbar = '11pt monospace'
 
 ## Font used in the tab bar.
 ## Type: QtFont
-c.fonts.tabs = '14pt monospace'
+c.fonts.tabs = '11pt monospace'
 
 ## Font family for cursive fonts.
 ## Type: FontFamily

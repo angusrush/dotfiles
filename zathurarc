@@ -3,7 +3,7 @@ map - zoom out
 
 map c recolor
 
-set font "Source Code Pro for Powerline 15"
+set font "Source Code Pro for Powerline 10"
 set guioptions ""
 
 set highlight-transparency 0.5

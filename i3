@@ -278,4 +278,8 @@ for_window [class="Termite" instance="termite" title="htop" instance="htop"] mov
 exec --no-startup-id termite --name=scratchpad
 for_window [class="Termite" instance="termite" instance="scratchpad"] move scratchpad
 
+# restart pulseaudio -- necessary for some reason
+exec pkill pulseaudio
+exec pulseaudio
+
 # vim:filetype=i3
