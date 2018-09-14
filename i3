@@ -241,6 +241,8 @@ bindsym XF86Explorer exec playerctl next
 # Toggle day/night settings
 bindsym $mod+n exec togglenightmode
 
+# Open pdf in Zathura
+bindsym $mod+t exec zathura "$(ls ~/Textbooks/**/*.pdf | rofi -dmenu)"
 
 ##################################################
 # Startup programs begin here
