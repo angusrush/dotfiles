@@ -3,7 +3,7 @@
 frame_width = 3
 frame_color = "#1f222d"
 
-font = Monospace 14
+font = Monospace 10
 
 # Allow a small subset of html markup in notifications and formats:
 #   <b>bold</b>
