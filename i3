@@ -92,7 +92,7 @@ font pango:Ubuntu 0
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec alacritty
 
 # start browser
 bindsym $mod+i exec qutebrowser
