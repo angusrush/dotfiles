@@ -1386,7 +1386,7 @@ c.url.searchengines = {
         'gtge': 'https://translate.google.com/#de/en/{}',
         'you': 'https://www.youtube.com/results?search_query={}',
         'wiki': 'https://en.wikipedia.org/wiki/{}',
-        'nlab': 'https://ncatlab.org/nlab/search?query={}',
+        'nlab': 'https://www.google.com/search?ei=m9qgW_beI4ixswHwrJrgCA&q=site%3Ancatlab.org+{}',
         'aw': 'https://wiki.archlinux.org/index.php?search={}&title=Special%3ASearch&go=Go'
         }
 
@@ -1657,7 +1657,7 @@ c.zoom.default = '150%'
 # config.bind('<Return>', 'follow-hint', mode='hint')
 
 ## Bindings for insert mode
-# config.bind('<Ctrl-E>', 'open-editor', mode='insert')
+config.bind('<Ctrl-E>', 'open-editor', mode='insert')
 # config.bind('<Escape>', 'leave-mode', mode='insert')
 # config.bind('<Shift-Ins>', 'insert-text {primary}', mode='insert')
 
