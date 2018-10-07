@@ -48,6 +48,10 @@ alias syu="sudo pacman -Syu"
 alias et="edittex"
 alias wm="sudo wifi-menu"
 alias ssha="ssh angus@angus-server.duckdns.org -t 'tmux attach || tmux'"
+alias hp="bluetoothctl connect 00:16:94:2B:F0:DC"
+alias home="sudo netctl stop-all && sudo netctl start wlp4s0-welcomehome"
+alias uni="sudo netctl stop-all && sudo netctl start wlp4s0-eduroam"
+
 
 # Enable visual mode
 bindkey -M vicmd v visual-mode
