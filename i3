@@ -231,7 +231,7 @@ bindsym XF86MonBrightnessUp exec xbright +85 5 && pkill -SIGRTMIN+12 i3blocks # 
 bindsym XF86MonBrightnessDown exec xbright -85 && pkill -SIGRTMIN+12 i3blocks # decrease screen brightness
 
 # toggle touchpad
-bindsym XF86Display exec toggletouchpad && togglecursor
+bindsym XF86Display exec /home/angus/programming/scripts/toggletouchpad && /home/angus/programming/scripts/togglecursor
 
 # Media player controls
 bindsym XF86Search exec playerctl play-pause && pkill -SIGRTMIN+14 i3blocks
@@ -239,7 +239,7 @@ bindsym XF86LaunchA exec playerctl previous
 bindsym XF86Explorer exec playerctl next
 
 # Toggle day/night settings
-bindsym $mod+n exec togglenightmode
+bindsym $mod+n exec /home/angus/programming/scripts/togglenightmode
 
 # Open pdf in Zathura
 bindsym $mod+t exec zathura "$(ls ~/Textbooks/**/*.pdf | rofi -dmenu)"
@@ -270,7 +270,7 @@ exec pulseaudio -D
 exec_always --no-startup-id /home/angus/.config/polybar/launch.sh
 
 # run script which enables tap-to-click
-exec enabletapping
+exec /home/angus/programming/scripts/enabletapping
 
 # start htop
 exec --no-startup-id termite -e htop --name=htop
