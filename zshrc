@@ -28,6 +28,22 @@ antigen apply
 # User configuration
 ##################################################
 
+# This changes the cursor to a vertical bar when entering insert mode
+zle-keymap-select () {
+if [ "$TERM" = "xterm-256color" ]; then
+        if [ $KEYMAP = vicmd ]; then
+                # the command mode for vi
+                echo -ne "\e[2 q"
+        else
+                # the insert mode for vi
+                echo -ne "\e[5 q"
+        fi
+fi
+}
+
+# We start in insert mode, so the cursor should be a bar then too
+echo -ne "\e[5 q"
+
 # Use neovim to edit commands
 export EDITOR='nvim'
 export KEYTIMEOUT=1
@@ -63,15 +79,16 @@ autoload -U select-quoted
 zle -N select-quoted
 zle -N select-bracketed
 for km in visual viopp; do
-    bindkey -M $km -- '-' vi-up-line-or-history
-    for c in {a,i}${(s..)^:-\'\"\`\|,./:;-=+@}; do
-        bindkey -M $km $c select-quoted
-    done
-    for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
-        bindkey -M $km $c select-bracketed
-    done
+        bindkey -M $km -- '-' vi-up-line-or-history
+        for c in {a,i}${(s..)^:-\'\"\`\|,./:;-=+@}; do
+                bindkey -M $km $c select-quoted
+        done
+        for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
+                bindkey -M $km $c select-bracketed
+        done
 done
 
 # fzf shortcuts
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+
