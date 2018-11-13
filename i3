@@ -28,12 +28,13 @@ set $nord15 #b48ead
 
 # Mine -- gray-blue
 set $nord16 #73809b
+set $nord1op #2e3440d9
 
 # Window Colors
 #                         border       background     text       indicator
 client.focused            $nord10      $nord10        $nord6     $nord8
-client.focused_inactive   $nord1       $nord1         $nord6     $nord8
-client.unfocused          $nord1       $nord1         $nord6     $nord8
+client.focused_inactive   $nord1op     $nord1op       $nord6     $nord8
+client.unfocused          $nord1op     $nord1op       $nord6     $nord8
 client.urgent             $nord7       $nord7         $nord1     $nord8
 
 # gaps and borders
