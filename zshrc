@@ -65,8 +65,11 @@ alias et="edittex"
 alias wm="sudo wifi-menu"
 alias ssha="ssh angus@angus-server.duckdns.org -t 'tmux attach || tmux'"
 alias hp="bluetoothctl connect 00:16:94:2B:F0:DC"
+alias jbl="bluetoothctl connect 78:44:05:40:29:78"
 alias home="sudo netctl stop-all && sudo netctl start wlp4s0-welcomehome"
 alias uni="sudo netctl stop-all && sudo netctl start wlp4s0-eduroam"
+alias die="disown && exit"
+alias sl="sl -e"
 
 
 # Enable visual mode
