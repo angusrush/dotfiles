@@ -40,7 +40,7 @@ client.urgent             $nord7       $nord7         $nord1     $nord8
 # gaps and borders
 gaps inner 10
 gaps outer 5
-#smart_gaps on
+smart_borders on
 default_border pixel 2
 
 # Add a mode triggered by $mod+y to toggle gaps
@@ -281,7 +281,7 @@ for_window [class="Termite" instance="termite" title="htop" instance="htop"] mov
 exec --no-startup-id termite --name=scratchpad
 for_window [class="Termite" instance="termite" instance="scratchpad"] move scratchpad
 
-# restart pulseaudio -- necessary for some reason
+# restart pulseaudio -- necessary for some reason. Not working ATM.
 exec pkill pulseaudio
 exec pulseaudio
 
