@@ -1392,7 +1392,8 @@ c.url.searchengines = {
         'you': 'https://www.youtube.com/results?search_query={}',
         'wiki': 'https://en.wikipedia.org/wiki/{}',
         'nlab': 'https://www.google.com/search?ei=m9qgW_beI4ixswHwrJrgCA&q=site%3Ancatlab.org+{}',
-        'aw': 'https://wiki.archlinux.org/index.php?search={}&title=Special%3ASearch&go=Go'
+        'aw': 'https://wiki.archlinux.org/index.php?search={}&title=Special%3ASearch&go=Go',
+        'wa': 'https://www.wolframalpha.com/input/?i={}'
         }
 
 ## Page(s) to open at the start.
@@ -1533,10 +1534,10 @@ c.zoom.default = '150%'
 # config.bind('gd', 'download')
 # config.bind('gf', 'view-source')
 # config.bind('gg', 'scroll-to-perc 0')
-# config.bind('gl', 'tab-move -')
-# config.bind('gm', 'tab-move')
+# config.bind('gj', 'tab-move')
+config.bind('gk', 'tab-move -')
+config.bind('gj', 'tab-move +')
 # config.bind('go', 'set-cmd-text :open {url:pretty}')
-# config.bind('gr', 'tab-move +')
 # config.bind('gt', 'set-cmd-text -s :buffer')
 # config.bind('gu', 'navigate up')
 # config.bind('h', 'scroll left')
