@@ -160,11 +160,11 @@ set $backgroundimage /home/angus/Pictures/wallpaper1.jpg
 
 # dedicated workspace definitions
 set $workspace7 "7: Skype"
-set $workspace8 "8: Htop"
 set $workspace9 "9: Thunderbird"
 set $workspace10 "10: Spotify"
 
-for_window [class="Spotify"] move to workspace $workspace10
+for_window [class="Firefox"] move to workspace 4
+for_window [class="Thunderbird"] move to workspace $workspace9
 for_window [class="Spotify"] move to workspace $workspace10
 
 # switch to workspace
@@ -219,8 +219,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# change i3lock color
-bindsym $mod+shift+x exec "screenlocker"
+# change i3lock to something a bit nicer
+bindsym $mod+shift+x exec "/home/angus/.local/bin/screenlocker"
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q sset Master 10%+ unmute && pkill -SIGRTMIN+11 i3blocks #increase sound volume
@@ -232,7 +232,7 @@ bindsym XF86MonBrightnessUp exec xbright +85 5 && pkill -SIGRTMIN+12 i3blocks # 
 bindsym XF86MonBrightnessDown exec xbright -85 && pkill -SIGRTMIN+12 i3blocks # decrease screen brightness
 
 # toggle touchpad
-bindsym XF86Display exec /home/angus/programming/scripts/toggletouchpad && /home/angus/programming/scripts/togglecursor
+bindsym XF86Display exec /home/angus/programming/scripts/toggletouchpad
 
 # Media player controls
 bindsym XF86Search exec playerctl play-pause && pkill -SIGRTMIN+14 i3blocks
