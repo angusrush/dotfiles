@@ -38,8 +38,8 @@ client.unfocused          $nord1op     $nord1op       $nord6     $nord8
 client.urgent             $nord7       $nord7         $nord1     $nord8
 
 # gaps and borders
-gaps inner 10
-gaps outer 5
+gaps inner 8
+gaps outer 0
 smart_borders on
 default_border pixel 2
 
@@ -54,23 +54,25 @@ mode "$mode_gaps" {
 }
 
 # Start i3bar to display a workspace bar
-#bar {
-#        status_command i3blocks -c /home/angus/.config/i3/i3blocks.conf
-#        #status_command i3status
-#        tray_output primary
-#        font pango:Ubuntu 7
-#        i3bar_command i3bar
-#        colors {
-#                separator            $nord3
-#                background           $nord0
-#                statusline           $nord4
-##                                    border     background  text
-#                focused_workspace    $nord0     $nord0      $nord8
-#                active_workspace     $nord0     $nord0      $nord16
-#                inactive_workspace   $nord0     $nord0      $nord16
-#                urgent_workspace     $nord0     $nord0      $nord11
-#        }
-#}
+bar {
+        status_command i3blocks -c "/home/angus/.config/i3/i3blocks.conf"
+        #status_command i3status
+        tray_output primary
+        i3bar_command i3bar -t
+        font pango:Source Code Pro 18px
+        position top
+        tray_output none
+        colors {
+                separator            $nord3
+                background           $nord1op
+                statusline           $nord4
+#                                    border     background  text
+                focused_workspace    $nord1op   $nord1op    $nord4
+                active_workspace     $nord1op   $nord1op    $nord16
+                inactive_workspace   $nord1op   $nord1op    $nord16
+                urgent_workspace     $nord1op   $nord1op    $nord11
+        }
+}
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -159,9 +161,9 @@ bindsym $mod+a focus parent
 set $backgroundimage /home/angus/Pictures/wallpaper1.jpg
 
 # dedicated workspace definitions
-set $workspace7 "7: Skype"
-set $workspace9 "9: Thunderbird"
-set $workspace10 "10: Spotify"
+set $workspace7 "7"
+set $workspace9 "9"
+set $workspace10 "10"
 
 for_window [class="Firefox"] move to workspace 4
 for_window [class="Thunderbird"] move to workspace $workspace9
@@ -175,7 +177,7 @@ bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace $workspace7
-bindsym $mod+8 workspace $workspace8
+bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace $workspace9
 bindsym $mod+0 workspace $workspace10
 
@@ -187,7 +189,7 @@ bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace $workspace7
-bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
@@ -268,7 +270,7 @@ exec redshift
 exec pulseaudio -D
 
 # polybar
-exec_always --no-startup-id /home/angus/.config/polybar/launch.sh
+# exec_always --no-startup-id /home/angus/.config/polybar/launch.sh
 
 # run script which enables tap-to-click
 exec /home/angus/programming/scripts/enabletapping
@@ -281,7 +283,7 @@ for_window [class="Termite" instance="termite" title="htop" instance="htop"] mov
 exec --no-startup-id termite --name=scratchpad
 for_window [class="Termite" instance="termite" instance="scratchpad"] move scratchpad
 
-# restart pulseaudio -- necessary for some reason. Not working ATM.
+# restart pulseaudio -- necessary for some reason
 exec pkill pulseaudio
 exec pulseaudio
 
