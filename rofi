@@ -4,10 +4,11 @@ rofi.lines:                 7
 rofi.line-padding:          10
 rofi.matching:              fuzzy
 rofi.bw:                    0
-rofi.padding:               0
+rofi.padding:               400
 rofi.hide-scrollbar:        true
 rofi.line-margin:           0
 rofi.font:                  Source Code Pro for Powerline 20
+rofi.fullscreen:            true
 
 ! Base16 Nord
 ! Author: arcticicestudio
@@ -33,12 +34,12 @@ rofi.font:                  Source Code Pro for Powerline 20
 rofi.color-enabled: true
 
 ! Property Name     BG       Border   Separator
-rofi.color-window:  #3B4252, #3B4252, #2E3440
+rofi.color-window:  #CC3B4252, #CC3B4252, #002E3440
 
 ! Property Name     BG       FG       BG-alt   Head-BG  Head-FG
-rofi.color-normal:  #3B4252, #E5E9F0, #3B4252, #3B4252, #8FBCBB
-rofi.color-active:  #3B4252, #EBCB8B, #3B4252, #3B4252, #EBCB8B
-rofi.color-urgent:  #3B4252, #88C0D0, #3B4252, #3B4252, #88C0D0
+rofi.color-normal:  #003B4252, #E5E9F0, #003B4252, #003B4252, #8FBCBB
+rofi.color-active:  #003B4252, #EBCB8B, #003B4252, #003B4252, #EBCB8B
+rofi.color-urgent:  #003B4252, #88C0D0, #003B4252, #003B4252, #88C0D0
 
 ! Set the desired separator style
-rofi.separator-style: solid
+rofi.separator-style: none
