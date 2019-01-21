@@ -38,7 +38,7 @@ client.unfocused          $nord1op     $nord1op       $nord6     $nord8
 client.urgent             $nord7       $nord7         $nord1     $nord8
 
 # gaps and borders
-gaps inner 8
+gaps inner 6
 gaps outer 0
 smart_borders on
 default_border pixel 2
@@ -48,7 +48,7 @@ set $mode_gaps Toggle gaps: (1) on (0) off
 bindsym $mod+y mode "$mode_gaps"
 mode "$mode_gaps" {
     bindsym 0 mode "default", gaps inner all set 0, gaps outer all set 0
-    bindsym 1 mode "default", gaps inner all set 10, gaps outer all set 5
+    bindsym 1 mode "default", gaps inner all set 6
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
@@ -165,7 +165,6 @@ set $workspace7 "7"
 set $workspace9 "9"
 set $workspace10 "10"
 
-for_window [class="Firefox"] move to workspace 4
 for_window [class="Thunderbird"] move to workspace $workspace9
 for_window [class="Spotify"] move to workspace $workspace10
 
@@ -279,9 +278,8 @@ exec /home/angus/programming/scripts/enabletapping
 exec --no-startup-id termite -e htop --name=htop
 for_window [class="Termite" instance="termite" title="htop" instance="htop"] move scratchpad
 
-# start scratch terminal
-exec --no-startup-id termite --name=scratchpad
-for_window [class="Termite" instance="termite" instance="scratchpad"] move scratchpad
+# Enable floating for qutebrowser terminal
+for_window [class="Termite" instance="popupeditor"] floating enable
 
 # restart pulseaudio -- necessary for some reason
 exec pkill pulseaudio
