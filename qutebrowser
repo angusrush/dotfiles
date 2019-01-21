@@ -768,7 +768,7 @@ c.completion.scrollbar.width = 0
 ## `{line0}`: Same as `{line}`, but starting from index 0. * `{column0}`:
 ## Same as `{column}`, but starting from index 0.
 ## Type: ShellCommand
-c.editor.command = ['nvim', '{file}', '-c', 'normal {line}G{column0}l']
+c.editor.command = ['termite', '--name', 'popupeditor', '-e', 'nvim {file}', '-c', 'normal {line}G{column0}l']
 
 ## Encoding to use for the editor.
 ## Type: Encoding
@@ -889,7 +889,7 @@ c.fonts.tabs = '11pt monospace'
 ## Characters used for hint strings.
 ## Type: UniqueCharString
 # c.hints.chars = 'asdfghjkl'
-c.hints.chars = '!@#$%^&*()[]{}\|-=_+`~'
+c.hints.chars = '1234567890'
 
 ## Dictionary file to be used by the word hints.
 ## Type: File
@@ -1595,6 +1595,8 @@ config.bind('gj', 'tab-move +')
 # config.bind('yy', 'yank')
 # config.bind('{{', 'navigate prev -t')
 # config.bind('}}', 'navigate next -t')
+config.bind('<Ctrl-o>', 'edit-url')
+config.bind('ec', 'config-edit')
 
 ## Bindings for caret mode
 # config.bind('$', 'move-to-end-of-line', mode='caret')
@@ -1655,6 +1657,7 @@ config.bind('gj', 'tab-move +')
 # config.bind('<Shift-Tab>', 'completion-item-focus prev', mode='command')
 # config.bind('<Tab>', 'completion-item-focus next', mode='command')
 # config.bind('<Up>', 'completion-item-focus --history prev', mode='command')
+config.bind('<Ctrl-o>', 'edit-command', mode='command')
 
 ## Bindings for hint mode
 # config.bind('<Ctrl-B>', 'hint all tab-bg', mode='hint')
