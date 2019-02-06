@@ -1595,8 +1595,10 @@ config.bind('gj', 'tab-move +')
 # config.bind('yy', 'yank')
 # config.bind('{{', 'navigate prev -t')
 # config.bind('}}', 'navigate next -t')
-config.bind('<Ctrl-o>', 'edit-url')
+config.bind('<Ctrl-e>', 'edit-url')
 config.bind('ec', 'config-edit')
+config.bind('sy', 'spawn mpv {url}')
+config.bind('sY', 'hint links spawn mpv {hint-url}')
 
 ## Bindings for caret mode
 # config.bind('$', 'move-to-end-of-line', mode='caret')
@@ -1657,7 +1659,7 @@ config.bind('ec', 'config-edit')
 # config.bind('<Shift-Tab>', 'completion-item-focus prev', mode='command')
 # config.bind('<Tab>', 'completion-item-focus next', mode='command')
 # config.bind('<Up>', 'completion-item-focus --history prev', mode='command')
-config.bind('<Ctrl-o>', 'edit-command', mode='command')
+config.bind('<Ctrl-e>', 'edit-command', mode='command')
 
 ## Bindings for hint mode
 # config.bind('<Ctrl-B>', 'hint all tab-bg', mode='hint')
@@ -1667,7 +1669,7 @@ config.bind('<Ctrl-o>', 'edit-command', mode='command')
 # config.bind('<Return>', 'follow-hint', mode='hint')
 
 ## Bindings for insert mode
-config.bind('<Ctrl-E>', 'open-editor', mode='insert')
+config.bind('<Ctrl-e>', 'open-editor', mode='insert')
 # config.bind('<Escape>', 'leave-mode', mode='insert')
 # config.bind('<Shift-Ins>', 'insert-text {primary}', mode='insert')
 
