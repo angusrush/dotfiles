@@ -244,7 +244,7 @@ bindsym XF86Explorer exec playerctl next
 bindsym $mod+n exec /home/angus/programming/scripts/togglenightmode
 
 # Open pdf in Zathura
-bindsym $mod+t exec zathura "$(ls ~/Textbooks/**/*.pdf | rofi -dmenu)"
+bindsym $mod+t exec zathura "$(zsh -c "ls ~/Textbooks/**/*.pdf | rofi -dmenu")"
 
 ##################################################
 # Startup programs begin here
