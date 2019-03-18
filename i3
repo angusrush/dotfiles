@@ -63,7 +63,7 @@ bar {
         position top
         tray_output none
         colors {
-                separator            $nord3
+                separator            $nord10
                 background           $nord1op
                 statusline           $nord4
 #                                    border     background  text
@@ -79,8 +79,6 @@ bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window
 bindsym $mod+minus [instance="htop"] scratchpad show
-bindsym $mod+equal [instance="scratchpad"] scratchpad show
-
 
 # Use windows as mod key
 set $mod Mod4
@@ -158,7 +156,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Background image location
-set $backgroundimage /home/angus/Pictures/wallpaper1.jpg
+set $backgroundimage /home/angus/Pictures/mars/mars_1.jpg
 
 # dedicated workspace definitions
 set $workspace7 "7"
@@ -244,7 +242,8 @@ bindsym XF86Explorer exec playerctl next
 bindsym $mod+n exec /home/angus/programming/scripts/togglenightmode
 
 # Open pdf in Zathura
-bindsym $mod+t exec zathura "$(zsh -c "ls ~/Textbooks/**/*.pdf | rofi -dmenu")"
+bindsym $mod+t exec /home/angus/programming/scripts/textbook_opener
+bindsym $mod+c exec /home/angus/programming/scripts/texpdf_opener
 
 ##################################################
 # Startup programs begin here
