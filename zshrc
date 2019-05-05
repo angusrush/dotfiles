@@ -6,9 +6,7 @@ source /home/angus/antigen/antigen.zsh
 
 export PATH=$PATH:~/.local/bin
 export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
-
-# Use vim keybindings
-bindkey -v
+#export XKB_DEFAULT_OPTIONS=caps:escape
 
 # Enable plugins
 antigen use oh-my-zsh
@@ -24,9 +22,32 @@ antigen bundle zsh-users/zsh-completions
 antigen theme gentoo
 
 antigen apply
+
 ##################################################
 # User configuration
 ##################################################
+
+# Use vim keybindings
+bindkey -v
+
+# Enable visual mode
+bindkey -M vicmd v visual-mode
+bindkey -M vicmd V edit-command-line
+
+# Enable more vim-style text objects, i.e. ci", ci}, etc.
+autoload -U select-bracketed
+autoload -U select-quoted
+zle -N select-quoted
+zle -N select-bracketed
+for km in visual viopp; do
+        bindkey -M $km -- '-' vi-up-line-or-history
+        for c in {a,i}${(s..)^:-\'\"\`\|,./:;-=+@}; do
+                bindkey -M $km $c select-quoted
+        done
+        for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
+                bindkey -M $km $c select-bracketed
+        done
+done
 
 # This changes the cursor to a vertical bar when entering insert mode
 zle-keymap-select () {
@@ -43,6 +64,12 @@ fi
 
 # We start in insert mode, so the cursor should be a bar then too
 echo -ne "\e[5 q"
+
+# Use beam shape cursor for each new prompt, e.g. when exiting a program.
+_fix_cursor() {
+       echo -ne '\e[5 q'
+}
+precmd_functions+=(_fix_cursor)
 
 # Use neovim to edit commands
 export EDITOR='nvim'
@@ -70,28 +97,8 @@ alias home="sudo netctl stop-all && sudo netctl start wlp4s0-welcomehome"
 alias uni="sudo netctl stop-all && sudo netctl start wlp4s0-eduroam"
 alias die="disown && exit"
 alias sl="sl -e"
-
-
-# Enable visual mode
-bindkey -M vicmd v visual-mode
-bindkey -M vicmd V edit-command-line
-
-# Enable more vim-style text objects, i.e. ci", ci}, etc.
-autoload -U select-bracketed
-autoload -U select-quoted
-zle -N select-quoted
-zle -N select-bracketed
-for km in visual viopp; do
-        bindkey -M $km -- '-' vi-up-line-or-history
-        for c in {a,i}${(s..)^:-\'\"\`\|,./:;-=+@}; do
-                bindkey -M $km $c select-quoted
-        done
-        for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
-                bindkey -M $km $c select-bracketed
-        done
-done
+alias to="texfile_opener"
 
 # fzf shortcuts
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-

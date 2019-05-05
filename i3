@@ -156,7 +156,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Background image location
-set $backgroundimage /home/angus/Pictures/mars/mars_1.jpg
+set $backgroundimage /home/angus/Pictures/mars/mars_2.jpg
 
 # dedicated workspace definitions
 set $workspace7 "7"
