@@ -65,7 +65,7 @@ fi
 # We start in insert mode, so the cursor should be a bar then too
 echo -ne "\e[5 q"
 
-# Use beam shape cursor for each new prompt, e.g. when exiting a program.
+# Use bar cursor for each new prompt, e.g. when exiting a program.
 _fix_cursor() {
        echo -ne '\e[5 q'
 }
@@ -98,6 +98,8 @@ alias uni="sudo netctl stop-all && sudo netctl start wlp4s0-eduroam"
 alias die="disown && exit"
 alias sl="sl -e"
 alias to="texfile_opener"
+alias old="zathura ~/Downloads/`ls -t ~/Downloads | head -1`"
+alias lastpdf="zathura Downloads/$(ls -t Downloads | grep .pdf | head -1) & die"
 
 # fzf shortcuts
 source /usr/share/fzf/key-bindings.zsh
