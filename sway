@@ -1,14 +1,13 @@
-# My config for sway
+# File:    .config/sway/config
+# Github:  https://github.com/angusrush/dotfiles
 
-##################################################
+# Appearance {{{
+
 # Nord colors
-# see https://github.com/arcticicestudio/nord
-##################################################
 # nord0 - nord3 are dark - less dark gray
 # nord4 - nord6 are grey - almost white
 # nord7 - nord10 are green - blue
 # nord11 - nord15 are red, orange, yellow, green, purple
-
 set $nord0  #2e3440
 set $nord1  #3b4252
 set $nord2  #434c5e
@@ -42,35 +41,37 @@ gaps inner 6
 smart_borders on
 default_border pixel 3
 
-##################################################
-# Shortcuts
-##################################################
+# Hide cursor after 8 seconds with no movement
+seat * hide_cursor 8000
 
-# Logo key. Use Mod1 for Alt.
+# wallpaper
+output "*" background ~/Pictures/wallpaper1_darker.jpg fill
+
+# No hidpi mode
+output eDP-1 scale 1
+
+# }}}
+
+# Define variables {{{
+
+# Logo key
 set $mod Mod4
+
 # Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
+
 # Your preferred terminal emulator
 set $term alacritty
+
 # Your preferred application launcher
 set $menu rofi -show drun | xargs swaymsg exec
 
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/mars/mars_2.jpg fill
-#
-# Example configuration:
-#
-output eDP-1 scale 1
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
+# }}}
 
-### Input configuration
-#
+# Input configuration {{{
 input "1:1:AT_Translated_Set_2_keyboard" {
   xkb_options caps:escape,compose:prsc
 }
@@ -78,43 +79,56 @@ input "1:1:AT_Translated_Set_2_keyboard" {
 input "2:7:SynPS/2_Synaptics_TouchPad" {
   tap enabled
 }
+# }}}
 
-### Key bindings
-#
-# Basics:
-#
+# Custom key bindings {{{ 
+
 # start a terminal
 bindsym $mod+Return exec $term
 
 # start browser
 bindsym $mod+i exec qutebrowser
 
-# kill focused window
-bindsym $mod+Shift+q kill
-
 # start your launcher
 bindsym $mod+d exec $menu
 
-# Drag floating windows by holding down $mod and left mouse button.
-# Resize them with right mouse button + $mod.
-# Despite the name, also works for non-floating windows.
-# Change normal to inverse to use left mouse button for resizing and right
-# mouse button for dragging.
-floating_modifier $mod normal
+# Media and brightness keys 
+bindsym XF86AudioRaiseVolume exec amixer -q sset Master 10%+ unmute && pkill -SIGRTMIN+11 i3blocks
+bindsym XF86AudioLowerVolume exec amixer -q sset Master 10%- unmute && pkill -SIGRTMIN+11 i3blocks
+bindsym XF86AudioMute exec amixer -q set Master toggle && pkill -SIGRTMIN+11 i3blocks
+bindsym XF86MonBrightnessUp exec xbright +85 5 && pkill -SIGRTMIN+12 i3blocks
+bindsym XF86MonBrightnessDown exec xbright -85 && pkill -SIGRTMIN+12 i3blocks
+bindsym XF86Search exec playerctl play-pause && pkill -SIGRTMIN+14 i3blocks
+bindsym XF86LaunchA exec playerctl previous
+bindsym XF86Explorer exec playerctl next
+
+# Toggle night mode
+bindsym $mod+n exec /home/angus/programming/scripts/togglenightmode
+
+# Open pdf in Zathura
+bindsym $mod+t exec /home/angus/programming/scripts/textbook_opener
+bindsym $mod+c exec /home/angus/programming/scripts/texpdf_opener
+bindsym $mod+x exec /home/angus/programming/scripts/download_opener
 
 # reload the configuration file
 bindsym $mod+Shift+r reload
 
 # exit sway (logs you out of your Wayland session)
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
-#
-# Moving around:
-#
+
+# }}}
+
+# Moving focus {{{
+
+# Hold to drag floaging window
+floating_modifier $mod normal
+
 # Move your focus around
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
+
 # or use $mod+[up|down|left|right]
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -126,14 +140,31 @@ bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
+
 # ditto, with arrow keys
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
-#
-# Workspaces:
-#
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# }}}
+
+# Scratchpad {{{
+
+# Move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+# }}}
+
+# Workspaces {{{
+
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -145,6 +176,7 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
@@ -183,44 +215,39 @@ bindsym $mod+space focus mode_toggle
 
 # move focus to the parent container
 bindsym $mod+a focus parent
-#
-# Scratchpad:
-#
-# Sway has a "scratchpad", which is a bag of holding for windows.
-# You can send windows there and get them back later.
 
-# Move the currently focused window to the scratchpad
-bindsym $mod+Shift+minus move scratchpad
+for_window [class="Thunderbird"] move to workspace 9
+for_window [class="Spotify"] move to workspace 10
 
-# Show the next scratchpad window or hide the focused scratchpad window.
-# If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+minus scratchpad show
-#
-# Resizing containers:
+# }}}
+
+# Resizing containers {{{
 #
 mode "resize" {
 # left will shrink the containers width
 # right will grow the containers width
 # up will shrink the containers height
 # down will grow the containers height
-  bindsym $left resize shrink width 10px
-    bindsym $down resize grow height 10px
-    bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+  bindsym $left resize shrink width 48px
+    bindsym $down resize grow height 48px
+    bindsym $up resize shrink height 48px
+    bindsym $right resize grow width 48px
 
 # ditto, with arrow keys
-    bindsym Left resize shrink width 10px
-    bindsym Down resize grow height 10px
-    bindsym Up resize shrink height 10px
-    bindsym Right resize grow width 10px
+    bindsym Left resize shrink width 48px
+    bindsym Down resize grow height 48px
+    bindsym Up resize shrink height 48px
+    bindsym Right resize grow width 48px
 
 # return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+# }}}
 
-# Start i3bar to display a workspace bar
+# Bar {{{
+#
 bar {
   status_command i3blocks -c "/home/angus/.config/i3/i3blocks.conf"
     tray_output primary
@@ -239,28 +266,18 @@ bar {
     }
 }
 
-for_window [class="Thunderbird"] move to workspace $workspace9
-for_window [class="Spotify"] move to workspace $workspace10
+# }}}
 
-# Media and brightness keys 
-bindsym XF86AudioRaiseVolume exec amixer -q sset Master 10%+ unmute && pkill -SIGRTMIN+11 i3blocks
-bindsym XF86AudioLowerVolume exec amixer -q sset Master 10%- unmute && pkill -SIGRTMIN+11 i3blocks
-bindsym XF86AudioMute exec amixer -q set Master toggle && pkill -SIGRTMIN+11 i3blocks
-bindsym XF86MonBrightnessUp exec xbright +85 5 && pkill -SIGRTMIN+12 i3blocks
-bindsym XF86MonBrightnessDown exec xbright -85 && pkill -SIGRTMIN+12 i3blocks
-bindsym XF86Search exec playerctl play-pause && pkill -SIGRTMIN+14 i3blocks
-bindsym XF86LaunchA exec playerctl previous
-bindsym XF86Explorer exec playerctl next
+# Startup programs {{{
 
-bindsym $mod+n exec /home/angus/programming/scripts/togglenightmode
-
-# start notifications
+# Notifications
 exec mako
 
-# Open pdf in Zathura
-bindsym $mod+t exec /home/angus/programming/scripts/textbook_opener
-bindsym $mod+c exec /home/angus/programming/scripts/texpdf_opener
-
+# Redshift (currently broken)
 exec redshift -l 55.7:12.6 -t 5700:3600 -g 0.8 -m randr -v
 
+# }}}
+
 include /etc/sway/config.d/*
+
+# vim:foldmethod=marker foldmarker={{{,}}}
