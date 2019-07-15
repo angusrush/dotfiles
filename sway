@@ -45,7 +45,7 @@ default_border pixel 3
 seat * hide_cursor 8000
 
 # wallpaper
-output "*" background ~/Pictures/wallpaper1_darker.jpg fill
+output "*" background ~/Pictures/wallpaper1.jpg fill
 
 # No hidpi mode
 output eDP-1 scale 1
