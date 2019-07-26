@@ -26,12 +26,13 @@ set $nord14 #a3be8c
 set $nord15 #b48ead
 
 # Mine -- gray-blue
-set $nord16 #73809b
-set $nord1op #2e3440d9
+set $nord16   #73809b
+set $nord1op  #2e3440d9
+set $nord10op #5e81acd9
 
 # Window Colors
 #                         border      background     text       indicator  border    
-client.focused            $nord10     $nord10        $nord6     $nord8     $nord10   
+client.focused            $nord10op   $nord10op      $nord6     $nord8     $nord10   
 client.focused_inactive   $nord1op    $nord1op       $nord6     $nord8     $nord1op  
 client.unfocused          $nord1op    $nord1op       $nord6     $nord8     $nord1op  
 client.urgent             $nord7      $nord7         $nord1     $nord8     $nord7    
@@ -109,6 +110,7 @@ bindsym $mod+n exec /home/angus/programming/scripts/togglenightmode
 bindsym $mod+t exec /home/angus/programming/scripts/textbook_opener
 bindsym $mod+c exec /home/angus/programming/scripts/texpdf_opener
 bindsym $mod+x exec /home/angus/programming/scripts/download_opener
+bindsym $mod+u exec alacritty --command zsh /home/angus/programming/scripts/texfile_opener_new
 
 # reload the configuration file
 bindsym $mod+Shift+r reload
