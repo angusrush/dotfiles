@@ -10,6 +10,8 @@ set highlight-transparency 0.5
 
 set smooth-scroll true
 
+set window-title-basename true
+
 ##################################################
 # colors
 ##################################################
