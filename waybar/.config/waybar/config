@@ -1,0 +1,71 @@
+{
+        "layer": "top",
+        "height": 30,
+        "spacing": 20,
+        "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
+        "modules-right": ["custom/pacman", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery","clock"],
+        "sway/mode": {
+                "format": "<span style=\"italic\">{}</span>"
+        },
+        "clock": {
+                "tooltip-format": "{:%Y-%m-%d | %H:%M}",
+                "format-alt": "{:%Y-%m-%d}"
+        },
+        "cpu": {
+                "format": "{usage}% ",
+                "tooltip": false
+        },
+        "memory": {
+                "format": "{}% "
+        },
+        "custom/pacman": {
+                "format": "{} ",
+                "interval": 3600,
+                "exec": "checkupdates | wc -l",
+                "exec-if": "wget -q --spider http://www.google.com",
+                "on-click": "alacritty --class 'Updates' -e 'yay'; pkill -SIGRTMIN+8 waybar",
+                "signal": 8
+        },
+        "temperature": {
+                "critical-threshold": 80,
+                "format": "{temperatureC}°C {icon}",
+                "format-icons": ["", "", ""]
+        },
+        "backlight": {
+                "format": "{percent}% {icon}",
+                "format-icons": ["", ""]
+        },
+        "battery": {
+                "states": {
+                        "warning": 30,
+                        "critical": 15
+                },
+                "format": "{capacity}% {icon}",
+                "format-charging": "{capacity}% ",
+                "format-plugged": "{capacity}% ",
+                "format-alt": "{time} {icon}",
+                "format-icons": ["", "", "", "", ""]
+        },
+        "network": {
+                "format-wifi": "{essid} ({signalStrength}%) ",
+                "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+                "format-linked": "{ifname} (No IP) ",
+                "format-disconnected": "Disconnected ⚠",
+                "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        },
+        "pulseaudio": {
+                "format": "{volume}% {icon} {format_source}",
+                "format-bluetooth": "{volume}% {icon} {format_source}",
+                "format-muted": " {format_source}",
+                "format-icons": {
+                        "headphones": "",
+                        "handsfree": "",
+                        "headset": "",
+                        "phone": "",
+                        "portable": "",
+                        "car": "",
+                        "default": ["", "", ""]
+                },
+                "on-click": "pavucontrol"
+        }
+}
