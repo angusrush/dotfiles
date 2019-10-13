@@ -80,21 +80,15 @@ setopt inc_append_history
 setopt share_history
 
 # Personal aliases go here
-alias wttr="curl -s wttr.in/Liverpool"
+alias wttr="curl -s wttr.in/Hamburg"
 alias sl="sl -e"
 alias vim="nvim"
-alias rmsock="rm -r /tmp/vim/ tmp/vim*"
 alias gs="git status"
-alias sps="sudo pacman -S"
-alias syu="sudo pacman -Syu"
 alias et="edittex"
 alias wm="sudo wifi-menu"
 alias ssha="ssh angus@angus-server.duckdns.org -t 'tmux attach || tmux'"
 alias hp="bluetoothctl connect 00:16:94:2B:F0:DC"
 alias jbl="bluetoothctl connect 78:44:05:40:29:78"
-alias oontz="bluetoothctl connect DF:69:C7:6C:A1:B5"
-alias home="sudo netctl stop-all && sudo netctl start wlp4s0-welcomehome"
-alias uni="sudo netctl stop-all && sudo netctl start wlp4s0-eduroam"
 alias die="disown && exit"
 alias sl="sl -e"
 alias to="texfile_opener"
