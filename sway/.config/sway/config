@@ -38,7 +38,7 @@ client.unfocused          $nord1op    $nord1op       $nord6     $nord8     $nord
 client.urgent             $nord7      $nord7         $nord1     $nord8     $nord7    
 
 # gaps and borders
-gaps inner 6
+gaps inner 7
 smart_borders on
 default_border pixel 3
 
