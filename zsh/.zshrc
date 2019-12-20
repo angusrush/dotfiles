@@ -94,6 +94,8 @@ alias sl="sl -e"
 alias to="texfile_opener"
 alias old="zathura ~/Downloads/`ls -t ~/Downloads | head -1`"
 alias lastpdf="zathura Downloads/$(ls -t Downloads | grep .pdf | head -1) & die"
+alias hm="systemctl --user status offlineimap-oneshot@hotmail.timer | grep Trigger"
+alias hb="systemctl --user status offlineimap-oneshot@hamburg.timer | grep Trigger"
 
 # fzf shortcuts
 source /usr/share/fzf/key-bindings.zsh
