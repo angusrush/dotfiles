@@ -1394,7 +1394,9 @@ c.url.searchengines = {
         'wiki': 'https://en.wikipedia.org/wiki/{}',
         'define': 'https://en.oxforddictionaries.com/definition/{}',
         'nlab': 'https://www.google.com/search?ei=m9qgW_beI4ixswHwrJrgCA&q=site%3Ancatlab.org+{}',
+        'se': 'https://www.seriouseats.com/search?term={}',
         'aw': 'https://wiki.archlinux.org/index.php?search={}&title=Special%3ASearch&go=Go',
+        'synonym': 'https://www.thesaurus.com/browse/{}',
         'wa': 'https://www.wolframalpha.com/input/?i={}'
         }
 
