@@ -78,17 +78,17 @@ window#waybar.chromium {
 
 #clock {
     background-color: transparent;
-    padding: 0 12px;
+    padding: 0 15px;
 }
 
 #battery {
     background-color: transparent;
-    padding: 0 12px;
+    padding: 0 15px;
 }
 
 #battery.charging {
     background-color: transparent;
-    padding: 0 12px;
+    padding: 0 15px;
 }
 
 @keyframes blink {
@@ -110,52 +110,52 @@ window#waybar.chromium {
 
 label:focus {
     background-color: transparent;
-    padding: 0 12px;
+    padding: 0 15px;
 }
 
 #cpu {
     background-color: transparent;
-    padding: 0 12px;
+    padding: 0 15px;
 }
 
 #memory {
     background-color: transparent;
-    padding: 0 12px;
+    padding: 0 15px;
 }
 
 #custom-pacman {
     background-color: transparent;
-    padding: 0 12px;
+    padding: 0 15px;
 }
 
 #backlight {
     background-color: transparent;
-    padding: 0 12px;
+    padding: 0 15px;
 }
 
 #network {
     background-color: transparent;
-    padding: 0 12px;
+    padding: 0 15px;
 }
 
 #network.disconnected {
     background-color: transparent;
-    padding: 0 12px;
+    padding: 0 15px;
 }
 
 #pulseaudio {
     background-color: transparent;
-    padding: 0 12px;
+    padding: 0 15px;
 }
 
 #pulseaudio.muted {
     background-color: transparent;
-    padding: 0 12px;
+    padding: 0 15px;
 }
 
 #custom-media {
     background-color: transparent;
-    padding: 0 12px;
+    padding: 0 15px;
     min-width: 100px;
 }
 
