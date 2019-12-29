@@ -3,13 +3,14 @@
         "height": 30,
         "spacing": 20,
         "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
-        "modules-right": ["custom/pacman", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery","clock"],
+        "modules-center": ["clock"],
+        "modules-right": ["custom/pacman", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery"],
         "sway/mode": {
                 "format": "<span style=\"italic\">{}</span>"
         },
         "clock": {
-                "tooltip-format": "{:%Y-%m-%d | %H:%M}",
-                "format-alt": "{:%Y-%m-%d}"
+                "format": "{:%Z: %A %B %d, %H:%M:%S}",
+                "interval": 1
         },
         "cpu": {
                 "format": "{usage}% ",
