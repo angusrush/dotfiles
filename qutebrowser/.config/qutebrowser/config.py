@@ -1,21 +1,21 @@
 nord = {
-    'base03': '#3b4252',
-    'base02': '#434c5e',
-    'base01': '#e5e9f0',
-    'base00': '#d8dee9',
-    'base04':  '#4c566a',
-    'base0': '#4c566a',
-    'base1': '#5e81ac',
-    'base2': '#eee8d5',
-    'base3': '#eceff4',
-    'yellow': '#ebcb8b',
-    'orange': '#ebcb8b',
-    'red': '#bf616a',
+    'base03' : '#3b4252',
+    'base02' : '#434c5e',
+    'base01' : '#e5e9f0',
+    'base00' : '#d8dee9',
+    'base04' : '#4c566a',
+    'base0'  : '#4c566a',
+    'base1'  : '#5e81ac',
+    'base2'  : '#eee8d5',
+    'base3'  : '#eceff4',
+    'yellow' : '#ebcb8b',
+    'orange' : '#ebcb8b',
+    'red'    : '#bf616a',
     'magenta': '#b48ead',
-    'violet': '#8fbcbb',
-    'blue': '#5e81ac',
-    'cyan': '#88c0d0',
-    'green': '#a3be8c'
+    'violet' : '#8fbcbb',
+    'blue'   : '#5e81ac',
+    'cyan'   : '#88c0d0',
+    'green'  : '#a3be8c'
 }
 
 ## Background color of the completion widget category headers.
@@ -825,7 +825,7 @@ c.fonts.statusbar = '15pt monospace'
 
 ## Font used in the tab bar.
 ## Type: QtFont
-c.fonts.tabs = '15pt monospace'
+c.fonts.tabs = '14pt monospace'
 
 ## Font family for cursive fonts.
 ## Type: FontFamily
@@ -1154,7 +1154,7 @@ c.statusbar.hide = True
 
 ## Padding (in pixels) for the statusbar.
 ## Type: Padding
-# c.statusbar.padding = {'top': 1, 'bottom': 1, 'left': 0, 'right': 0}
+c.statusbar.padding = {'top': 4, 'bottom': 4, 'left': 2, 'right': 0}
 
 ## Position of the status bar.
 ## Type: VerticalPosition
@@ -1199,7 +1199,7 @@ c.statusbar.hide = True
 ## Scaling factor for favicons in the tab bar. The tab size is unchanged,
 ## so big favicons also require extra `tabs.padding`.
 ## Type: Float
-# c.tabs.favicons.scale = 1.0
+c.tabs.favicons.scale = 1.2
 
 ## When to show favicons in the tab bar.
 ## Type: String
@@ -1207,15 +1207,15 @@ c.statusbar.hide = True
 ##   - always: Always show favicons.
 ##   - never: Always hide favicons.
 ##   - pinned: Show favicons only on pinned tabs.
-# c.tabs.favicons.show = 'always'
+c.tabs.favicons.show = 'always'
 
 ## Padding (in pixels) for tab indicators.
 ## Type: Padding
-# c.tabs.indicator.padding = {'top': 2, 'bottom': 2, 'left': 0, 'right': 4}
+c.tabs.indicator.padding = {'top': 4, 'bottom': 4, 'left': 0, 'right': 4}
 
 ## Width (in pixels) of the progress indicator (0 to disable).
 ## Type: Int
-# c.tabs.indicator.width = 3
+c.tabs.indicator.width = 0
 
 ## How to behave when the last tab is closed.
 ## Type: String
@@ -1225,7 +1225,7 @@ c.statusbar.hide = True
 ##   - startpage: Load the start page.
 ##   - default-page: Load the default page.
 ##   - close: Close the window.
-# c.tabs.last_close = 'ignore'
+c.tabs.last_close = 'close'
 
 ## Minimum width (in pixels) of tabs (-1 for the default minimum size
 ## behavior). This setting only applies when tabs are horizontal. This
@@ -1266,7 +1266,7 @@ c.statusbar.hide = True
 
 ## Padding (in pixels) around text for tabs.
 ## Type: Padding
-# c.tabs.padding = {'top': 0, 'bottom': 0, 'left': 5, 'right': 5}
+c.tabs.padding = {'top': 4, 'bottom': 4, 'left': 5, 'right': 5}
 
 ## Shrink pinned tabs down to their contents.
 ## Type: Bool
@@ -1279,7 +1279,7 @@ c.statusbar.hide = True
 ##   - bottom
 ##   - left
 ##   - right
-# c.tabs.position = 'top'
+c.tabs.position = 'top'
 
 ## Which tab to select when the focused tab is removed.
 ## Type: SelectOnRemove
