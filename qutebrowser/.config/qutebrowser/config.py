@@ -810,11 +810,6 @@ c.fonts.messages.info = '15pt monospace'
 ## Type: Font
 c.fonts.messages.warning = '15pt monospace'
 
-## Default monospace fonts. Whenever "monospace" is used in a font
-## setting, it's replaced with the fonts listed here.
-## Type: Font
-c.fonts.monospace = 'Source Code Pro'
-
 ## Font used for prompts.
 ## Type: Font
 c.fonts.prompts = '15pt sans-serif'
