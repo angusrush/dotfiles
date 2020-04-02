@@ -96,6 +96,7 @@ alias old="zathura ~/Downloads/`ls -t ~/Downloads | head -1`"
 alias lastpdf="zathura Downloads/$(ls -t Downloads | grep .pdf | head -1) & die"
 alias hm="systemctl --user status offlineimap-oneshot@hotmail.timer | grep Trigger"
 alias hb="systemctl --user status offlineimap-oneshot@hamburg.timer | grep Trigger"
+alias tbadd="tbsearch --add-from-arxiv"
 
 # fzf shortcuts
 source /usr/share/fzf/key-bindings.zsh
