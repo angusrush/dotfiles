@@ -1392,7 +1392,8 @@ c.url.searchengines = {
         'se': 'https://www.seriouseats.com/search?term={}',
         'aw': 'https://wiki.archlinux.org/index.php?search={}&title=Special%3ASearch&go=Go',
         'synonym': 'https://www.thesaurus.com/browse/{}',
-        'wa': 'https://www.wolframalpha.com/input/?i={}'
+        'wa': 'https://www.wolframalpha.com/input/?i={}',
+        'duden': 'https://www.duden.de/suchen/dudenonline/{}'
         }
 
 ## Page(s) to open at the start.
