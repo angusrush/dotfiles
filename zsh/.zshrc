@@ -75,6 +75,10 @@ precmd_functions+=(_fix_cursor)
 export EDITOR='nvim'
 export KEYTIMEOUT=1
 
+# Use neovim as pager for man
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
+
 # Share command history between all open terminal instances
 setopt inc_append_history
 setopt share_history
@@ -97,6 +101,7 @@ alias lastpdf="zathura Downloads/$(ls -t Downloads | grep .pdf | head -1) & die"
 alias hm="systemctl --user status offlineimap-oneshot@hotmail.timer | grep Trigger"
 alias hb="systemctl --user status offlineimap-oneshot@hamburg.timer | grep Trigger"
 alias tbadd="tbsearch --add-from-arxiv"
+alias lo="libreoffice"
 
 # fzf shortcuts
 source /usr/share/fzf/key-bindings.zsh
