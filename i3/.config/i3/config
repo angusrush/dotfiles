@@ -245,6 +245,12 @@ bindsym $mod+n exec /home/angus/programming/scripts/togglenightmode
 bindsym $mod+t exec /home/angus/programming/scripts/textbook_opener
 bindsym $mod+c exec /home/angus/programming/scripts/texpdf_opener
 
+# Wacom stuff
+bindsym $mod+Mod1+1 exec /home/angus/programming/wacom/topleft.sh
+bindsym $mod+Mod1+2 exec /home/angus/programming/wacom/bottomleft.sh
+bindsym $mod+Mod1+3 exec /home/angus/programming/wacom/topright.sh
+bindsym $mod+Mod1+4 exec /home/angus/programming/wacom/bottomright.sh
+
 ##################################################
 # Startup programs begin here
 ##################################################
