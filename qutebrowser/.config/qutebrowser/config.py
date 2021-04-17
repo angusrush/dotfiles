@@ -1,3 +1,5 @@
+config.load_autoconfig(False)
+
 nord = {
     'base03' : '#3b4252',
     'base02' : '#434c5e',
@@ -820,7 +822,8 @@ c.fonts.statusbar = '15pt monospace'
 
 ## Font used in the tab bar.
 ## Type: QtFont
-c.fonts.tabs = '14pt monospace'
+c.fonts.tabs.selected = '14pt monospace'
+c.fonts.tabs.unselected = '14pt monospace'
 
 ## Font family for cursive fonts.
 ## Type: FontFamily
@@ -1145,7 +1148,7 @@ c.scrolling.smooth = True
 
 ## Hide the statusbar unless a message is shown.
 ## Type: Bool
-c.statusbar.hide = True
+c.statusbar.show = 'always'
 
 ## Padding (in pixels) for the statusbar.
 ## Type: Padding
@@ -1378,11 +1381,13 @@ c.url.default_page = 'https://www.nytimes.com/'
 c.url.searchengines = {
         'DEFAULT': 'https://duckduckgo.com/?q={}',
         'g': 'https://www.google.com/search?q={}',
+        'gi': 'https://www.google.com/search?q={}',
         'dcc': 'https://www.dict.cc/?s={}',
         'leo': 'https://dict.leo.org/german-english/{}',
-        'r': 'https://www.reddit.com/r/{}',
-        'lineg': 'https://www.linguee.com/english-german/search?source=auto&query={}',
+        'r': 'https://old.reddit.com/r/{}',
         'linge': 'https://www.linguee.com/german-english/search?source=auto&query={}',
+        'dleg': 'https://www.deepl.com/translator#en/de/{}',
+        'dlge': 'https://www.deepl.com/translator#de/en/{}',
         'gteg': 'https://translate.google.com/#en/de/{}',
         'gtge': 'https://translate.google.com/#de/en/{}',
         'you': 'https://www.youtube.com/results?search_query={}',
@@ -1598,6 +1603,7 @@ config.bind('gj', 'tab-move +')
 config.bind('<Ctrl-e>', 'edit-url')
 config.bind('ec', 'config-edit')
 config.bind('sy', 'spawn mpv {url}')
+config.bind('sl', 'spawn --userscript qute-lastpass')
 config.bind('sY', 'hint links spawn mpv {hint-url}')
 
 ## Bindings for caret mode
