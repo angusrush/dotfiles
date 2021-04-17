@@ -129,6 +129,10 @@ bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. 
 # Sync mailbox
 bindsym $mod+m exec offlineimap
 
+# screenshot selected area
+bindsym $mod+p exec IMG=~/Pictures/screenshots/$(date +%Y-%m-%d_%H-%m-%s).png && grim -g "$(slurp)" $IMG && wl-copy < $IMG
+bindsym $mod+Shift+p exec IMG=~/Pictures/screenshots/$(date +%Y-%m-%d_%H-%m-%s).png && grim $IMG && wl-copy < $IMG
+
 # }}}
 
 # Moving focus {{{
