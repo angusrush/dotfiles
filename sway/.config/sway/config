@@ -85,6 +85,10 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
   tap enabled
 }
 
+input type:tablet_tool {
+  calibration_matrix 0.0 1.0 1.0 -1.0 0.0 0.0
+}
+
 # }}}
 
 # Custom key bindings {{{ 
