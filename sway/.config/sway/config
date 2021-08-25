@@ -70,24 +70,31 @@ set $term alacritty
 # Your preferred application launcher
 set $menu rofi -show drun | xargs swaymsg exec
 
+set $LAPTOP_KEYBOARD "1:1:AT_Translated_Set_2_keyboard" 
+set $DESKTOP_KEYBOARD "1241:274:USB-HID_Keyboard"
+set $TOUCHPAD "2:7:SynPS/2_Synaptics_TouchPad" 
+set $WACOM_TABLET "2:7:SynPS/2_Synaptics_TouchPad"
+
 # }}}
 
 # Input configuration {{{
-input "1:1:AT_Translated_Set_2_keyboard" {
+input $LAPTOP_KEYBOARD {
   xkb_options caps:escape,compose:prsc
 }
 
-input "1241:274:USB-HID_Keyboard" {
+input $DESKTOP_KEYBOARD {
   xkb_options caps:escape,compose:ralt
 }
 
-input "2:7:SynPS/2_Synaptics_TouchPad" {
+input $TOUCHPAD {
   tap enabled
 }
 
-input type:tablet_tool {
-  calibration_matrix 0.0 1.0 1.0 -1.0 0.0 0.0
-}
+# Move drawing area of graphics tablet around
+bindsym $mod+Alt+1 input '1386:891:Wacom_One_by_Wacom_M_Pen' map_to_region 0 0 1536 864
+bindsym $mod+Alt+2 input '1386:891:Wacom_One_by_Wacom_M_Pen' map_to_region 0 576 1536 864
+bindsym $mod+Alt+3 input '1386:891:Wacom_One_by_Wacom_M_Pen' map_to_region 1024 0 1536 864
+bindsym $mod+Alt+4 input '1386:891:Wacom_One_by_Wacom_M_Pen' map_to_region 1024 576 1536 864
 
 # }}}
 

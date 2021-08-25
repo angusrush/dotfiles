@@ -79,6 +79,12 @@ export KEYTIMEOUT=1
 export MANPAGER='nvim +Man!'
 export MANWIDTH=999
 
+# Use firefox and qutebrowser with native wayland mode
+#export MOZ_ENABLE_WAYLAND=1
+#export XDG_SESSION_TYPE=wayland
+#export XDG_CURRENT_DESKTOP=sway
+#export GDK_BACKEND=wayland
+
 # Share command history between all open terminal instances
 setopt inc_append_history
 setopt share_history
